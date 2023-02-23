@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#--------------React Files-------------------#
+
 # dependencies
 frontend/sistema-vazvi/node_modules
 frontend/sistema-vazvi/.pnp
@@ -21,6 +23,8 @@ frontend/sistema-vazvi/.env.production.local
 frontend/sistema-vazvi/npm-debug.log*
 frontend/sistema-vazvi/yarn-debug.log*
 frontend/sistema-vazvi/yarn-error.log*
+
+#--------------Nest Files-------------------#
 
 # compiled output
 backend/api/dist
