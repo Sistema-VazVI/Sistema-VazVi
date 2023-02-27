@@ -1,33 +1,34 @@
-import * as React from 'react';
+import React, {useState} from 'react'
 import api from './api/api'
+import IProduct from './models/product.model';
 
 function App() {
 
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
 
   React.useEffect(() => {
 
-    getData();
-
-  }, [])
-
-  const getData = () => { 
-
-    api.get('product').then((response: any) => {
+    api.get('product').then((response) => {
 
       console.log(response.data);
       setProducts(response.data);
-      console.log(products);
 
     }).catch(error => {
       console.log(error)
     });
 
-  }
+  }, [])
+
 
   return (
-    <h1>ayudaaaaaaaaaaa</h1>
+    <div>
+      {products.map((product: IProduct) => (
+        <p key={product.id}>{product.name}{product.category.name}{product.brand.name}</p>
+      ))}
+    </div>
   );
+
+  
 }
 
 export default App;
