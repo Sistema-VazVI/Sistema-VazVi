@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import api from './api/api'
 import IProduct from './models/product.model';
+import { getAllProducts } from './endpoints/product.endopint';
 
 function App() {
 
@@ -8,24 +8,26 @@ function App() {
 
   React.useEffect(() => {
 
-    api.get('product').then((response) => {
-
-      console.log(response.data);
-      setProducts(response.data);
-
-    }).catch(error => {
-      console.log(error)
+    getAllProducts().then((data) => {
+      if(data){
+        setProducts(data);
+      }
     });
 
   }, [])
 
+  const viewProduct = (data: IProduct) => {
+    console.log(data);
+  };
 
   return (
     <div>
       {products.map((product: IProduct) => (
-        <p key={product.id}>{product.name}{product.category.name}{product.brand.name}</p>
+        <p key={product.id}>{product.id} {product.category.name} {product.brand.name}  <button  onClick={() => viewProduct(product)} > view product </button> </p>
       ))}
+
     </div>
+
   );
 
   

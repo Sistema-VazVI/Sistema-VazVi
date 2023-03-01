@@ -22,7 +22,13 @@ export class ProductService {
   }
 
   findById(id: number): Promise<Product> {
-    return this.productRepository.findOneBy({ id: id });
+    return this.productRepository.findOne({ 
+      where: { id: id },
+      relations: {
+        category: true,
+        brand: true,
+      },
+     });
   }
 
   create(product: CreateProductDto): Promise<CreateProductDto> {
