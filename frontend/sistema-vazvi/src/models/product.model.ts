@@ -4,10 +4,10 @@ import ICategory from "./category.model";
 
 export default interface IProduct {
  
-    id: number;
+    id?: number;
     name: string;
     price: number;
-    stock: string;
+    stock: number;
     category: ICategory;
     brand: IBrand;
     is_active: number;
