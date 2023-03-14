@@ -1,41 +1,25 @@
 import React, { useState } from "react";
-import IProduct from "./models/product.model";
-import { getAllProducts, getSingleProduct, createProduct, updateProduct, deleteProduct } from './endpoints/product.endopint';
+import IProduct, { IProductUpdate } from "./models/product.model";
+import { setAllProducts, viewProduct, softDelete, hardDelete, update } from "./controllers/product.controller";
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [product, setProduct] = useState<IProduct>({} as IProduct);
 
-  const testCreate: IProduct = {
+  const testCreate: IProductUpdate = {
+    id: 0,
     name: "testCreate 2",
     price: 100,
     stock: 1,
     is_active: 1,
-    category: {
-      id: 4,
-    },
-    brand: {
-      id: 2,
-    },
+    category: 4,
+    brand: 2,
   };
 
   React.useEffect(() => {
-    getAllProducts().then((data) => {
-      if (data) {
-        setProducts(data);
-      }
-    });
+    setAllProducts(setProducts);
   }, []);
 
-  const viewProduct = (productData: IProduct) => {
-    setProduct(productData);
-  };
-
-  const softDelete = (productData: IProduct)=> {
-    setProduct(productData);
-    product.is_active = 0;
-    updateProduct(product);
-  };
 
   return (
     <div>
@@ -43,9 +27,9 @@ function App() {
       {products.map((product: IProduct) => (
         <p key={product.id}>
           {product.id} {product.name} {product.category.name} {product.brand.name}{" "} {product.is_active}
-          <button onClick={() => viewProduct(product)}> view product </button>{" "}
+          <button onClick={() => viewProduct(product, setProduct) }> view product </button>{" "}
           <button onClick={() => softDelete(product)}> soft delete </button>{" "}
-          <button onClick={() => deleteProduct(product)}> delete </button>{" "}
+          <button onClick={() => softDelete(product)}> delete </button>{" "}
         </p>
       ))}
     </div>

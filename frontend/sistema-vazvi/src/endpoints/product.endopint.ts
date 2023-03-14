@@ -1,4 +1,4 @@
-import IProduct from "../models/product.model";
+import IProduct, {IProductUpdate, IProductCreate} from "../models/product.model";
 import axios from "axios";
 
 export const getAllProducts = async (): Promise<IProduct[]> => {
@@ -27,9 +27,9 @@ export const getSingleProduct = async (id:number): Promise<IProduct> => {
     });
 };
 
-export const createProduct = async (product:IProduct): Promise<IProduct> => {
+export const createProduct = async (product:IProductCreate): Promise<IProductCreate> => {
   return await axios
-    .post<IProduct>('http://localhost:3001/product', product)
+    .post<IProductCreate>('http://localhost:3001/product', product)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -40,9 +40,9 @@ export const createProduct = async (product:IProduct): Promise<IProduct> => {
     });
 };
 
-export const updateProduct = async (product:IProduct): Promise<IProduct> => {
+export const updateProduct = async (product:IProductUpdate): Promise<IProductUpdate> => {
   return await axios
-    .patch<IProduct>('http://localhost:3001/product', product)
+    .patch<IProductUpdate>('http://localhost:3001/product', product)
     .then((response) => {
       if (response.data) {
         return response.data;
