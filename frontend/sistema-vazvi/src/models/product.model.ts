@@ -27,11 +27,11 @@ export interface IProductCreate {
 export interface IProductUpdate {
     
     id: number;
-    name: string;
-    price: number;
-    stock: number;
-    category: number;
-    brand: number;
+    name?: string;
+    price?: number;
+    stock?: number;
+    category?: number;
+    brand?: number;
     is_active?: number;
 
 }

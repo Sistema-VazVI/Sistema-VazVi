@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import IProduct, { IProductUpdate } from "./models/product.model";
-import { setAllProducts, viewProduct, softDelete, hardDelete, update } from "./controllers/product.controller";
+import IProduct, { IProductCreate, IProductUpdate } from "./models/product.model";
+import { setAllProducts, viewProduct, hardDeleteProduct, updateProduct, addProduct } from "./controllers/product.controller";
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [product, setProduct] = useState<IProduct>({} as IProduct);
 
-  const testCreate: IProductUpdate = {
-    id: 0,
-    name: "testCreate 2",
+  const testCreate: IProductCreate = {
+    name: "testCreate 3",
     price: 100,
     stock: 1,
     is_active: 1,
@@ -23,13 +22,13 @@ function App() {
 
   return (
     <div>
-      <button  onClick={() => createProduct(testCreate)}> Crear </button>
+      <button  onClick={() => addProduct(testCreate)}> Crear </button>
       {products.map((product: IProduct) => (
         <p key={product.id}>
           {product.id} {product.name} {product.category.name} {product.brand.name}{" "} {product.is_active}
           <button onClick={() => viewProduct(product, setProduct) }> view product </button>{" "}
-          <button onClick={() => softDelete(product)}> soft delete </button>{" "}
-          <button onClick={() => softDelete(product)}> delete </button>{" "}
+          <button onClick={() => updateProduct(product, true)}> soft delete </button>{" "}
+          <button onClick={() => hardDeleteProduct(product)}> delete </button>{" "}
         </p>
       ))}
     </div>

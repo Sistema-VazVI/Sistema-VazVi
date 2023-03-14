@@ -1,7 +1,7 @@
 import IProduct, {IProductUpdate, IProductCreate} from "../models/product.model";
 import axios from "axios";
 
-export const getAllProducts = async (): Promise<IProduct[]> => {
+export const getAll = async (): Promise<IProduct[]> => {
   return await axios
     .get<IProduct[]>('http://localhost:3001/product')
     .then((response) => {
@@ -14,7 +14,7 @@ export const getAllProducts = async (): Promise<IProduct[]> => {
     });
 };
 
-export const getSingleProduct = async (id:number): Promise<IProduct> => {
+export const getSingle = async (id:number): Promise<IProduct> => {
   return await axios
     .get<IProduct>(`http://localhost:3001/product/${id}`)
     .then((response) => {
@@ -27,7 +27,7 @@ export const getSingleProduct = async (id:number): Promise<IProduct> => {
     });
 };
 
-export const createProduct = async (product:IProductCreate): Promise<IProductCreate> => {
+export const create = async (product:IProductCreate): Promise<IProductCreate> => {
   return await axios
     .post<IProductCreate>('http://localhost:3001/product', product)
     .then((response) => {
@@ -40,7 +40,7 @@ export const createProduct = async (product:IProductCreate): Promise<IProductCre
     });
 };
 
-export const updateProduct = async (product:IProductUpdate): Promise<IProductUpdate> => {
+export const update = async (product:IProductUpdate): Promise<IProductUpdate> => {
   return await axios
     .patch<IProductUpdate>('http://localhost:3001/product', product)
     .then((response) => {
@@ -53,7 +53,7 @@ export const updateProduct = async (product:IProductUpdate): Promise<IProductUpd
     });
 };
 
-export const deleteProduct = async (product: IProduct): Promise<IProduct> => {
+export const remove = async (product: IProduct): Promise<IProduct> => {
   return await axios
     .delete<IProduct>(`http://localhost:3001/product/${product.id}`)
     .then((response) => {
