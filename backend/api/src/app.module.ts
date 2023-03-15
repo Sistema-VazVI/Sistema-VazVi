@@ -8,8 +8,6 @@ import { BrandModule } from './brand/brand.module';
 import { Brand } from './brand/entity/brand.entity';
 import { ClientModule } from './client/client.module';
 import { Client } from './client/entity/client.entity';
-import { ProductController } from './product/product.controller';
-import { ProductService } from './product/product.service';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
 
