@@ -31,6 +31,5 @@ export class ClientService {
   delete(id:number){
     return this.clientRepository.delete({id:id});
   }
-  
 
 }
