@@ -11,8 +11,6 @@ import { Client } from './client/entity/client.entity';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
 import { ItemTicket } from './item-ticket/entity/item-ticket.entity';
-import { ItemTicketModule } from './item-ticket/item-ticket.module';
-import { PaymentModule } from './payment/payment.module';
 
 @Module({
   imports: [
@@ -21,7 +19,7 @@ import { PaymentModule } from './payment/payment.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '',
+      password: 'root',
       database: 'inventariodb_test',
       entities: [Category, Brand, Client, Product, ItemTicket],
       synchronize: false,
@@ -30,8 +28,6 @@ import { PaymentModule } from './payment/payment.module';
     BrandModule,
     ClientModule,
     ProductModule,
-    ItemTicketModule,
-    PaymentModule,
   ],
   controllers: [AppController],
   providers: [AppService ],
