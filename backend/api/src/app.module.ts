@@ -10,8 +10,8 @@ import { ClientModule } from './client/client.module';
 import { Client } from './client/entity/client.entity';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
-import { ItemTicketModule } from './item-ticket/item-ticket.module';
 import { ItemTicket } from './item-ticket/entity/item-ticket.entity';
+import { ItemTicketModule } from './item-ticket/item-ticket.module';
 
 @Module({
   imports: [
