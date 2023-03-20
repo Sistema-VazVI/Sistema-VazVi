@@ -10,6 +10,8 @@ import { ClientModule } from './client/client.module';
 import { Client } from './client/entity/client.entity';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
+import { TicketController } from './ticket/ticket.controller';
+import { TicketModule } from './ticket/ticket.module';
 
 @Module({
   imports: [
@@ -27,8 +29,9 @@ import { Product } from './product/entity/product.entity';
     BrandModule,
     ClientModule,
     ProductModule,
+    TicketModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, TicketController],
   providers: [AppService ],
 })
 export class AppModule {}
