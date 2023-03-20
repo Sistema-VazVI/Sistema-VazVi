@@ -28,7 +28,7 @@ export class ProductService {
         category: true,
         brand: true,
       },
-     });
+    });
   }
 
   create(product: CreateProductDto): Promise<CreateProductDto> {
