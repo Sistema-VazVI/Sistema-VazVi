@@ -13,7 +13,12 @@ export class TicketService {
     ) {}
     
     findAll(): Promise<Ticket[]> {
-        return this.ticketRepository.find();
+        return this.ticketRepository.find({
+            relations: {
+                payment: true,
+                client: true,
+            },
+            });
     }
 
     findById(id: number): Promise<Ticket> {

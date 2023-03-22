@@ -15,7 +15,7 @@ export class PaymentService {
     findAll(): Promise<Payment[]> {
     return this.paymentRepository.find({
         relations: {
-            ticket: true
+            ticket: true,
         },
         });
     }
