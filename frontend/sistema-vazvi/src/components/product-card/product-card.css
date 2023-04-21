@@ -1,0 +1,74 @@
+.card {
+    border-radius: 28px;
+    font-family: Verdana, sans-serif;
+    height: auto;
+    border: 2px solid #EFD6D2;
+    box-shadow: -0.03px 2px 5px black;
+    opacity: 0.3;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    color: #6F5E76;
+    padding: 5px;
+    column-gap: 20px;
+    max-width: 395px;
+    min-width: 250px;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.cardInfo {
+    font-weight: 300;
+    font-size: auto;
+    display: flex;
+    align-items: start;
+    justify-items: end;
+    align-content: start;
+    justify-content: start;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.cardInfo p {
+    color: #000;
+    font-size: 0.6em;
+    line-height: 10px;
+    font-weight: 100;
+}
+
+.cardTitle {
+    color: #6F5E76;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-decoration-line: none;
+    font-family: Verdana, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.cardLogo {
+    width: 24px;
+    height: 24px;
+    background-color: #6f5e76;
+    border-radius: 50%;
+    color: #FFDDE2;
+    padding: 5px;
+    align-self: start;
+    margin: 20px 0px 0px 15px;
+}
+
+.cardBtn {
+    color: #6f5e76;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #EFD6D2;
+    border: 0px
+}
