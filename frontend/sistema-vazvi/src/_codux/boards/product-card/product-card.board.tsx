@@ -3,5 +3,9 @@ import { ProductCard } from '../../../components/product-card/product-card';
 
 export default createBoard({
     name: 'ProductCard',
-    Board: () => <ProductCard />
+    Board: () => <ProductCard />,
+    environmentProps: {
+        windowWidth: 1024,
+        windowHeight: 768
+    }
 });
