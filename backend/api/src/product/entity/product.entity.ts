@@ -26,6 +26,6 @@ export class Product{
     brand: Brand;
 
     @Column()
-    is_active: number;
+    is_active: boolean;
 
 }

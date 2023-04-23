@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Ticket } from "src/ticket/entity/ticket.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Client{
@@ -17,5 +18,8 @@ export class Client{
 
     @Column()
     debt: number;
+
+    @OneToMany(() => Ticket, (ticket: Ticket) => ticket.client)
+    tickets: Ticket[];
 
 }

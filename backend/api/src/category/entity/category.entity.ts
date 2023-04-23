@@ -9,6 +9,6 @@ export class Category{
     name: string;
 
     @Column()
-    is_active: number;
+    is_active: boolean;
 
 }

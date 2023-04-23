@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 import IProduct, { IProductCreate, IProductUpdate } from "./models/product.model";
-import { setAllProducts, viewProduct, hardDeleteProduct, updateProduct, addProduct } from "./controllers/product.controller";
+import { setAllProducts, viewProduct, hardDeleteProduct, updateProduct, addProduct } from "./controllers/product.controller"; 
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
