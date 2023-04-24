@@ -18,6 +18,7 @@
     min-height: 146px;
     max-height: 146px;
     width: 266px;
+    cursor: pointer;
 }
 
 .newIcon {

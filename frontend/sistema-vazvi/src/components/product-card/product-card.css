@@ -72,5 +72,40 @@
     height: 30px;
     border-radius: 50%;
     background-color: #EFD6D2;
-    border: 0px
+    border: 0px;
+    cursor: pointer;
+}
+
+.containerCards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    gap: 15px;
+    padding: 15px;
+    max-width: 1400px;
+    min-height: 500px;
+    min-width: 340px;
+    width: 90%;
+    height: 700px;
+    box-shadow: -0.28px 1.98px 10px black;
+    border-radius: 28px;
+    justify-items: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+@media (min-width: 500px) {
+    .containerCards{ grid-template-columns: repeat(1, 1fr);}
+}
+
+@media (min-width: 800px) {
+    .containerCards{ grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (min-width: 1300px) {
+    .containerCards{ grid-template-columns: repeat(3, 1fr);}
+}
+
+@media (min-width: 1600px) {
+    .containerCards{ grid-template-columns: repeat(4, 1fr);}
 }

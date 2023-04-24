@@ -6,7 +6,7 @@ export default createBoard({
     Board: () => <SideBar />,
     environmentProps: {
         canvasHeight: 768,
-        canvasWidth: 1024,
+        canvasWidth: 1512,
         windowWidth: 1024,
         windowHeight: 768
     }
