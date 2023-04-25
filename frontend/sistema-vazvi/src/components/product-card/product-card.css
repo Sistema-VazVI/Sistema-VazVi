@@ -82,16 +82,32 @@
     grid-auto-flow: row;
     gap: 15px;
     padding: 15px;
+    max-height: 700px;
     max-width: 1400px;
-    min-height: 500px;
     min-width: 340px;
-    width: 90%;
-    height: 700px;
     box-shadow: -0.28px 1.98px 10px black;
     border-radius: 28px;
     justify-items: center;
     align-items: center;
     overflow: scroll;
+}
+
+@media (min-height: 1300px){
+    .containerCards{
+        height: 700px;
+    }
+}
+
+@media (min-height: 300px) {
+    .containerCards{
+        height: 300px;
+    }
+}
+
+@media (min-height: 350px) {
+    .containerCards{
+        height: 400px;
+    }
 }
 
 @media (min-width: 500px) {
