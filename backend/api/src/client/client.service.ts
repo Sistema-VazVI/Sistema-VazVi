@@ -17,7 +17,10 @@ export class ClientService {
   }
 
   findById(id: number): Promise<Client>{
-    return this.clientRepository.findOneBy({id:id});
+    return this.clientRepository.findOne({
+      where: { id: id },
+      relations: {tickets: true}
+    });
   }
 
   create(client: CreateClientDto): Promise<CreateClientDto>{

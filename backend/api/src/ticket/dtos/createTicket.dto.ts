@@ -6,10 +6,7 @@ export class CreateTicketDto{
     total: number;
 
     @IsNumber()
-    is_payed: number;
-
-    @IsNumber()
-    paymentId: number;
+    is_payed: boolean;
 
     @IsNumber()
     clientId: number;

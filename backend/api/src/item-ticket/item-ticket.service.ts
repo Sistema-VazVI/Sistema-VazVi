@@ -24,6 +24,7 @@ export class ItemTicketService {
     return this.ItemTicketRepository.findOne({
       where: { id: id },
       relations: {
+        ticket: true,
         product: true,
       },
     });
