@@ -2,7 +2,6 @@
     border-radius: 28px;
     font-family: Verdana, sans-serif;
     border: 2px solid #EFD6D2;
-    opacity: 0.3;
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -92,36 +91,44 @@
     overflow: scroll;
 }
 
-@media (min-height: 1300px){
-    .containerCards{
+@media (min-height: 1300px) {
+    .containerCards {
         height: 700px;
     }
 }
 
 @media (min-height: 300px) {
-    .containerCards{
+    .containerCards {
         height: 300px;
     }
 }
 
 @media (min-height: 350px) {
-    .containerCards{
+    .containerCards {
         height: 400px;
     }
 }
 
 @media (min-width: 500px) {
-    .containerCards{ grid-template-columns: repeat(1, 1fr);}
+    .containerCards {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 @media (min-width: 800px) {
-    .containerCards{ grid-template-columns: repeat(2, 1fr);}
+    .containerCards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1300px) {
-    .containerCards{ grid-template-columns: repeat(3, 1fr);}
+    .containerCards {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (min-width: 1600px) {
-    .containerCards{ grid-template-columns: repeat(4, 1fr);}
+    .containerCards {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
