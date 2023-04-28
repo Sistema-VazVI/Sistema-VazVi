@@ -17,7 +17,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 	setProduct
 }) => (
 	<div className={`${className} card`}>
-		<TagIcon className="cardLogo" />
+		<div className="cardLogo"><TagIcon /></div> 
 		<div className="cardInfo">
 			<h6 className="cardTitle">{`${product?.name}`}</h6>
 			<span>
