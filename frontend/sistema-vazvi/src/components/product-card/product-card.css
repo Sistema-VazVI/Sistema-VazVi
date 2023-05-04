@@ -1,8 +1,7 @@
 .card {
     border-radius: 28px;
     font-family: Verdana, sans-serif;
-    border: 2px solid #EFD6D2;
-    opacity: 0.3;
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -23,7 +22,7 @@
 .cardButtons {
     display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    column-gap: 10px;
 }
 
 .cardInfo {
@@ -76,6 +75,11 @@
     cursor: pointer;
 }
 
+.cardBtn:hover {
+    color: #EFD6D2;
+    background-color: #6f5e76;
+}
+
 .containerCards {
     display: grid;
     grid-template-rows: auto;
@@ -85,11 +89,12 @@
     max-height: 700px;
     max-width: 1400px;
     min-width: 340px;
-    box-shadow: -0.28px 1.98px 10px black;
-    border-radius: 28px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.415);
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
+    border-radius: 15px;
     justify-items: center;
     align-items: center;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 @media (min-height: 1300px){

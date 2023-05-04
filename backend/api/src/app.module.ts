@@ -25,7 +25,7 @@ import { PaymentModule } from './payment/payment.module';
       port: 3306,
       username: 'root',
       password: 'root',
-      database: 'inventariodb',
+      database: 'inventariodb_test',
       entities: [Category, Brand, Client, Product, Ticket, ItemTicket, Payment],
       synchronize: false,
     }),

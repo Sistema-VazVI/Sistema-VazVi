@@ -28,3 +28,22 @@ h1{
     align-content: center;
     justify-content: center;
 }
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #EFD6D2;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #EFD6D2;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #6F5E76;
+	border: 2px solid #6F5E76;
+}
