@@ -1,4 +1,5 @@
 import './linea.css';
+import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import React from 'react';
 
 export interface LineaProps {
@@ -7,8 +8,7 @@ export interface LineaProps {
 
 export const Linea: React.FC<LineaProps> = ({ className = '' }) => (
     <div className={`${className} LineCategory botones`}>
-        <div className="botonizq">utton>
-  boton">
+        <div className="botonizq"><button className="boton">
                 <TrashIcon />
             </button>
             <button className="boton">
