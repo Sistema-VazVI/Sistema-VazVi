@@ -12,7 +12,7 @@ export class Ticket{
     total: number;
 
     @Column()
-    is_payed: number;
+    is_payed: boolean;
 
     @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
     payment: Payment[];

@@ -1,7 +1,11 @@
+import { Dispatch, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/product.endopint';
 import IProduct, {IProductCreate, IProductUpdate} from '../models/product.model';
 
-export function setAllProducts(setProducts: any) {
+type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
+type SetProductType = Dispatch<SetStateAction<IProduct>>;
+
+export function setAllProducts(setProducts: SetProductsType) {
     getAll().then((data) => {
         if (data) {
           setProducts(data);
@@ -9,7 +13,7 @@ export function setAllProducts(setProducts: any) {
       });
 }
 
-export function viewProduct(product: IProduct, setProduct: any){
+export function viewProduct(product: IProduct, setProduct: SetProductType){
     setProduct(product);
     console.log(product);
 }
