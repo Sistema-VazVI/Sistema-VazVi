@@ -6,6 +6,6 @@ export interface BtnAceptarProps {
 }
 
 export const BtnAceptar: React.FC<BtnAceptarProps> = ({ className = '' }) => (
-    <div className={className}><button className="Btn">Aceptar</button>
+    <div className={`${className} divAcept`}><button className="BtnAcep">Aceptar</button>
     </div>
 );

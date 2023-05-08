@@ -1,0 +1,101 @@
+.Container {
+    width: 840px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    column-gap: 20px;
+    font-family: Verdana, sans-serif;
+    border: 1px solid #ffffff;
+}
+
+.title {
+    font-weight: 600;
+    text-align: justify;
+    font-size: 2em;
+    color: #735380;
+    display: flex;
+}
+
+.Styles {
+    display: flex;
+    height: 50px;
+    min-height: 30px;
+    min-width: 350px;
+    max-width: 800px;
+    max-height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 5px 0px 0px;
+    width: 790px;
+    border: 1px solid #6F5E76;
+    border-radius: 15px;
+}
+
+.div1 {
+    margin-top: 0px;
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 800px;
+    height: 110px;
+    grid-template-columns: 2fr;
+    gap: 0px 20px;
+    grid-auto-flow: row;
+}
+
+.divTit {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    margin: 0px;
+    height: 150px;
+}
+
+.etiquetas {
+    color: #735380;
+    font-size: 1.8em;
+    display: flex;
+    flex-direction: row;
+    margin-right: 450px;
+    align-items: center;
+    justify-items: start;
+    gap: 0px 20px;
+}
+
+.Styles2 {
+    flex-direction: row;
+    justify-items: start;
+    gap: 20px;
+    width: 350px;
+    height: 50px;
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #735380;
+    border: 1px solid #6F5E76;
+    border-radius: 10px;
+    grid-template-rows: 2px;
+    grid-template-columns: auto;
+}
+
+.div2 {
+    display: inline-block;
+    border: 2px solid #FFFFFF;
+    width: 360px;
+    overflow: hidden;
+    flex-direction: row;
+    margin: 0px 35px 0px 0px;
+}
+
+.DivAccCan {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-right: 50px;
+    text-align: start;
+    direction: ltr;
+    position: sticky;
+}
