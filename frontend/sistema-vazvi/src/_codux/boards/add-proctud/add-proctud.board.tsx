@@ -5,7 +5,7 @@ export default createBoard({
     name: 'AddProctud',
     Board: () => <AddProctud />,
     environmentProps: {
-        canvasHeight: 516,
+        canvasHeight: 628,
         windowHeight: 640
     }
 });
