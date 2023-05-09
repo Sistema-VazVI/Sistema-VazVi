@@ -3,14 +3,11 @@ import IProduct, {
 	IProductCreate,
 	IProductUpdate,
 } from "./models/product.model";
-import {
-	setAllProducts,
-	addProduct,
-} from "./controllers/product.controller";
+import { setAllProducts, addProduct } from "./controllers/product.controller";
 import { ProductCard } from "./components/product-card/product-card";
 import { NewItem } from "./components/new-item/new-item";
 import { SideBar } from "./components/side-bar/side-bar";
-import "./app.css"
+import "./app.css";
 import { ProductSearchBar } from "./components/product-search-bar/product-search-bar";
 
 function App() {
@@ -35,12 +32,17 @@ function App() {
 			<SideBar />
 			<div className="container">
 				<h1>Inventario</h1>
-        <ProductSearchBar/>
+				<ProductSearchBar />
 				<div className="containerCards">
-					<div><NewItem testCreate={testCreate}/></div>
+					<div>
+						<NewItem testCreate={testCreate} />
+					</div>
 					{products.map((product: IProduct) => (
 						<div key={product.id}>
-							<ProductCard product={product} setProduct={setProduct}/>
+							<ProductCard
+								product={product}
+								setProduct={setProduct}
+							/>
 						</div>
 					))}
 				</div>

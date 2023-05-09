@@ -1,8 +1,7 @@
 .newItem {
     border-radius: 28px;
     font-family: Verdana, sans-serif;
-    border: 3px dashed #6F5E76;
-    opacity: 0.3;
+    border: 2px dashed #6F5E76;
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -13,7 +12,6 @@
     padding: 5px;
     column-gap: 20px;
     max-width: 395px;
-    min-width: 250px;
     height: 146px;
     min-height: 146px;
     max-height: 146px;
@@ -24,4 +22,16 @@
 .newIcon {
     width: 40px;
     height: 40px;
+}
+
+@media (max-width:400px){
+    .newItem{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 220px;
+    }
+    .newIcon{
+        width: 30px;
+        height: 30px;
+    }
 }
