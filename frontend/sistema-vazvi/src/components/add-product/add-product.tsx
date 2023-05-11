@@ -1,13 +1,13 @@
-import './add-proctud.css';
+import './add-product.css';
 import React from 'react';
 import { BtnCancel } from '../btn-cancel/btn-cancel';
 import { BtnAceptar } from '../btn-aceptar/btn-aceptar';
 
-export interface AddProctudProps {
+export interface AddProductProps {
     className?: string;
 }
 
-export const AddProctud: React.FC<AddProctudProps> = ({ className = '' }) => (
+export const AddProductForm: React.FC<AddProductProps> = ({ className = '' }) => (
     <div className={`${className} Container`}>
         <div className="divTit">
             <h6 className="title">Agregar  producto </h6>
