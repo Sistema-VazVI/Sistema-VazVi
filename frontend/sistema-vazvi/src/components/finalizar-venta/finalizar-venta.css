@@ -1,0 +1,82 @@
+.ContainerEndSales {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 650px;
+    height: 200px;
+    font-family: Verdana, sans-serif;
+    font-weight: 600;
+    color: #6F5E76;
+    border-radius: 25px;
+    border: 1px solid #FFFFFF;
+    box-shadow: -0.44px 0.9px 2px rgb(0, 0, 0);
+}
+
+.divTitES {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    margin: -30px 0px 0px 25px;
+    height: 150px;
+}
+
+.titleEs {
+    font-weight: 600;
+    text-align: justify;
+    font-size: 2em;
+    color: #735380;
+    display: flex;
+}
+
+.Styles {
+    display: flex;
+    height: 50px;
+    min-height: 30px;
+    min-width: 350px;
+    max-width: 600px;
+    max-height: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 5px 0px 0px;
+    width: 790px;
+    border: 1px solid #6F5E76;
+    border-radius: 15px;
+}
+
+.div1 {
+    margin-top: 0px;
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    width: 600px;
+    height: 110px;
+    grid-template-columns: 2fr;
+    gap: 0px 20px;
+    grid-auto-flow: row;
+}
+
+.etiquetas {
+    color: #735380;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: start;
+    gap: 0px 20px;
+    font-weight: 300;
+}
+
+.divBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: end;
+    border: 1px solid #ffffff;
+    width: 215px;
+    height: 50px;
+    margin-top: 9px;
+    padding-left: 400px;
+}

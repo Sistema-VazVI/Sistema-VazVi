@@ -1,11 +1,9 @@
-.divAcept {
+.divEnd {
     width: 100px;
     display: inline-block;
-    margin-right: 0px;
-    margin-left: 12px;
 }
 
-.BtnAcep {
+.BtnEndS {
     width: 100px;
     height: 40px;
     font-family: Verdana, sans-serif;
