@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import App from "./pages/App";
 import { SideBar } from "./components/side-bar/side-bar";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);

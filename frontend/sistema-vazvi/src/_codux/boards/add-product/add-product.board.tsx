@@ -6,6 +6,7 @@ export default createBoard({
     Board: () => <AddProductForm />,
     environmentProps: {
         canvasHeight: 628,
-        windowHeight: 640
+        windowHeight: 640,
+        windowWidth: 1024
     }
 });

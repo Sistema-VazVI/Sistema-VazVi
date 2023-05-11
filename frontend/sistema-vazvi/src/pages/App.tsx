@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import IProduct, { IProductCreate, IProductUpdate } from "./models/product.model";
-import { setAllProducts, addProduct } from "./controllers/product.controller";
-import { ProductCard } from "./components/product-card/product-card";
-import { NewItem } from "./components/new-item/new-item";
-import { AddProductForm } from "./components/add-product/add-product";
+import IProduct, { IProductCreate, IProductUpdate } from "../models/product.model";
+import { setAllProducts, addProduct } from "../controllers/product.controller";
+import { ProductCard } from "../components/product-card/product-card";
+import { NewItem } from "../components/new-item/new-item";
+import { AddProductForm } from "../components/add-product/add-product";
 import "./app.css";
-import { ProductSearchBar } from "./components/product-search-bar/product-search-bar";
+import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -69,7 +69,7 @@ function App() {
 						onAfterOpen={afterOpenModal}
 						onRequestClose={closeModal}
 						style={customStyles}
-						contentLabel="Example Modal"
+						contentLabel="Form Modal"
 					>
 						<AddProductForm/>
 					</Modal>
