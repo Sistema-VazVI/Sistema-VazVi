@@ -3,5 +3,5 @@ import { NewItem } from '../../../components/new-item/new-item';
 
 export default createBoard({
     name: 'NewItem',
-    Board: () => <NewItem />
+    Board: () => <NewItem className={''} />
 });

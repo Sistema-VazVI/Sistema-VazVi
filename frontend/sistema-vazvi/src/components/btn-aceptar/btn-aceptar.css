@@ -1,0 +1,18 @@
+
+
+.divAcept {
+    width: 100px;
+    display: inline-block;
+}
+
+.BtnAcep {
+    width: 100px;
+    height: 40px;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    background-color: #6f5e76;
+}

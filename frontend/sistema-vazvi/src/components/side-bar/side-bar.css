@@ -66,5 +66,22 @@
 }
 
 .sideBarOption:hover a {
-	color: #6f5e76;
+    color: #6F5E76;
+}
+
+.Content {}
+
+.Content2 {
+    display: inline-block;
+    border: 1px solid #efd6d2;
+    border-radius: 20px;
+    box-shadow: 3px 3px 2px black;
+    width: 350px;
+    margin-top: 100px;
+    margin-left: 75px;
+    text-align: start;
+    overflow: hidden;
+    padding: 0px 0px 0px 30px;
+    min-width: 200px;
+    max-width: 1021px;
 }
