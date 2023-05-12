@@ -1,7 +1,5 @@
 import './add-line.css';
 import React from 'react';
-import { BtnAceptar } from '../btn-aceptar/btn-aceptar';
-import { BtnCancel } from '../btn-cancel/btn-cancel';
 
 export interface AddLineProps {
     className?: string;
@@ -17,8 +15,6 @@ export const AddLine: React.FC<AddLineProps> = ({ className = '' }) => (
             <input className="Styles" />
         </div>
         <div className="divBtn">
-            <BtnCancel />
-            <BtnAceptar />
         </div>
 
     </div>

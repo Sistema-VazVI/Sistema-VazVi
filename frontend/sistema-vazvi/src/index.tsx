@@ -4,6 +4,7 @@ import Products from "./routes/products";
 import { SideBar } from "./components/side-bar/side-bar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
+import Clients from "./routes/clients";
 
 const router = createBrowserRouter([
 	{
@@ -11,6 +12,11 @@ const router = createBrowserRouter([
 		element: <div><SideBar /> <Products/></div>,
 		errorElement: <ErrorPage />,
 	},
+	{
+		path: "/clients",
+		element: <div><SideBar /> <Clients/></div>,
+		errorElement: <ErrorPage />,
+	}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);

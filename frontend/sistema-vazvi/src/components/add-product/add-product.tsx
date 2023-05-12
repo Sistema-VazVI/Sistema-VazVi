@@ -1,12 +1,21 @@
 import "./add-product.css";
 import React from "react";
 import { XCircleIcon } from "@heroicons/react/24/outline";
+import { addProduct } from "../../controllers/product.controller";
+import { IProductCreate } from "../../models/product.model";
+import { Form } from "react-router-dom";
+
 export interface AddProductProps {
 	className?: string;
 	closeModal?: () => void;
+    product?: IProductCreate;
 }
 
-export const AddProductForm: React.FC<AddProductProps> = ({ className = "", closeModal }) => (
+export async function newProduct(product: IProductCreate){
+
+}
+
+export const AddProductForm: React.FC<AddProductProps> = ({ className = "", closeModal, product }) => (
 	<div className={`${className} Container`}>
 		<div className="divTit">
 			<div
@@ -17,11 +26,12 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 			</div>
 			<h1 className="title">Añadir Producto</h1>
 		</div>
-		<form method="post">
+		<form method="post" action="/">
 			<div className="nameForm">
-				<label className="etiquetas">Nombre Del Producto</label>
+				<label className="etiquetas" >Nombre Del Producto</label>
 				<input
 					type="text"
+                    name="productName"
 					className="inputLG"
 					placeholder="Introduzca el nombre del producto"
 				/>
@@ -32,6 +42,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 					<select
 						defaultValue=""
 						className="mdForm"
+                        name="category"
 					>
 						<option
 							hidden
@@ -39,7 +50,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 						>
 							Categoria
 						</option>
-						<option>Opcion 1</option>
+						<option value={4}>Opcion 1</option>
 					</select>
 				</div>
 				<div className="divCol">
@@ -47,6 +58,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 					<select
 						defaultValue=""
 						className="mdForm"
+                        name="line"
 					>
 						<option
 							hidden
@@ -54,15 +66,17 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 						>
 							Linea
 						</option>
-						<option>Opcion 1</option>
+						<option value={2}>Opcion 1</option>
 					</select>
 				</div>
 			</div>
+            <input type="hidden" value="1"/>
 			<div className="twoClmnForm">
 				<div className="divCol">
 					<label className="etiquetas">Precio</label>
 					<input
 						type="number"
+                        name="price"
 						className="mdForm"
 						placeholder="$ MXN"
 					/>
@@ -71,6 +85,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 					<label className="etiquetas">Stock</label>
 					<input
 						type="number"
+                        name="stock"
 						className="mdForm"
 						placeholder="No. productos en stock"
 					/>

@@ -1,11 +1,15 @@
-import './cliente.css';
-import React from 'react';
+import "./cliente.css";
+import React from "react";
 
 export interface ClienteProps {
-    className?: string;
+	className?: string;
 }
 
-export const Cliente: React.FC<ClienteProps> = ({ className = '' }) => (
-    <div className={`${className} divCliente`}>Cliente:<select className="styles3"><option>cliente</option></select>
-    </div>
+export const Cliente: React.FC<ClienteProps> = ({ className = "" }) => (
+	<div className={`${className} divCliente`}>
+		Cliente:
+		<select className="styles3">
+			<option>cliente</option>
+		</select>
+	</div>
 );

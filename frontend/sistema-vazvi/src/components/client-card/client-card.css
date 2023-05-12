@@ -1,76 +1,93 @@
-.card {
-    border-radius: 28px;
-    font-family: Verdana, sans-serif;
-    border: 2px solid #EFD6D2;
+.CardClient {
     display: flex;
     flex-direction: row;
-    justify-items: center;
-    justify-content: start;
-    align-content: center;
     align-items: center;
-    color: #6F5E76;
-    padding: 5px;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-evenly;
     column-gap: 20px;
-    height: 146px;
-    min-height: 146px;
-    max-height: 146px;
-    width: 266px;
+    height: 100px;
+    font-family: Verdana, sans-serif;
+    color: #6F5E76;
+    border: 2px solid #EFD6D2;
+    border-radius: 28px;
+    width: 280px;
 }
 
-.cardButtons {
+.ClientLogo {
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    color: #FFDDE2;
+    border-radius: 50%;
+    background-color: #6f5e76;
+    margin-left: 15px;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.Data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: start;
+    justify-content: start;
+    gap: 5px;
+    width: 120px;
+}
+
+.Title {
+    font-size: 10px;
+    font-weight: 600;
+    color: #6F5E76;
+    margin: 0;
+    width: 100%;
+}
+
+.InfoClient {
+    line-height: 0px;
+    font-size: 8px;
+    color: #6F5E76;
+    display: inline-block;
+    flex-direction: row;
+    align-items: start;
+    justify-items: start;
+    justify-content: center;
+    align-content: center;
+    direction: ltr;
+    text-align: start;
+}
+
+.InfoClient p {
+    display: inline-block;
+    flex-direction: row;
+    align-items: start;
+}
+
+.CardButtons {
     display: flex;
     flex-direction: row;
     column-gap: 5px;
-}
-
-.cardInfo {
-    font-weight: 300;
-    font-size: auto;
-    display: flex;
-    align-items: start;
-    justify-items: end;
-    align-content: start;
-    justify-content: start;
-    flex-direction: column;
-    text-align: justify;
-}
-
-.cardInfo p {
-    color: #000;
-    font-size: 0.6em;
-    line-height: 10px;
-    font-weight: 100;
-}
-
-.cardTitle {
-    color: #6F5E76;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-decoration-line: none;
-    font-family: Verdana, sans-serif;
-    font-style: normal;
-    font-size: 14px;
-}
-
-.cardLogo {
-    width: 24px;
-    height: 24px;
-    background-color: #6f5e76;
-    border-radius: 50%;
-    color: #FFDDE2;
-    padding: 5px;
-    align-self: start;
-    margin: 20px 0px 0px 15px;
+    width: 35%;
+    margin-right: 15px;
 }
 
 .cardBtn {
-    color: #6f5e76;
     width: 30px;
     height: 30px;
+    color: #6f5e76;
     border-radius: 50%;
     background-color: #EFD6D2;
-    border: 0px;
-    cursor: pointer;
+    text-align: start;
+    border: 1px solid #EFD6D2;
+}
+
+.cardBtn:hover {
+    background-color: #6F5E76;
+    color: #EFD6D2;
 }
 
 .containerCards {
@@ -134,17 +151,23 @@
 }
 
 @media (max-width:400px) {
-    .card {
-        width: 220px;
+    .CardClient {
+        width: 265px;
         margin-bottom: 10px;
     }
 
-    .cardLogo {
+    .ClientLogo {
         display: none;
     }
 
     .containerCards {
         gap: 5px;
+    }
+}
+
+@media (max-width:800px) {
+    .CardClient {
+        width: 265px;
     }
 }
 

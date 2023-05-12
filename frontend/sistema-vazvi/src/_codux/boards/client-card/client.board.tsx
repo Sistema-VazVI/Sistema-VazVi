@@ -1,9 +1,9 @@
 import { createBoard } from '@wixc3/react-board';
-import { Client } from '../../../components/client/client';
+import { ClientCard } from '../../../components/client-card/client-card';
 
 export default createBoard({
-    name: 'Client',
-    Board: () => <Client />,
+    name: 'ClientCard',
+    Board: () => <ClientCard />,
     environmentProps: {
         canvasHeight: 162
     }
