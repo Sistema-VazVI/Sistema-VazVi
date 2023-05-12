@@ -14,25 +14,18 @@ const customStyles = {
 		left: "50%",
 		right: "auto",
 		bottom: "auto",
-		marginRight: "-50%",
 		transform: "translate(-50%, -50%)",
+		borderRadius: 30
 	},
 };
 
-function App() {
+function Products() {
 	const [products, setProducts] = useState<IProduct[]>([]);
 	const [product, setProduct] = useState<IProduct>({} as IProduct);
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 
-	let subtitle: any;
-
 	function openModal() {
 		setIsOpen(true);
-	}
-
-	function afterOpenModal() {
-		// references are now sync'd and can be accessed.
-		subtitle.style.color = "#f00";
 	}
 
 	function closeModal() {
@@ -66,7 +59,6 @@ function App() {
 					</div>
 					<Modal
 						isOpen={modalIsOpen}
-						onAfterOpen={afterOpenModal}
 						onRequestClose={closeModal}
 						style={customStyles}
 						contentLabel="Form Modal"
@@ -87,4 +79,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Products;

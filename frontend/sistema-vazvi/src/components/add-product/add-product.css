@@ -2,20 +2,25 @@
     width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-items: center;
     font-family: Verdana, sans-serif;
     border: 1px solid #ffffff;
-    align-content: center;
+    align-content: end;
     justify-content: center;
+    overflow: auto;
+    gap: 10px 0px;
+    color: #6F5E76;
 }
 
-.title {
-    font-weight: 600;
-    text-align: justify;
-    font-size: 2em;
-    color: #735380;
+.Container form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    row-gap: 10px;
 }
 
 .inputLG {
@@ -28,14 +33,14 @@
     margin: 5px 0px 0px;
     color: #735380;
     padding-left: 10px;
-    border: 1px solid #6F5E76;
+    border: 1px solid #6f5e76;
     border-radius: 15px;
     width: 100%;
 }
 
 .nameForm {
     margin-top: 0px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     display: inline-block;
     margin-right: 0px;
     margin-bottom: 0px;
@@ -48,22 +53,26 @@
 }
 
 .divTit {
-    display: block;
-    flex-direction: row;
-    align-items: center;
     margin: 0px;
-    height: auto;
-    width: 90%;
+    height: 90px;
+    column-gap: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-items: start;
+    align-content: start;
+    justify-content: start;
+    row-gap: 0px;
+    width: 100%;
 }
 
 .etiquetas {
     color: #735380;
-    font-size: 1.8em;
+    font-size: 1.3em;
     display: block;
     flex-direction: row;
     align-items: start;
     justify-items: start;
-    gap: 0px 0px;
 }
 
 .mdForm {
@@ -72,7 +81,7 @@
     height: 50px;
     font-size: 1.5em;
     color: #735380;
-    border: 1px solid #6F5E76;
+    border: 1px solid #6f5e76;
     border-radius: 10px;
     padding-left: 10px;
     grid-template-columns: auto;
@@ -83,7 +92,7 @@
 
 .divCol {
     display: block;
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     overflow: visible;
     flex-direction: row;
     margin-top: 0px;
@@ -104,7 +113,7 @@
 
 .twoClmnForm {
     margin-top: 0px;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     display: flex;
     margin-right: 0px;
     margin-bottom: 10px;
@@ -120,10 +129,76 @@
     justify-content: start;
 }
 
-.btnForm {
+.btnFormContainer {
     display: flex;
     flex-direction: row;
     gap: 0px 20px;
     margin: 15px 5% 15px 0%;
     align-self: end;
+}
+
+.btnCancel {
+    padding: 10px 0px;
+    width: 90px;
+    border: 1.5px solid #6f5e76;
+    background-color: #ffffff;
+    border-radius: 13px;
+    color: #6f5e76;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btnCancel:hover {
+    background-color: #6f5e76;
+    color: #EFD6D2;
+}
+
+.btnAccept {
+    padding: 10px 0px;
+    width: 90px;
+    border: 1.5px solid #6f5e76;
+    background-color: #6f5e76;
+    border-radius: 13px;
+    color: #EFD6D2;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btnAccept:hover {
+    color: #6f5e76;
+    background-color: #ffdde2;
+}
+
+.closeIcon {
+    color: #6F5E76;
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.closeIcon:hover {
+    color: #ffdde2;
+}
+
+.title {
+    display: block;
 }
