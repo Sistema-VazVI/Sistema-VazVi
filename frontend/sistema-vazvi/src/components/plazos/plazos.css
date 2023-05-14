@@ -1,0 +1,20 @@
+.divPlazos {
+    display: flex;
+    flex-direction: column;
+    width: 205px;
+    height: 55px;
+    font-family: Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6F5E76;
+}
+
+.stylePlazos {
+    margin-top: 10px;
+    width: 200px;
+    height: 25px;
+    color: #6F5E76;
+    border: 1px solid #6F5E76;
+    opacity: 0.4;
+    box-shadow: 3px 3px 2px black;
+}

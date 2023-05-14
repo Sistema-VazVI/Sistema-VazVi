@@ -4,7 +4,7 @@ import IProduct, {
 	IProductCreate,
 	IProductUpdate,
 } from "./models/product.model";
-import { setAllProducts, addProduct } from "./controllers/product.controller";
+import { setAllProducts, addProduct, viewProduct, updateProduct, hardDeleteProduct } from "./controllers/product.controller";
 import { ProductCard } from "./components/product-card/product-card";
 import { NewItem } from "./components/new-item/new-item";
 import { SideBar } from "./components/side-bar/side-bar";
@@ -12,44 +12,36 @@ import "./app.css";
 import { ProductSearchBar } from "./components/product-search-bar/product-search-bar"; 
 
 function App() {
-	const [products, setProducts] = useState<IProduct[]>([]);
-	const [product, setProduct] = useState<IProduct>({} as IProduct);
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [product, setProduct] = useState<IProduct>({} as IProduct);
 
-	const testCreate: IProductCreate = {
-		name: "testCreate 3",
-		price: 100,
-		stock: 1,
-		is_active: true,
-		category: 4,
-		brand: 2,
-	};
+  const testCreate: IProductCreate = {
+    name: "testCreate 3",
+    price: 100,
+    stock: 1,
+    is_active: true,
+    category: 4,
+    brand: 2,
+  };
 
-	React.useEffect(() => {
-		setAllProducts(setProducts);
-	}, [products]);
+  React.useEffect(() => {
+    setAllProducts(setProducts);
+  }, []);
 
-	return (
-		<div>
-			<SideBar />
-			<div className="container">
-				<h1>Inventario</h1>
-				<ProductSearchBar />
-				<div className="containerCards">
-					<div>
-						<NewItem testCreate={testCreate} />
-					</div>
-					{products.map((product: IProduct) => (
-						<div key={product.id}>
-							<ProductCard
-								product={product}
-								setProduct={setProduct}
-							/>
-						</div>
-					))}
-				</div>
-			</div>
-		</div>
-	);
+
+  return (
+    <div>
+      <button  onClick={() => addProduct(testCreate)}> Crear </button>
+      {products.map((product: IProduct) => (
+        <p key={product.id}>
+          {product.id} {product.name} {product.category.name} {product.brand.name}{" "} {product.is_active}
+          <button onClick={() => viewProduct(product, setProduct) }> view product </button>{" "}
+          <button onClick={() => updateProduct(product, true)}> soft delete </button>{" "}
+          <button onClick={() => hardDeleteProduct(product)}> delete </button>{" "}
+        </p>
+      ))}
+    </div>
+  );
 }
 
 export default App;

@@ -1,0 +1,22 @@
+.divCliente {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: center;
+    margin-top: 0px;
+    width: 205px;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: #6F5E76;
+    font-weight: 600;
+    height: 55px;
+}
+
+.styles3 {
+    width: 200px;
+    height: 25px;
+    color: #6F5E76;
+    border: 1px solid #6F5E76;
+    margin-top: 10px;
+    opacity: 0.4;
+}
