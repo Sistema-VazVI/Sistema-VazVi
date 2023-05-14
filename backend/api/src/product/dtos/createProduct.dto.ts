@@ -18,5 +18,5 @@ export class CreateProductDto{
 
     @IsNumber()
     @IsOptional()
-    is_active: number;
+    is_active: boolean;
 }

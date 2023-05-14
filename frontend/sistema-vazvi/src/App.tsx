@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import IProduct, {
 	IProductCreate,
@@ -8,7 +9,7 @@ import { ProductCard } from "./components/product-card/product-card";
 import { NewItem } from "./components/new-item/new-item";
 import { SideBar } from "./components/side-bar/side-bar";
 import "./app.css";
-import { ProductSearchBar } from "./components/product-search-bar/product-search-bar";
+import { ProductSearchBar } from "./components/product-search-bar/product-search-bar"; 
 
 function App() {
 	const [products, setProducts] = useState<IProduct[]>([]);

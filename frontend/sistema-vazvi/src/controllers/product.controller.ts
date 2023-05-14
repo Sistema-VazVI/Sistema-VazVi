@@ -39,7 +39,7 @@ export function updateProduct(product: IProduct, option:boolean) {
   }
 
   if(option){//Enters if its a soft delete
-    updatedProduct.is_active = 0;
+    updatedProduct.is_active = false;
   }
 
   update(updatedProduct);

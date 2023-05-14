@@ -43,6 +43,9 @@
     ]
   },
   "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  },
+  "devDependencies": {
     "@wixc3/react-board": "^2.1.3"
   }
 }

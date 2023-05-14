@@ -24,7 +24,6 @@ export class PaymentController {
     
     @Post()
     create(@Body() payment:CreatePaymentDto): Promise<CreatePaymentDto>{
-        console.log(payment);
         return this.paymentService.create(payment);
     }
     

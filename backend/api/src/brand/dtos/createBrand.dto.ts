@@ -6,5 +6,5 @@ export class CreateBrandDto{
 
     @IsNumber()
     @IsOptional()
-    is_active: number;
+    is_active: boolean;
 }

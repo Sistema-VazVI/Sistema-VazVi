@@ -9,7 +9,7 @@ export default interface IProduct {
     stock: number;
     category: ICategory;
     brand: IBrand;
-    is_active: number;
+    is_active: boolean;
 
 }
 
@@ -20,7 +20,7 @@ export interface IProductCreate {
     stock: number;
     category: number;
     brand: number;
-    is_active?: number;
+    is_active?: boolean;
 
 }
 
@@ -32,6 +32,6 @@ export interface IProductUpdate {
     stock?: number;
     category?: number;
     brand?: number;
-    is_active?: number;
+    is_active?: boolean;
 
 }

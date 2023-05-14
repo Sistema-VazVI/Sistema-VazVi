@@ -10,5 +10,5 @@ export class UpdateCategoryDto{
 
     @IsNumber()
     @IsOptional()
-    is_active: number;
+    is_active: boolean;
 }
