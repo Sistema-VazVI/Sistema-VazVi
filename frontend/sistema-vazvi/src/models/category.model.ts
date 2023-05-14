@@ -2,6 +2,6 @@ export default interface ICategory {
 
     id: number;
     name?: string;
-    is_active?: number;
+    is_active?: boolean;
 
 }

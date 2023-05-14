@@ -9,5 +9,5 @@ export class Brand{
     name: string;
 
     @Column()
-    is_active: number;
+    is_active: boolean;
 }
