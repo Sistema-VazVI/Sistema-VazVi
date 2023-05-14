@@ -11,7 +11,7 @@ function App() {
     name: "testCreate 3",
     price: 100,
     stock: 1,
-    is_active: 1,
+    is_active: true,
     category: 4,
     brand: 2,
   };
