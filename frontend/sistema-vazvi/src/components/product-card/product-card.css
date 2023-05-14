@@ -1,7 +1,7 @@
 .card {
     border-radius: 28px;
     font-family: Verdana, sans-serif;
-    border: 2px solid #EFD6D2;
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
     display: flex;
     flex-direction: row;
     justify-items: center;
@@ -20,7 +20,7 @@
 .cardButtons {
     display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    column-gap: 10px;
 }
 
 .cardInfo {
@@ -71,6 +71,11 @@
     background-color: #EFD6D2;
     border: 0px;
     cursor: pointer;
+}
+
+.cardBtn:hover {
+    color: #EFD6D2;
+    background-color: #6f5e76;
 }
 
 .containerCards {

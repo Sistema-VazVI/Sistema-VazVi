@@ -1,7 +1,15 @@
 
 import React, { useState } from "react";
-import IProduct, { IProductCreate, IProductUpdate } from "./models/product.model";
-import { setAllProducts, viewProduct, hardDeleteProduct, updateProduct, addProduct } from "./controllers/product.controller"; 
+import IProduct, {
+	IProductCreate,
+	IProductUpdate,
+} from "./models/product.model";
+import { setAllProducts, addProduct } from "./controllers/product.controller";
+import { ProductCard } from "./components/product-card/product-card";
+import { NewItem } from "./components/new-item/new-item";
+import { SideBar } from "./components/side-bar/side-bar";
+import "./app.css";
+import { ProductSearchBar } from "./components/product-search-bar/product-search-bar"; 
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
