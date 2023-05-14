@@ -1,0 +1,132 @@
+.card {
+    border-radius: 28px;
+    font-family: Verdana, sans-serif;
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+    color: #6F5E76;
+    padding: 5px;
+    column-gap: 20px;
+    max-width: 395px;
+    min-width: 250px;
+    height: 146px;
+    min-height: 146px;
+    max-height: 146px;
+    width: 266px;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.cardInfo {
+    font-weight: 300;
+    font-size: auto;
+    display: flex;
+    align-items: start;
+    justify-items: end;
+    align-content: start;
+    justify-content: start;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.cardInfo p {
+    color: #000;
+    font-size: 0.6em;
+    line-height: 10px;
+    font-weight: 100;
+}
+
+.cardTitle {
+    color: #6F5E76;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-decoration-line: none;
+    font-family: Verdana, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.cardLogo {
+    width: 24px;
+    height: 24px;
+    background-color: #6f5e76;
+    border-radius: 50%;
+    color: #FFDDE2;
+    padding: 5px;
+    align-self: start;
+    margin: 20px 0px 0px 15px;
+}
+
+.cardBtn {
+    color: #6f5e76;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #EFD6D2;
+    border: 0px;
+    cursor: pointer;
+}
+
+.cardBtn:hover {
+    color: #EFD6D2;
+    background-color: #6f5e76;
+}
+
+.containerCards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-flow: row;
+    gap: 15px;
+    padding: 15px;
+    max-height: 700px;
+    max-width: 1400px;
+    min-width: 340px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.415);
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
+    border-radius: 15px;
+    justify-items: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+@media (min-height: 1300px){
+    .containerCards{
+        height: 700px;
+    }
+}
+
+@media (min-height: 300px) {
+    .containerCards{
+        height: 300px;
+    }
+}
+
+@media (min-height: 350px) {
+    .containerCards{
+        height: 400px;
+    }
+}
+
+@media (min-width: 500px) {
+    .containerCards{ grid-template-columns: repeat(1, 1fr);}
+}
+
+@media (min-width: 800px) {
+    .containerCards{ grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (min-width: 1300px) {
+    .containerCards{ grid-template-columns: repeat(3, 1fr);}
+}
+
+@media (min-width: 1600px) {
+    .containerCards{ grid-template-columns: repeat(4, 1fr);}
+}
