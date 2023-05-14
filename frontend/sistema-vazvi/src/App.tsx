@@ -4,7 +4,7 @@ import IProduct, {
 	IProductCreate,
 	IProductUpdate,
 } from "./models/product.model";
-import { setAllProducts, addProduct } from "./controllers/product.controller";
+import { setAllProducts, addProduct, viewProduct, updateProduct, hardDeleteProduct } from "./controllers/product.controller";
 import { ProductCard } from "./components/product-card/product-card";
 import { NewItem } from "./components/new-item/new-item";
 import { SideBar } from "./components/side-bar/side-bar";
