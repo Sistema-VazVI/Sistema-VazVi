@@ -18,12 +18,6 @@ export async function newProduct(product: IProductCreate){
 export const AddProductForm: React.FC<AddProductProps> = ({ className = "", closeModal, product }) => (
 	<div className={`${className} Container`}>
 		<div className="divTit">
-			<div
-				className="closeIcon"
-				onClick={closeModal}
-			>
-				<XCircleIcon onClick={closeModal}/>
-			</div>
 			<h1 className="title">Añadir Producto</h1>
 		</div>
 		<form method="post" action="/">

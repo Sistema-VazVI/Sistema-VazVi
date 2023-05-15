@@ -32,15 +32,6 @@ function Products() {
 		setIsOpen(false);
 	}
 
-	const testCreate: IProductCreate = {
-		name: "testCreate 3",
-		price: 100,
-		stock: 1,
-		is_active: 1,
-		category: 4,
-		brand: 2,
-	};
-
 	React.useEffect(() => {
 		setAllProducts(setProducts);
 	}, [products]);
@@ -53,7 +44,6 @@ function Products() {
 				<div className="containerCards">
 					<div>
 						<NewItem
-							testCreate={testCreate}
 							openModal={openModal}
 						/>
 					</div>
