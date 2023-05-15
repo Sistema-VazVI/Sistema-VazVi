@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { ClientCard } from "../components/client-card/client-card";
 import { NewItem } from "../components/new-item/new-item";
 import { NewClientForm } from "../components/new-client-form/new-client-form";
+import { ClientSearch } from "../components/client-search/client-search";
 
 const customStyles = {
 	content: {
@@ -31,6 +32,7 @@ function Clients() {
 		<div>
 			<div className="container">
 				<h1>Clientes</h1>
+				<ClientSearch/>
 				<div className="containerCards">
 					<div>
 						<NewItem openModal={openModal} />

@@ -16,6 +16,11 @@ const router = createBrowserRouter([
 		path: "/clients",
 		element: <div><SideBar /> <Clients/></div>,
 		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/lines-categories",
+		element: <div><SideBar /> <Clients/></div>,
+		errorElement: <ErrorPage />,
 	}
 ]);
 
