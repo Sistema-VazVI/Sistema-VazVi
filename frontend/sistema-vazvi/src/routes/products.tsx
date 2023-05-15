@@ -30,6 +30,10 @@ function Products() {
 	const [categories, setCategories] = useState<ICategory[]>([]);
 	const [brands, setBrands] = useState<IBrand[]>([]);
 	const [product, setProduct] = useState<IProduct>({} as IProduct);
+	const [brand, setBrand] = useState<number | undefined>(undefined);
+	const [category, setCategory] = useState<number | undefined>(undefined);
+	const [search, setSearch] = useState<string | undefined>(undefined);
+
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 
 	function openModal() {
@@ -41,11 +45,17 @@ function Products() {
 	}
 
 	React.useEffect(() => {
-		setAllProducts(setProducts);
+		setAllProducts(setProducts, category, brand, search);
 		setAllCategories(setCategories);
 		setAllBrands(setBrands);
-	}, [products]);
+	}, []);
+	
+	React.useEffect(() => {
+		setAllProducts(setProducts, category, brand, search);
+		console.log('hoa');
+	}, [category, brand, search, product]);
 
+	
 	return (
 		<div>
 			<div className="container">
@@ -53,6 +63,9 @@ function Products() {
 				<ProductSearchBar 
 					categories={categories}
 					brands={brands}
+					searchFilter={setSearch}
+					categoryFilter={setCategory}
+					brandFilter={setBrand}
 				/>
 				<div className="containerCards">
 					<div>

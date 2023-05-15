@@ -1,9 +1,19 @@
 import IProduct, {IProductUpdate, IProductCreate} from "../models/product.model";
 import axios from "axios";
 
-export const getAll = async (): Promise<IProduct[]> => {
+export const getAll = async (categoryId: number | undefined, brandId: number | undefined, searchFilter: string | undefined): Promise<IProduct[]> => {
+  let url: string = 'http://localhost:3001/product';
+  if (categoryId !== undefined) {
+    url += `?categoryId=${categoryId}`;
+  }
+  if (brandId !== undefined) {
+    url += `${categoryId !== undefined ? '&' : '?'}brandId=${brandId}`;
+  }
+  if (searchFilter !== undefined) {
+    url += `${categoryId !== undefined || brandId !== undefined ? '&' : '?'}searchFilter=${searchFilter}`;
+  }
   return await axios
-    .get<IProduct[]>('http://localhost:3001/product')
+    .get<IProduct[]>(url)
     .then((response) => {
       if (response.data) {
         return response.data;

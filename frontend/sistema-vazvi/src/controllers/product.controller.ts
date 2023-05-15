@@ -6,8 +6,8 @@ import { UseFormRegister } from 'react-hook-form';
 type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
 type SetProductType = Dispatch<SetStateAction<IProduct>>;
 
-export function setAllProducts(setProducts: SetProductsType) {
-    getAll().then((data) => {
+export function setAllProducts(setProducts: SetProductsType, categoryId: number | undefined, brandId: number | undefined, searchFilter: string | undefined) {
+    getAll(categoryId, brandId, searchFilter).then((data) => {
         if (data) {
           setProducts(data);
         }
