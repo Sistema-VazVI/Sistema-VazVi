@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { Delete, Patch, Post, Put } from '@nestjs/common/decorators/http/request-mapping.decorator';
-import { Body, Param } from '@nestjs/common/decorators/http/route-params.decorator';
+import { Body, Param, Query } from '@nestjs/common/decorators/http/route-params.decorator';
 import { UpdateResult } from 'typeorm';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dtos/createProduct.dto';
@@ -13,8 +13,12 @@ export class ProductController {
     constructor(private readonly productService: ProductService){}
 
     @Get()
-    getAll(): Promise<Product[]>{
-        return this.productService.findAll();
+    getAll(
+        @Query('categoryId') categoryId?: number,
+        @Query('brandId') brandId?: number,
+        @Query('searchFilter') searchFilter?: string
+        ): Promise<Product[]>{
+            return this.productService.findAll(categoryId, brandId, searchFilter);
     }
 
     @Get(':id')
@@ -24,7 +28,6 @@ export class ProductController {
     
     @Post()
     create(@Body() product:CreateProductDto): Promise<CreateProductDto>{
-        console.log(product);
         return this.productService.create(product);
     }
     
