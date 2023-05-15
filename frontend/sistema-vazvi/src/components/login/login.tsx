@@ -13,6 +13,9 @@ export const Login: React.FC<LoginProps> = ({ className = '' }) => (
 
             <input type="text" className="inputForm" /><br /><label className="etiquetasForm">Contraseña:</label><br /><input type="text" className="inputForm" /><br /><br />
             <br />
-            <input type="submit" value="Login" className="btnLogin" /></form>
+            <input type="submit" value="Login" className="btnLogin" />
+            <br />
+            <br />
+        </form>
     </div>
 );
