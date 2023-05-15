@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div>
-      <button  onClick={() => addProduct(testCreate)}> Crear </button>
+      {/* <button  onClick={() => addProduct(testCreate)}> Crear </button> */}
       {products.map((product: IProduct) => (
         <p key={product.id}>
           {product.id} {product.name} {product.category.name} {product.brand.name}{" "} {product.is_active}

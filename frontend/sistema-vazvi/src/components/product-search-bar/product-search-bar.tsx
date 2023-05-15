@@ -1,13 +1,15 @@
 import "./product-search-bar.css";
 import React from "react";
+import ICategory from '../../models/category.model';
+import IBrand from "../../models/brand.model";
 
 export interface ProductSearchBarProps {
     className?: string;
+    categories: ICategory[];
+    brands: IBrand[];
 }
 
-export const ProductSearchBar: React.FC<ProductSearchBarProps> = ({
-    className = "",
-}) => (
+export const ProductSearchBar: React.FC<ProductSearchBarProps> = ({ className = "", categories, brands }) => (
     <div className={`${className} searchContainer`}>
         <label>
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" className="css-i6dzq1">
@@ -18,15 +20,15 @@ export const ProductSearchBar: React.FC<ProductSearchBarProps> = ({
         </label>
         <select defaultValue="" className="searchSelect">
             <option hidden value="">Línea</option>
-            <option>Opcion 1</option>
-            <option>Opcion 2</option>
-            <option>Opcion 3</option>
+            {brands.map((brand: IBrand) => (
+				<option value={brand.id}>{brand.name}</option>
+			))}
         </select>
         <select defaultValue="" className="searchSelect">
             <option hidden value="">Categoría</option>
-            <option>Opcion 1</option>
-            <option>Opcion 2</option>
-            <option>Opcion 3</option>
+            {categories.map((category: ICategory) => (
+				<option value={category.id}>{category.name}</option>
+			))}
         </select>
     </div>
 );

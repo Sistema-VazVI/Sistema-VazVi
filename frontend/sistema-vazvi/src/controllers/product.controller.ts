@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, MouseEventHandler, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/product.endopint';
 import IProduct, {IProductCreate, IProductUpdate} from '../models/product.model';
+import { UseFormRegister } from 'react-hook-form';
 
 type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
 type SetProductType = Dispatch<SetStateAction<IProduct>>;

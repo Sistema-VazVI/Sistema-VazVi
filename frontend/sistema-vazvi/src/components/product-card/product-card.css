@@ -87,7 +87,7 @@
     width: 95%;
     height: 20%;
     min-width: 250px;
-    box-shadow: -0.28px 1.98px 10px black;
+    box-shadow: -0.28px 1.98px 10px rgb(0, 0, 0);
     border-radius: 28px;
     padding-bottom: 25px;
     justify-items: center;

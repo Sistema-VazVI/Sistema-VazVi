@@ -13,7 +13,11 @@ export class ClientService {
   ) {}
 
   findAll(): Promise<Client[]> {
-    return this.clientRepository.find();
+    return this.clientRepository.find({
+      order:{
+        name: 'ASC',
+      }
+    });
   }
 
   findById(id: number): Promise<Client>{

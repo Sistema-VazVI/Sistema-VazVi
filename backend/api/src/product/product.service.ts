@@ -18,6 +18,9 @@ export class ProductService {
         category: true,
         brand: true,
       },
+      order:{
+        name: 'ASC',
+      }
     });
   }
 

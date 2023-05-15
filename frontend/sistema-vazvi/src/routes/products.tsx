@@ -1,12 +1,18 @@
+import Modal from "react-modal";
+import "./app.css";
 import React, { useState } from "react";
-import IProduct, { IProductCreate, IProductUpdate } from "../models/product.model";
-import { setAllProducts, addProduct } from "../controllers/product.controller";
+import IProduct from "../models/product.model";
+import ICategory from "../models/category.model";
+import IBrand from "../models/brand.model";
+import { setAllProducts } from "../controllers/product.controller";
+import { setAllBrands } from "../controllers/brand.controller";
 import { ProductCard } from "../components/product-card/product-card";
 import { NewItem } from "../components/new-item/new-item";
-import { AddProductForm } from "../components/add-product/add-product";
-import "./app.css";
+import { AddProductForm,  } from "../components/add-product/add-product";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
-import Modal from "react-modal";
+import { setAllCategories } from "../controllers/category.controller";
+
+
 
 const customStyles = {
 	content: {
@@ -21,6 +27,8 @@ const customStyles = {
 
 function Products() {
 	const [products, setProducts] = useState<IProduct[]>([]);
+	const [categories, setCategories] = useState<ICategory[]>([]);
+	const [brands, setBrands] = useState<IBrand[]>([]);
 	const [product, setProduct] = useState<IProduct>({} as IProduct);
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -32,28 +40,23 @@ function Products() {
 		setIsOpen(false);
 	}
 
-	const testCreate: IProductCreate = {
-		name: "testCreate 3",
-		price: 100,
-		stock: 1,
-		is_active: 1,
-		category: 4,
-		brand: 2,
-	};
-
 	React.useEffect(() => {
 		setAllProducts(setProducts);
+		setAllCategories(setCategories);
+		setAllBrands(setBrands);
 	}, [products]);
 
 	return (
 		<div>
 			<div className="container">
 				<h1>Inventario</h1>
-				<ProductSearchBar />
+				<ProductSearchBar 
+					categories={categories}
+					brands={brands}
+				/>
 				<div className="containerCards">
 					<div>
 						<NewItem
-							testCreate={testCreate}
 							openModal={openModal}
 						/>
 					</div>
@@ -63,7 +66,10 @@ function Products() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
-						<AddProductForm/>
+						<AddProductForm 
+							brands={brands} 
+							categories={categories}
+							/>
 					</Modal>
 					{products.map((product: IProduct) => (
 						<div key={product.id}>

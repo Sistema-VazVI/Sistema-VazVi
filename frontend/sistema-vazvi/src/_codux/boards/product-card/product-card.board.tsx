@@ -11,11 +11,11 @@ export default createBoard({
         },
         category: {
             id: 0,
-            is_active: 0,
+            is_active: true,
             name: 'cat'
         },
         id: 0,
-        is_active: 0,
+        is_active: true,
         name: 'Nombre',
         price: 0,
         stock: 0

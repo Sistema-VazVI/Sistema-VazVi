@@ -5,7 +5,7 @@ import ICategory, {ICategoryCreate, ICategoryUpdate} from '../models/category.mo
 type SetCategorysType = Dispatch<SetStateAction<ICategory[]>>;
 type SetCategoryType = Dispatch<SetStateAction<ICategory>>;
 
-export function setAllCategorys(setCategorys: SetCategorysType) {
+export function setAllCategories(setCategorys: SetCategorysType) {
     getAll().then((data) => {
         if (data) {
           setCategorys(data);
