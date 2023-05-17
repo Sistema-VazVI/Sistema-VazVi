@@ -1,5 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
-import { Lineacat } from '../../../components/lineacat/lineacat';
+import { Lineacat } from '../../../components/line/line';
 
 export default createBoard({
     name: 'Line',

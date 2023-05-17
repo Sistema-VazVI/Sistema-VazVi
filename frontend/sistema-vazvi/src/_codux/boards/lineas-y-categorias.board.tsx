@@ -1,8 +1,8 @@
 import { createBoard } from '@wixc3/react-board';
 import { SideBar } from '../../components/side-bar/side-bar';
 import { NewItem } from '../../components/new-item/new-item';
-import { Lineacat } from '../../components/lineacat/lineacat';
-import { Line } from '../../components/line/line';
+import { Lineacat } from '../../components/line/line';
+import { Line } from '../../components/category/category';
 
 export default createBoard({
     name: 'Lineas_y_categorias',
