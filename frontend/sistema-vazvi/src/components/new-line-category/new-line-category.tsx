@@ -5,17 +5,19 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 export interface NewLineCategoryProps {
     className?: string;
     openModal?: () => void;
+    title?: string;
 }
 
 export const NewLineCategory: React.FC<NewLineCategoryProps> = ({
     className = "",
-    openModal
+    openModal,
+    title
 }) => (
     <div
         className={`${className} newLineCategory`}
         onClick={openModal}
     >
-        <PlusIcon className="newIcon" />
-        <h3>Agregar nuevo</h3>
+        <PlusIcon className="newIconLine" />
+        <h3>Nueva {`${title}`}</h3>
     </div>
 );

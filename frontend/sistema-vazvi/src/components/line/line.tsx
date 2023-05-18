@@ -1,4 +1,4 @@
-import "./line.css";
+import "./lineCat.css";
 import React from "react";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
@@ -8,12 +8,12 @@ export interface LineProps {
 }
 
 export const Line: React.FC<LineProps> = ({ className = "" }) => (
-    <div className={`${className} card`}>
+    <div className={`${className} cardLineCat`}>
         <div className="cardLogo">
             <ListBulletIcon />
         </div>
-        <div className="Titulo">Linea / Categoria</div>
-        <div className="Botones">
+        <div className="Titulo">Acondicionador Acondicionador</div>
+        <div className="btnContainer">
             <button className="btn">
                 <PencilSquareIcon />
             </button>

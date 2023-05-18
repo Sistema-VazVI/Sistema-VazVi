@@ -1,22 +1,24 @@
-import './line.css';
-import { TagIcon } from "@heroicons/react/24/outline";
+import "../line/lineCat.css";
+import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
-import React from 'react';
+import React from "react";
 
 export interface CategoryProps {
     className?: string;
 }
 
-export const Category: React.FC<CategoryProps> = ({ className = '' }) => (
-    <div className={`${className} Categoria`}>
-        <div className="btnizq"><button className="btnizq bntizq1">
-            <TagIcon />
-        </button></div>Categoria 1<div className="botones">
+export const Category: React.FC<CategoryProps> = ({ className = "" }) => (
+    <div className={`${className} cardLineCat`}>
+        <div className="cardLogo">
+            <BookmarkIcon />
+        </div>
+        <div className="Titulo">Categoria</div>
+        <div className="btnContainer">
             <button className="btn">
-              <PencilSquareIcon/>
+                <PencilSquareIcon />
             </button>
             <button className="btn">
-              <TrashIcon/>
+                <TrashIcon />
             </button>
         </div>
     </div>

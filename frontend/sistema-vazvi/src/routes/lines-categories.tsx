@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./app.css";
 import Modal from "react-modal";
-import { NewItem } from "../components/new-item/new-item";
 import { NewLineForm } from "../components/new-line-form/new-line-form";
+import { NewLineCategory } from "../components/new-line-category/new-line-category";
+import { NewCategoryForm } from "../components/new-category-form/new-category-form";
+import { Category } from "../components/category/category";
+import { Line } from "../components/line/line";
 
 const customStyles = {
 	content: {
@@ -16,32 +19,71 @@ const customStyles = {
 };
 
 function LinesCategories() {
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [modalIsOpenCat, setIsOpenCat] = useState(false);
+	const [modalIsOpenLine, setIsOpenLine] = useState(false);
 
-	function openModal() {
-		setIsOpen(true);
+	function openModalCat() {
+		setIsOpenCat(true);
 	}
 
-	function closeModal() {
-		setIsOpen(false);
+	function closeModalCat() {
+		setIsOpenCat(false);
+	}
+
+	function openModalLine() {
+		setIsOpenLine(true);
+	}
+
+	function closeModalLine() {
+		setIsOpenLine(false);
 	}
 
 	return (
 		<div>
 			<div className="container">
 				<h1>Líneas y Categorías</h1>
-				<div className="containerCards">
-					<div>
-						<NewItem openModal={openModal} />
+				<Modal
+					isOpen={modalIsOpenLine}
+					onRequestClose={closeModalLine}
+					style={customStyles}
+					contentLabel="Form Modal"
+				>
+					<NewLineForm />
+				</Modal>
+				<Modal
+					isOpen={modalIsOpenCat}
+					onRequestClose={closeModalCat}
+					style={customStyles}
+					contentLabel="Form Modal"
+				>
+					<NewCategoryForm />
+				</Modal>
+				<div className="lineCatContainer">
+					<div className="lineCatCardsContainer">
+						<NewLineCategory
+							openModal={openModalCat}
+							title="Categoría"
+						/>
+						<Category />
+						<Category />
+						<Category />
+						<Category />
+						<Category />
+						<Category />
 					</div>
-					<Modal
-						isOpen={modalIsOpen}
-						onRequestClose={closeModal}
-						style={customStyles}
-						contentLabel="Form Modal"
-					>
-						<NewLineForm/>
-					</Modal>
+
+					<div className="lineCatCardsContainer">
+						<NewLineCategory
+							openModal={openModalLine}
+							title="Línea"
+						/>
+						<Line />
+						<Line />
+						<Line />
+						<Line />
+						<Line />
+						<Line />
+					</div>
 				</div>
 			</div>
 		</div>

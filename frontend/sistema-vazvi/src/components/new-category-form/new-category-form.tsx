@@ -1,19 +1,19 @@
-import "./new-line-form.css";
+import "./new-category-form.css";
 import React from "react";
 
-export interface NewLineFormProps {
+export interface NewCategoryFormProps {
 	className?: string;
 }
 
-export const NewLineForm: React.FC<NewLineFormProps> = ({ className = "" }) => (
+export const NewCategoryForm: React.FC<NewCategoryFormProps> = ({ className = "" }) => (
 	<div className={`${className} containerModal`}>
-		<h1>Nueva Línea</h1>
+		<h1>Nueva Categoría</h1>
 		<form className="lineForm">
 			<div className="formName">
-				<label>Nombre de la Línea:</label>
+				<label>Nombre de la Categoría:</label>
 				<input
 					type="text"
-					name="lineName"
+					name="categoryName"
 					placeholder="Introduzca el nombre"
 				/>
 			</div>

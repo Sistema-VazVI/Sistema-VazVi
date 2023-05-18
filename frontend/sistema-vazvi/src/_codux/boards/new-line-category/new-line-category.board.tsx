@@ -3,5 +3,5 @@ import { NewLineCategory } from '../../../components/new-line-category/new-line-
 
 export default createBoard({
     name: 'NewLineCategory',
-    Board: () => <NewLineCategory />
+    Board: () => <NewLineCategory title='Categoría'/>
 });
