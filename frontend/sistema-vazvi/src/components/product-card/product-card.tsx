@@ -8,31 +8,34 @@ import { hardDeleteProduct, viewProduct } from "../../controllers/product.contro
 export interface ProductCardProps {
 	className?: string;
 	product?: IProduct;
-	setProduct?: any;		
+	setProduct?: any;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({
-	className = "",
-	product,
-	setProduct
-}) => (
+export const ProductCard: React.FC<ProductCardProps> = ({ className = "", product, setProduct }) => (
 	<div className={`${className} card`}>
-		<div className="cardLogo"><TagIcon /></div> 
+		<div className="cardLogo">
+			<TagIcon />
+		</div>
 		<div className="cardInfo">
 			<h6 className="cardTitle">{`${product?.name}`}</h6>
 			<span>
-				<p>
-					Stock: {`${product?.stock}`} - ${`${product?.price}`}
-				</p>
+				<p> ${`${product?.price}`}</p>
+				<p>Stock: {`${product?.stock}`}</p>
 				<p>Línea: {`${product?.brand?.name}`}</p>
 				<p>Categoría: {`${product?.category?.name}`}</p>
 			</span>
 		</div>
 		<div className="cardButtons">
-			<button className="cardBtn" onClick={() => viewProduct(product!, setProduct) }>
+			<button
+				className="cardBtn"
+				onClick={() => viewProduct(product!, setProduct)}
+			>
 				<PencilSquareIcon />
 			</button>
-			<button className="cardBtn" onClick={() => hardDeleteProduct(product!)}>
+			<button
+				className="cardBtn"
+				onClick={() => hardDeleteProduct(product!)}
+			>
 				<TrashIcon />
 			</button>
 		</div>

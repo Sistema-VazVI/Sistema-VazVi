@@ -11,7 +11,7 @@ export const ClientCard: React.FC<ClientCardProps> = ({ className = '' }) => (
     <div className={`${className} CardClient`}>
         <UserIcon className="ClientLogo" />
         <div className="Data">
-            <h5 className="Title">Jesus Ricardo Barba Hernandez</h5>
+            <h5 className="Title">Jose maria sebastian Rodriguez zavala</h5>
             <span className="InfoClient">
                 <p>Telefono:</p>
                 <p>444 123 1234</p>

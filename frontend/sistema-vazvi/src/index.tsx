@@ -16,13 +16,17 @@ const router = createBrowserRouter([
 		path: "/clients",
 		element: <div><SideBar /> <Clients/></div>,
 		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/lines-categories",
+		element: <div><SideBar /> <Clients/></div>,
+		errorElement: <ErrorPage />,
 	}
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
 	<React.StrictMode>
-		
 		<RouterProvider router={router}/>
 	</React.StrictMode>
 );
