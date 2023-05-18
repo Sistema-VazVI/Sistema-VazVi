@@ -103,8 +103,14 @@
 
 @media (max-height: 1200px) {
 	.lineCatCardsContainer {
-		height: 700px;
+		height: 650px;
 	}
+}
+
+@media (max-height: 854px) {
+    .lineCatCardsContainer {
+        height: 600px;
+    }
 }
 
 @media (max-width: 1440px) {
