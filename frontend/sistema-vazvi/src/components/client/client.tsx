@@ -15,7 +15,8 @@ export const Client: React.FC<ClientProps> = ({ className = '' }) => (
             <span className="InfoClient">
                 <p>Telefono: 444 120 1234</p>
                 <p>Saldo: $1500.00</p>
-            </span></div>
+            </span>
+        </div>
         <div className="CardButtons">
             <button className="cardBtn">
                 <EyeIcon/>
