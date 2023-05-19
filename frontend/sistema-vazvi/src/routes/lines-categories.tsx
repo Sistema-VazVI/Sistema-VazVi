@@ -6,6 +6,7 @@ import { NewLineCategory } from "../components/new-line-category/new-line-catego
 import { NewCategoryForm } from "../components/new-category-form/new-category-form";
 import { Category } from "../components/category/category";
 import { Line } from "../components/line/line";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 
 const customStyles = {
 	content: {
@@ -48,6 +49,10 @@ function LinesCategories() {
 					style={customStyles}
 					contentLabel="Form Modal"
 				>
+					<XCircleIcon
+						className="closeIcon"
+						onClick={closeModalLine}
+					/>
 					<NewLineForm />
 				</Modal>
 				<Modal
@@ -56,6 +61,10 @@ function LinesCategories() {
 					style={customStyles}
 					contentLabel="Form Modal"
 				>
+					<XCircleIcon
+						className="closeIcon"
+						onClick={closeModalCat}
+					/>
 					<NewCategoryForm />
 				</Modal>
 				<div className="lineCatContainer">
@@ -65,11 +74,6 @@ function LinesCategories() {
 							title="Categoría"
 						/>
 						<Category />
-						<Category />
-						<Category />
-						<Category />
-						<Category />
-						<Category />
 					</div>
 
 					<div className="lineCatCardsContainer">
@@ -77,11 +81,6 @@ function LinesCategories() {
 							openModal={openModalLine}
 							title="Línea"
 						/>
-						<Line />
-						<Line />
-						<Line />
-						<Line />
-						<Line />
 						<Line />
 					</div>
 				</div>

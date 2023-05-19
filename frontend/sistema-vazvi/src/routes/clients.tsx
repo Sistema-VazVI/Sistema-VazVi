@@ -5,6 +5,7 @@ import { ClientCard } from "../components/client-card/client-card";
 import { NewItem } from "../components/new-item/new-item";
 import { NewClientForm } from "../components/new-client-form/new-client-form";
 import { ClientSearch } from "../components/client-search/client-search";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 
 const customStyles = {
 	content: {
@@ -43,44 +44,9 @@ function Clients() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
+						<XCircleIcon className="closeIcon" onClick={closeModal}/>
 						<NewClientForm/>
 					</Modal>
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
-					<ClientCard />
 					<ClientCard />
 				</div>
 			</div>

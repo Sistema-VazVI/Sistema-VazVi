@@ -6,6 +6,17 @@ export interface ShoppingCartProps {
     className?: string;
 }
 
+const customStyles = {
+	content: {
+		top: "50%",
+		left: "50%",
+		right: "auto",
+		bottom: "auto",
+		transform: "translate(-50%, -50%)",
+		borderRadius: 30,
+	},
+};
+
 export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = '' }) => (
     <div className={`${className} cartContainer`}>
         <h2>Carrito de Compra</h2>

@@ -117,7 +117,7 @@
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 5px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -126,7 +126,6 @@
     justify-content: center;
     align-content: center;
     flex-direction: row;
-    width: 105%;
 }
 
 .column {

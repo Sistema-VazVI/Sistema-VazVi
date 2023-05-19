@@ -7,6 +7,7 @@ import { AddProductForm } from "../components/add-product/add-product";
 import "./app.css";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import Modal from "react-modal";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 
 const customStyles = {
 	content: {
@@ -53,6 +54,7 @@ function Products() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
+						<XCircleIcon className="closeIcon" onClick={closeModal}/>
 						<AddProductForm/>
 					</Modal>
 					{products.map((product: IProduct) => (
