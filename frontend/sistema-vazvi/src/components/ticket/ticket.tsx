@@ -1,6 +1,7 @@
 import './ticket.css';
 import React from 'react';
 import { TicketIcon, EyeIcon, BanknotesIcon } from "@heroicons/react/24/solid";
+import { Icon } from '@iconify/react';
 
 
 export interface TicketProps {
@@ -9,8 +10,7 @@ export interface TicketProps {
 
 export const Ticket: React.FC<TicketProps> = ({ className = '' }) => (
     <div className={`${className} CardTicket`}>
-
-        <TicketIcon className="ticketI"></TicketIcon>
+        <Icon icon="ic:outline-receipt-long" className="ticketI"/>
         <div className="DataTick">
             <h6 className="TitleT">Ticket 1</h6>
             <span className="InfoTicket">
@@ -29,7 +29,7 @@ export const Ticket: React.FC<TicketProps> = ({ className = '' }) => (
                 <EyeIcon />
             </button>
             <button className="cardBtnT">
-                <BanknotesIcon />
+                <Icon icon="mingcute:pig-money-line" width="25" height="25" />
             </button>
         </div>
         <div className="EstadoTic">Pendiente</div>
