@@ -1,10 +1,9 @@
 import { Dispatch, MouseEventHandler, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/product.endopint';
 import IProduct, {IProductCreate, IProductUpdate} from '../models/product.model';
-import { UseFormRegister } from 'react-hook-form';
 
 type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
-type SetProductType = Dispatch<SetStateAction<IProduct>>;
+type SetProductType = Dispatch<SetStateAction<IProduct | undefined>>;
 type setModalOpen = Dispatch<SetStateAction<boolean>>;
 
 export function setAllProducts(setProducts: SetProductsType, categoryId: number | undefined, brandId: number | undefined, searchFilter: string | undefined) {
@@ -28,15 +27,15 @@ export function hardDeleteProduct(product: IProduct) {
   remove(product);
 } 
 
-export function updateProduct(product: IProduct) {
+export function updateProduct(id:number, product: IProductCreate) {
 
   const updatedProduct: IProductUpdate = {
-    id: product.id,
+    id: id,
     name: product.name,
     price: product.price,
     stock: product.stock,
-    category: product.category.id,
-    brand: product.brand.id,
+    category: product.category,
+    brand: product.brand,
     is_active: product.is_active,
   }
 

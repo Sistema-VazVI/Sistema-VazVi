@@ -8,7 +8,7 @@ import { hardDeleteProduct, viewProduct } from "../../controllers/product.contro
 export interface ProductCardProps {
 	className?: string;
 	product: IProduct;
-	setProduct: Dispatch<SetStateAction<IProduct>>;
+	setProduct: Dispatch<SetStateAction<IProduct | undefined>>;
 	setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -20,7 +20,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className = "", produc
 		<div className="cardInfo">
 			<h6 className="cardTitle">{`${product?.name}`}</h6>
 			<span>
-				<p> ${`${product.price}`}</p>
+				<p>Precio: {product.price?.toLocaleString("es-MX", { style: "currency", currency: "MXN" })}</p>
 				<p>Stock: {`${product.stock}`}</p>
 				<p>Línea: {`${product.brand.name}`}</p>
 				<p>Categoría: {`${product.category.name}`}</p>

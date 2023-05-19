@@ -29,7 +29,7 @@ function Products() {
 	const [products, setProducts] = useState<IProduct[]>([]);
 	const [categories, setCategories] = useState<ICategory[]>([]);
 	const [brands, setBrands] = useState<IBrand[]>([]);
-	const [product, setProduct] = useState<IProduct>({} as IProduct);
+	const [product, setProduct] = useState<IProduct | undefined>(undefined);
 	const [brand, setBrand] = useState<number | undefined>(undefined);
 	const [category, setCategory] = useState<number | undefined>(undefined);
 	const [search, setSearch] = useState<string | undefined>(undefined);
@@ -42,7 +42,7 @@ function Products() {
 
 	function closeModal() {
 		setIsOpen(false);
-		setProduct({} as IProduct);
+		setProduct(undefined);
 	}
 
 	React.useEffect(() => {
@@ -53,7 +53,7 @@ function Products() {
 	
 	React.useEffect(() => {
 		setAllProducts(setProducts, category, brand, search);
-	}, [category, brand, search, product]);
+	}, [category, brand, search, products]);
 
 	
 	return (
@@ -80,6 +80,7 @@ function Products() {
 						contentLabel="Form Modal"
 					>
 						<AddProductForm
+							closeModal={closeModal}
 							product={product} 
 							brands={brands} 
 							categories={categories}

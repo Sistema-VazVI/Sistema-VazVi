@@ -38,6 +38,32 @@
     width: 100%;
 }
 
+input:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+input.border-error {
+    border-color: #E84C3D;
+  }
+  
+input.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
+select:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+select.border-error{
+    border-color: 1px solid #E84C3D !important;
+}
+
+select.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
 .nameForm {
     margin-top: 0px;
     border: 1px solid #ffffff;
@@ -85,7 +111,7 @@
     border-radius: 10px;
     padding-left: 10px;
     grid-template-columns: auto;
-    margin: 20px 0px 0px;
+    margin: 5px 0px 0px;
     width: 99%;
     overflow: visible;
 }
@@ -189,16 +215,34 @@
 
 .closeIcon {
     color: #6F5E76;
-    height: 48px;
-    width: 48px;
+    height: 28px;
+    width: 28px;
     cursor: pointer;
     transition: 0.4s;
-}
-
-.closeIcon:hover {
-    color: #ffdde2;
 }
 
 .title {
     display: block;
 }
+
+.error-message {
+    color: #E84C3D;
+    animation-name: errorAnimation;
+    animation-duration: 0.5s;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes errorAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

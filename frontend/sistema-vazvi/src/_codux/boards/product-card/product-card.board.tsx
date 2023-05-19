@@ -4,7 +4,7 @@ import IProduct from '../../../models/product.model';
 import { Dispatch, SetStateAction } from 'react';
 
 const product: IProduct = {} as IProduct;
-const setProduct: Dispatch<SetStateAction<IProduct>> = {} as Dispatch<SetStateAction<IProduct>>;
+const setProduct: Dispatch<SetStateAction<IProduct | undefined>> = {} as Dispatch<SetStateAction<IProduct | undefined>>;
 const setIsOpen: Dispatch<SetStateAction<boolean>> = {} as Dispatch<SetStateAction<boolean>>;
 
 export default createBoard({
