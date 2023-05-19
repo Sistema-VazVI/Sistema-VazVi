@@ -1,18 +1,18 @@
-import "./lineCat.css";
-import React from "react";
-import { ListBulletIcon } from "@heroicons/react/24/outline";
+import "../line/lineCat.css";
+import { BookmarkIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
+import React from "react";
 
-export interface LineProps {
+export interface CategoryProps {
     className?: string;
 }
 
-export const Line: React.FC<LineProps> = ({ className = "" }) => (
+export const Category: React.FC<CategoryProps> = ({ className = "" }) => (
     <div className={`${className} cardLineCat`}>
         <div className="cardLogo">
-            <ListBulletIcon />
+            <BookmarkIcon />
         </div>
-        <div className="Titulo">Acondicionador Acondicionador</div>
+        <div className="Titulo">Categoria</div>
         <div className="btnContainer">
             <button className="btn">
                 <PencilSquareIcon />

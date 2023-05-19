@@ -35,19 +35,3 @@
         height: 30px;
     }
 }
-
-
-.LineaCategory {
-    display: inline-block;
-    flex-direction: row;
-    grid-template-columns: none;
-    grid-auto-flow: row;
-    justify-items: center;
-    align-self: baseline;
-    float: initial;
-    box-shadow: inset -4px 0.14px 2px #efd6d2;
-    column-gap: 2px;
-    align-content: space-between;
-    position: static;
-    margin: 100px 30px 30px 80px;
-}

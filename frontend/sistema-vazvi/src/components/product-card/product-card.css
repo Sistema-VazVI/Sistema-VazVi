@@ -156,9 +156,6 @@
         padding-left: 30px;
     }
 
-    .containerCards {
-        gap: 5px;
-    }
 }
 
 @media (max-width:768px) {
@@ -170,30 +167,5 @@
 @media (max-width:820px) {
     .card {
         width: 260px;
-    }
-}
-
-@media (min-width: 500px) {
-    .containerCards {
-        padding-top: 50px;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (min-width: 760px) {
-    .containerCards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1300px) {
-    .containerCards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1600px) {
-    .containerCards {
-        grid-template-columns: repeat(4, 1fr);
     }
 }

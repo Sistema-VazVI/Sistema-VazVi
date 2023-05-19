@@ -5,6 +5,7 @@ import { SideBar } from "./components/side-bar/side-bar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import Clients from "./routes/clients";
+import LinesCategories from './routes/lines-categories';
 
 const router = createBrowserRouter([
 	{
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/lines-categories",
-		element: <div><SideBar /> <Clients/></div>,
+		element: <div><SideBar /> <LinesCategories/></div>,
 		errorElement: <ErrorPage />,
 	}
 ]);

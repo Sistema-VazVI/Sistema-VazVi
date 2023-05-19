@@ -93,66 +93,6 @@
     color: #EFD6D2;
 }
 
-.containerCards {
-    display: grid;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    gap: 15px;
-    padding: 20;
-    width: 95%;
-    height: 20%;
-    min-width: 250px;
-    box-shadow: -0.28px 1.98px 10px black;
-    border-radius: 28px;
-    padding-bottom: 25px;
-    justify-items: center;
-    align-items: center;
-    overflow: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #6f5e76;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: transparent;
-    display: none;
-}
-
-::-webkit-scrollbar-track-piece {
-    background: transparent;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #6f5e76;
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-button {
-    display: none;
-}
-
-::-webkit-resizer {
-    background: transparent;
-    display: none;
-}
-
-/* @media (max-height: 1200px) {
-    .containerCards {
-        height: 50%;
-    }
-} */
-
-@media (max-height: 1200px) {
-    .containerCards {
-        height: 600px;
-    }
-}
-
 @media (max-width:400px) {
     .CardClient {
         width: 265px;
@@ -162,39 +102,10 @@
     .ClientLogo {
         display: none;
     }
-
-    .containerCards {
-        gap: 5px;
-    }
 }
 
 @media (max-width:800px) {
     .CardClient {
         width: 265px;
-    }
-}
-
-@media (min-width: 500px) {
-    .containerCards {
-        padding-top: 50px;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media (min-width: 760px) {
-    .containerCards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1300px) {
-    .containerCards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1600px) {
-    .containerCards {
-        grid-template-columns: repeat(4, 1fr);
     }
 }
