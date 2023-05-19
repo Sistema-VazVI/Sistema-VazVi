@@ -7,6 +7,10 @@ import { NewCategoryForm } from "../components/new-category-form/new-category-fo
 import { Category } from "../components/category/category";
 import { Line } from "../components/line/line";
 import { XCircleIcon } from "@heroicons/react/24/outline";
+import IBrand, { IBrandCreate, IBrandUpdate } from "../models/brand.model";
+import { setAllBrands, addBrand } from "../controllers/brand.controller";
+import ICategory, { ICategoryCreate, ICategoryUpdate } from "../models/category.model";
+import { setAllCategorys, addCategory } from "../controllers/category.endpoint";
 
 const customStyles = {
 	content: {
@@ -22,6 +26,10 @@ const customStyles = {
 function LinesCategories() {
 	const [modalIsOpenCat, setIsOpenCat] = useState(false);
 	const [modalIsOpenLine, setIsOpenLine] = useState(false);
+	const [brands, setBrands] = useState<IBrand[]>([]);
+	const [brand, setBrand] = useState<IBrand>({} as IBrand);
+	const [categories, setCategories] = useState<ICategory[]>([]);
+	const [category, setCategory] = useState<ICategory>({} as ICategory);
 
 	function openModalCat() {
 		setIsOpenCat(true);
@@ -38,6 +46,11 @@ function LinesCategories() {
 	function closeModalLine() {
 		setIsOpenLine(false);
 	}
+
+	React.useEffect(() => {
+		setAllBrands(setBrands);
+		setAllCategorys(setCategories);
+	}, [brands, categories]);
 
 	return (
 		<div>
@@ -73,7 +86,14 @@ function LinesCategories() {
 							openModal={openModalCat}
 							title="Categoría"
 						/>
-						<Category />
+						{categories.map((cat: ICategory) => (
+							<div key={cat.id}>
+								<Category
+									category={cat}
+									setCategory={setCategory}
+								/>
+							</div>
+						))}
 					</div>
 
 					<div className="lineCatCardsContainer">
@@ -81,7 +101,14 @@ function LinesCategories() {
 							openModal={openModalLine}
 							title="Línea"
 						/>
-						<Line />
+						{brands.map((line: IBrand) => (
+							<div key={line.id}>
+								<Line
+									brand={line}
+									setBrand={setBrand}
+								/>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
