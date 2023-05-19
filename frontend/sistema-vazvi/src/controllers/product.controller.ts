@@ -5,6 +5,7 @@ import { UseFormRegister } from 'react-hook-form';
 
 type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
 type SetProductType = Dispatch<SetStateAction<IProduct>>;
+type setModalOpen = Dispatch<SetStateAction<boolean>>;
 
 export function setAllProducts(setProducts: SetProductsType, categoryId: number | undefined, brandId: number | undefined, searchFilter: string | undefined) {
     getAll(categoryId, brandId, searchFilter).then((data) => {
@@ -14,9 +15,9 @@ export function setAllProducts(setProducts: SetProductsType, categoryId: number 
       });
 }
 
-export function viewProduct(product: IProduct, setProduct: SetProductType){
+export function viewProduct(product: IProduct, setProduct: SetProductType, setIsOpen: setModalOpen){
     setProduct(product);
-    console.log(product);
+    setIsOpen(true);
 }
 
 export function addProduct(product: IProductCreate){
@@ -27,7 +28,7 @@ export function hardDeleteProduct(product: IProduct) {
   remove(product);
 } 
 
-export function updateProduct(product: IProduct, option:boolean) {
+export function updateProduct(product: IProduct) {
 
   const updatedProduct: IProductUpdate = {
     id: product.id,
@@ -37,10 +38,6 @@ export function updateProduct(product: IProduct, option:boolean) {
     category: product.category.id,
     brand: product.brand.id,
     is_active: product.is_active,
-  }
-
-  if(option){//Enters if its a soft delete
-    updatedProduct.is_active = false;
   }
 
   update(updatedProduct);

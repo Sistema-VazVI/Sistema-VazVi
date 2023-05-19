@@ -7,15 +7,6 @@ export default createBoard({
     name: 'ProductList',
     Board: () => <div className="containerCards">
         <NewItem />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
     </div>,
     environmentProps: {
         windowWidth: 1024,

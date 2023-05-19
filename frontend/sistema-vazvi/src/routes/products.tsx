@@ -34,7 +34,7 @@ function Products() {
 	const [category, setCategory] = useState<number | undefined>(undefined);
 	const [search, setSearch] = useState<string | undefined>(undefined);
 
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
 	function openModal() {
 		setIsOpen(true);
@@ -42,6 +42,7 @@ function Products() {
 
 	function closeModal() {
 		setIsOpen(false);
+		setProduct({} as IProduct);
 	}
 
 	React.useEffect(() => {
@@ -52,7 +53,6 @@ function Products() {
 	
 	React.useEffect(() => {
 		setAllProducts(setProducts, category, brand, search);
-		console.log('hoa');
 	}, [category, brand, search, product]);
 
 	
@@ -79,7 +79,8 @@ function Products() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
-						<AddProductForm 
+						<AddProductForm
+							product={product} 
 							brands={brands} 
 							categories={categories}
 							/>
@@ -89,6 +90,7 @@ function Products() {
 							<ProductCard
 								product={product}
 								setProduct={setProduct}
+								setIsOpen={setIsOpen}
 							/>
 						</div>
 					))}

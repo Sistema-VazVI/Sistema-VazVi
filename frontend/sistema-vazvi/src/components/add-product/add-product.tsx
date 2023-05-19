@@ -1,8 +1,8 @@
 import "./add-product.css";
 import React from "react";
 import { XCircleIcon } from "@heroicons/react/24/outline";
-import { addProduct } from "../../controllers/product.controller";
-import { IProductCreate } from "../../models/product.model";
+import { addProduct, updateProduct } from "../../controllers/product.controller";
+import IProduct, { IProductCreate } from "../../models/product.model";
 import ICategory from "../../models/category.model";
 import IBrand from "../../models/brand.model";
 import { useForm } from "react-hook-form";
@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 export interface AddProductProps {
 	className?: string;
 	closeModal?: () => void;
-    product?: IProductCreate;
+    product?: IProduct;
 	categories: ICategory[];
 	brands: IBrand[];
 }
