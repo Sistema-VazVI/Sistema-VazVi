@@ -14,17 +14,22 @@ export default createBoard({
                 <Cliente />
                 <Plazos />
             </div>
-            <div className="column">
-                <ProductSearchBar />
-                <div className="containerCards">
-                    <SaleCard />
-                    <SaleCard />
-                    <SaleCard />
-                    <SaleCard />
-                </div></div>
-            <div className="column">
-                <ShoppingCart />
-            </div>
-        </div>
+            <div className="col2">
+                <div>
+                    <ProductSearchBar />
+                    <div className="containerCardsSales">
+                        <SaleCard />
+                        <SaleCard />
+                        <SaleCard />
+                        <SaleCard />
+                    </div></div>
+                <div>
+                    <ShoppingCart />
+                </div>
+            </div></div>
     ),
+    environmentProps: {
+        windowWidth: 1920,
+        windowHeight: 1080
+    }
 });

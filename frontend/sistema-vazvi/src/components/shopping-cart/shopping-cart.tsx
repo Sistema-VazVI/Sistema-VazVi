@@ -4,20 +4,11 @@ import { TrashIcon } from '@heroicons/react/24/outline';
 
 export interface ShoppingCartProps {
     className?: string;
+    openModal?: ()=>void;
 }
 
-const customStyles = {
-	content: {
-		top: "50%",
-		left: "50%",
-		right: "auto",
-		bottom: "auto",
-		transform: "translate(-50%, -50%)",
-		borderRadius: 30,
-	},
-};
 
-export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = '' }) => (
+export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = '', openModal}) => (
     <div className={`${className} cartContainer`}>
         <h2>Carrito de Compra</h2>
         <hr />
@@ -40,7 +31,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = '' }) =>
         <div className="cartFooter">
             <p><span>Total: </span> $12000.00</p>
             <hr />
-            <button className="finishBtn">Terminar Venta</button>
+            <button className="finishBtn" onClick={openModal}>Terminar Venta</button>
         </div>
     </div>
 );

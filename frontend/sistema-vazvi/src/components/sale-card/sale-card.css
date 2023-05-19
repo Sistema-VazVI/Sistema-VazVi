@@ -109,3 +109,13 @@
     border: 1px solid #6F5E76;
     border-radius: 5px;
 }
+
+@media (max-width: 425px) {
+    .saleCard{
+        width: 150px;
+    }
+    
+    .saleLogo {
+        display: none;
+    }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
 import "./app.css";
 import Modal from "react-modal";
@@ -8,6 +9,7 @@ import { SaleCard } from "../components/sale-card/sale-card";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import { Cliente } from "../components/cliente/cliente";
 import { Plazos } from "../components/plazos/plazos";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const customStyles = {
 	content: {
@@ -23,6 +25,7 @@ const customStyles = {
 function Sales() {
 	const [products, setProducts] = useState<IProduct[]>([]);
 	const [modalIsOpen, setIsOpen] = useState(false);
+	const [confirmation, setConfirmation] = useState(false);
 
 	function openModal() {
 		setIsOpen(true);
@@ -30,6 +33,14 @@ function Sales() {
 
 	function closeModal() {
 		setIsOpen(false);
+	}
+
+	function openConfirmation() {
+		setConfirmation(true);
+	}
+
+	function closeConfirmation() {
+		setConfirmation(false);
 	}
 
 	React.useEffect(() => {
@@ -45,26 +56,82 @@ function Sales() {
 					onRequestClose={closeModal}
 					style={customStyles}
 					contentLabel="Form Modal"
-				></Modal>
+				>
+					<div className="confirmationModal">
+						<h1>¿Terminar la venta?</h1>
+
+						<div className="confirmationBtns">
+							<button
+								className="btnSecondary"
+								onClick={closeModal}
+							>
+								Volver
+							</button>
+							<button
+								className="btnPrimary"
+								onClick={() => {
+									closeModal();
+									openConfirmation();
+								}}
+							>
+								Terminar
+							</button>
+						</div>
+					</div>
+				</Modal>
+
+				<Modal
+					isOpen={confirmation}
+					onRequestClose={closeConfirmation}
+					style={customStyles}
+					contentLabel="Confirmation Modal"
+				>
+					<div className="confirmationModal">
+						<h1>
+							<CheckCircleIcon className="confirmationLogo"/> ¡La venta fue registrada!
+						</h1>
+
+						<div className="confirmationBtns">
+							<button
+								className="btnSecondary"
+								onClick={() => {
+									closeConfirmation();
+									location.href = "/clients";
+								}}
+							>
+								Terminar
+							</button>
+							<button
+								className="btnPrimary"
+								onClick={() => {
+									closeConfirmation();
+									location.href = "/clients";
+								}}
+							>
+								Abonar
+							</button>
+						</div>
+					</div>
+				</Modal>
 				<div className="grid">
 					<div className="column">
 						<Cliente />
 						<Plazos />
 					</div>
-					<div className="column">
-						<ProductSearchBar />
-						<div className="containerCardsSales">
-							{products.map((product: IProduct) => (
-								<div key={product.id}>
-									<SaleCard
-										product={product}
-									/>
-								</div>
-							))}
+					<div className="col2">
+						<div>
+							<ProductSearchBar />
+							<div className="containerCardsSales">
+								{products.map((product: IProduct) => (
+									<div key={product.id}>
+										<SaleCard product={product} />
+									</div>
+								))}
+							</div>
 						</div>
-					</div>
-					<div className="column">
-						<ShoppingCart />
+						<div>
+							<ShoppingCart openModal={openModal} />
+						</div>
 					</div>
 				</div>
 			</div>
