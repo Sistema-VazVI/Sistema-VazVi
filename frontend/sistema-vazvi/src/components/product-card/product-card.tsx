@@ -14,7 +14,7 @@ export interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ className = "", product, setProduct, setIsOpen }) => (
 	<div className={`${className} card`}>
-		<div className="cardLogo">
+		<div className="cardLogoProduct">
 			<TagIcon />
 		</div>
 		<div className="cardInfo">

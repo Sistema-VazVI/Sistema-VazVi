@@ -213,12 +213,19 @@ select.border-error:focus {
     background-color: #ffdde2;
 }
 
+.titleModalProduct {
+    display: block;
+    padding-left: 30px;
+}
+
 .closeIcon {
     color: #6F5E76;
     height: 28px;
     width: 28px;
     cursor: pointer;
     transition: 0.4s;
+    position: relative;
+    left: 90%;
 }
 
 .title {

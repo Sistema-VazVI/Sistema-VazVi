@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import Clients from "./routes/clients";
 import LinesCategories from './routes/lines-categories';
+import Sales from './routes/sales';
 
 const router = createBrowserRouter([
 	{
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
 		path: "/lines-categories",
 		element: <div><SideBar /> <LinesCategories/></div>,
 		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/sales",
+		element: <div><SideBar /> <Sales/></div>,
+		errorElement: <ErrorPage/>
 	}
 ]);
 
