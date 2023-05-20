@@ -36,6 +36,19 @@
     width: 100%;
 }
 
+input:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+input.border-error {
+    border-color: #E84C3D;
+  }
+  
+input.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
 .formName input {
     width: 95%;
     border: 1px solid rgb(111, 94, 118);
@@ -81,6 +94,18 @@
     color: #6F5E76;
     background-color: #EFD6D2;
 }
+
+.error-message {
+    color: #E84C3D;
+    animation-name: errorAnimation;
+    animation-duration: 0.5s;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    animation-timing-function: ease-in-out;
+  }
+  
 
 @media (max-width: 425px) {
     .containerModal{

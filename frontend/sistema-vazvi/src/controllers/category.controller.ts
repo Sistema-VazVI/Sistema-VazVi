@@ -3,7 +3,8 @@ import { getAll, getSingle, create, update, remove } from '../endpoints/category
 import ICategory, {ICategoryCreate, ICategoryUpdate} from '../models/category.model';
 
 type SetCategorysType = Dispatch<SetStateAction<ICategory[]>>;
-type SetCategoryType = Dispatch<SetStateAction<ICategory>>;
+type SetCategoryType = Dispatch<SetStateAction<ICategory | undefined>>;
+type setModalOpen = Dispatch<SetStateAction<boolean>>;
 
 export function setAllCategories(setCategorys: SetCategorysType) {
     getAll().then((data) => {
@@ -13,9 +14,9 @@ export function setAllCategories(setCategorys: SetCategorysType) {
       });
 }
 
-export function viewCategory(category: ICategory, setCategory: SetCategoryType){
+export function viewCategory(category: ICategory, setCategory: SetCategoryType, setIsOpen: setModalOpen) {
     setCategory(category);
-    console.log(category);
+    setIsOpen(true);
 }
 
 export function addCategory(category: ICategoryCreate){
@@ -26,24 +27,16 @@ export function hardDeleteCategory(category: ICategory) {
   remove(category);
 } 
 
-// export function updateCategory(category: ICategory, option:boolean) {
+export function updateCategory(id: number, category: ICategoryCreate) {
 
-//   const updatedCategory: ICategoryUpdate = {
-//     id: category.id,
-//     name: category.name,
-//     price: category.price,
-//     stock: category.stock,
-//     category: category.category.id,
-//     brand: category.brand.id,
-//     is_active: category.is_active,
-//   }
+  const updatedCategory: ICategoryUpdate = {
+    id: id,
+    name: category.name,
+    is_active: category.is_active,
+  }
 
-//   if(option){//Enters if its a soft delete
-//     updatedCategory.is_active = 0;
-//   }
-
-//   update(updatedCategory);
-// }
+  update(updatedCategory);
+}
 
 
 

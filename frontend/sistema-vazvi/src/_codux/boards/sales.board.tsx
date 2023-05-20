@@ -16,7 +16,7 @@ export default createBoard({
             </div>
             <div className="col2">
                 <div>
-                    <ProductSearchBar />
+                    {/* <ProductSearchBar /> */}
                     <div className="containerCardsSales">
                         <SaleCard />
                         <SaleCard />

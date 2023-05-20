@@ -6,11 +6,11 @@ import { NewLineCategory } from "../components/new-line-category/new-line-catego
 import { NewCategoryForm } from "../components/new-category-form/new-category-form";
 import { Category } from "../components/category/category";
 import { Line } from "../components/line/line";
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import IBrand, { IBrandCreate, IBrandUpdate } from "../models/brand.model";
 import { setAllBrands, addBrand } from "../controllers/brand.controller";
 import ICategory, { ICategoryCreate, ICategoryUpdate } from "../models/category.model";
-import { setAllCategorys, addCategory } from "../controllers/category.endpoint";
+import { setAllCategories, addCategory } from "../controllers/category.controller";
 
 const customStyles = {
 	content: {
@@ -27,9 +27,9 @@ function LinesCategories() {
 	const [modalIsOpenCat, setIsOpenCat] = useState(false);
 	const [modalIsOpenLine, setIsOpenLine] = useState(false);
 	const [brands, setBrands] = useState<IBrand[]>([]);
-	const [brand, setBrand] = useState<IBrand>({} as IBrand);
+	const [brand, setBrand] = useState<IBrand | undefined>(undefined);
 	const [categories, setCategories] = useState<ICategory[]>([]);
-	const [category, setCategory] = useState<ICategory>({} as ICategory);
+	const [category, setCategory] = useState<ICategory | undefined>(undefined);
 
 	function openModalCat() {
 		setIsOpenCat(true);
@@ -37,6 +37,7 @@ function LinesCategories() {
 
 	function closeModalCat() {
 		setIsOpenCat(false);
+		setCategory(undefined);
 	}
 
 	function openModalLine() {
@@ -45,11 +46,12 @@ function LinesCategories() {
 
 	function closeModalLine() {
 		setIsOpenLine(false);
+		setBrand(undefined);
 	}
 
 	React.useEffect(() => {
 		setAllBrands(setBrands);
-		setAllCategorys(setCategories);
+		setAllCategories(setCategories);
 	}, [brands, categories]);
 
 	return (
@@ -62,11 +64,14 @@ function LinesCategories() {
 					style={customStyles}
 					contentLabel="Form Modal"
 				>
-					<XCircleIcon
+					<XMarkIcon
 						className="closeIcon"
 						onClick={closeModalLine}
 					/>
-					<NewLineForm />
+					<NewLineForm 
+						closeModal={closeModalLine}
+						brand={brand}
+					/>
 				</Modal>
 				<Modal
 					isOpen={modalIsOpenCat}
@@ -74,11 +79,14 @@ function LinesCategories() {
 					style={customStyles}
 					contentLabel="Form Modal"
 				>
-					<XCircleIcon
+					<XMarkIcon
 						className="closeIcon"
 						onClick={closeModalCat}
 					/>
-					<NewCategoryForm />
+					<NewCategoryForm
+						closeModal={closeModalCat} 
+						category={category}
+					/>
 				</Modal>
 				<div className="lineCatContainer">
 					<div className="lineCatCardsContainer">
@@ -91,6 +99,7 @@ function LinesCategories() {
 								<Category
 									category={cat}
 									setCategory={setCategory}
+									setIsOpen={setIsOpenCat}
 								/>
 							</div>
 						))}
@@ -106,6 +115,7 @@ function LinesCategories() {
 								<Line
 									brand={line}
 									setBrand={setBrand}
+									setIsOpen={setIsOpenLine}
 								/>
 							</div>
 						))}

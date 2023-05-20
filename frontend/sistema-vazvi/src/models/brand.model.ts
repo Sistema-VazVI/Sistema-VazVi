@@ -15,6 +15,7 @@ export interface IBrandCreate{
 
 export interface IBrandUpdate{
 
+    id: number;
     name?: string;
     is_active?: boolean;
 

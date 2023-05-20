@@ -11,7 +11,7 @@ import { NewItem } from "../components/new-item/new-item";
 import { AddProductForm,  } from "../components/add-product/add-product";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import { setAllCategories } from "../controllers/category.controller";
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 
 
@@ -79,15 +79,21 @@ function Products() {
 						onRequestClose={closeModal}
 						style={customStyles}
 						contentLabel="Form Modal"
-						<AddProductForm
+					>
+						<XMarkIcon
+						className="closeIcon"
+						onClick={closeModal}
+						/>
+						<AddProductForm 
 							closeModal={closeModal}
 							product={product} 
 							brands={brands} 
 							categories={categories}
-							/>
-						<AddProductForm/>
+						/>
 					</Modal>
-					{products.map((product: IProduct) => (
+					{products
+					.filter((product) => product.is_active)
+					.map((product: IProduct) => (
 						<div key={product.id}>
 							<ProductCard
 								product={product}

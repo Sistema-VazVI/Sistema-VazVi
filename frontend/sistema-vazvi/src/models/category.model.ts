@@ -15,6 +15,7 @@ export interface ICategoryCreate {
 
 export interface ICategoryUpdate {
 
+    id: number;
     name?: string;
     is_active?: number;
 

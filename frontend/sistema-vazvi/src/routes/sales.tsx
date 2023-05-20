@@ -44,7 +44,7 @@ function Sales() {
 	}
 
 	React.useEffect(() => {
-		setAllProducts(setProducts);
+		// setAllProducts(setProducts);
 	}, [products]);
 
 	return (
@@ -120,7 +120,7 @@ function Sales() {
 					</div>
 					<div className="col2">
 						<div>
-							<ProductSearchBar />
+							{/* <ProductSearchBar /> */}
 							<div className="containerCardsSales">
 								{products.map((product: IProduct) => (
 									<div key={product.id}>

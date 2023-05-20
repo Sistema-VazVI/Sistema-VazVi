@@ -36,7 +36,6 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 					className="closeIcon"
 					onClick={closeModal}
 				>
-					<XMarkIcon onClick={closeModal}/>
 				</div>
 				<h1 className="title">Añadir Producto </h1>
 			</div>
