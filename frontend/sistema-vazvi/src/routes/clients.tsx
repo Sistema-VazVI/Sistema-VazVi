@@ -58,7 +58,6 @@ function Clients() {
 						/>
 						<NewClientForm />
 					</Modal>
-					<ClientCard />
 					{clients.map((cl: IClient) => (
 						<div key={cl.id}>
 							<ClientCard
