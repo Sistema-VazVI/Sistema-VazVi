@@ -10,6 +10,7 @@ import { ProductSearchBar } from "../components/product-search-bar/product-searc
 import { Cliente } from "../components/cliente/cliente";
 import { Plazos } from "../components/plazos/plazos";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const customStyles = {
 	content: {
@@ -88,28 +89,24 @@ function Sales() {
 				>
 					<div className="confirmationModal">
 						<h1>
-							<CheckCircleIcon className="confirmationLogo"/> ¡La venta fue registrada!
+							<CheckCircleIcon className="confirmationLogo" /> ¡La venta fue registrada!
 						</h1>
 
 						<div className="confirmationBtns">
-							<button
+							<Link
+								to="/clients"
 								className="btnSecondary"
-								onClick={() => {
-									closeConfirmation();
-									location.href = "/clients";
-								}}
+								onClick={closeConfirmation}
 							>
 								Terminar
-							</button>
-							<button
+							</Link>
+							<Link
+								to="/clients"
 								className="btnPrimary"
-								onClick={() => {
-									closeConfirmation();
-									location.href = "/clients";
-								}}
+								onClick={closeConfirmation}
 							>
 								Abonar
-							</button>
+							</Link>
 						</div>
 					</div>
 				</Modal>

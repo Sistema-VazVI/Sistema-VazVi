@@ -8,6 +8,7 @@ import { ClientSearch } from "../components/client-search/client-search";
 import { XCircleIcon } from "@heroicons/react/24/outline";
 import IClient, { IClientCreate, IClientUpdate } from "../models/client.model";
 import { setAllClients, addClient } from "../controllers/client.controller";
+import { useNavigate } from 'react-router-dom';
 
 const customStyles = {
 	content: {
@@ -24,6 +25,7 @@ function Clients() {
 	const [modalIsOpen, setIsOpen] = useState(false);
 	const [clients, setClients] = useState<IClient[]>([]);
 	const [client, setClient] = useState<IClient>({} as IClient);
+	const navigate = useNavigate();
 
 	function openModal() {
 		setIsOpen(true);
@@ -40,7 +42,7 @@ function Clients() {
 	return (
 		<div>
 			<div className="container">
-				<h1>Clientes</h1>
+				<h1>Clientes <button onClick={() => navigate(-1)}>go back</button></h1>
 				<ClientSearch />
 				<div className="containerCards">
 					<div>

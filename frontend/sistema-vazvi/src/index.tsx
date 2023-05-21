@@ -45,6 +45,15 @@ const router = createBrowserRouter([
 		),
 		errorElement: <ErrorPage />,
 	},
+	{
+		path: "/clients/9",
+		element: (
+			<div>
+				<SideBar /> 
+			</div>
+		),
+		errorElement: <ErrorPage />,
+	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
