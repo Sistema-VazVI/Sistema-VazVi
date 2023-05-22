@@ -25,7 +25,7 @@
 	overflow: hidden;
 }
 
-.sideNav a {
+.sideNavLink {
 	color: #ffdde2;
 	text-decoration: none;
 }
@@ -65,7 +65,7 @@
 	background-color: #ffdde2;
 }
 
-.sideBarOption:hover a {
+.sideBarOption:hover .sideNavLink {
     color: #6F5E76;
 }
 

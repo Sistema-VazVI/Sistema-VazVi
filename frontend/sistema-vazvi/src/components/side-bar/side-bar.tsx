@@ -7,7 +7,7 @@ import {
 	ShoppingBagIcon,
 	UserCircleIcon,
 } from "@heroicons/react/24/outline";
-
+import { Link } from "react-router-dom";
 export interface SideBarProps {
 	className?: string;
 }
@@ -17,23 +17,23 @@ export const SideBar: React.FC<SideBarProps> = ({ className = "" }) => (
 		<nav className="sideNav">
 			<div className="sideBarOption">
 				<ClipboardIcon className="navIcon" />
-				<a href="/"> Inventario</a>
+				<Link to="/" className="sideNavLink"> Inventario</Link>
 			</div>
 			<div className="sideBarOption">
 				<Bars3CenterLeftIcon className="navIcon" />
-				<a href="/lines-categories"> Líneas y Categorías</a>
+				<Link to="/lines-categories" className="sideNavLink"> Líneas y Categorías</Link>
 			</div>
 			<div className="sideBarOption">
 				<UserGroupIcon className="navIcon" />
-				<a href="/clients"> Clientes</a>
+				<Link to="/clients" className="sideNavLink"> Clientes</Link>
 			</div>
 			<div className="sideBarOption">
 				<ShoppingBagIcon className="navIcon" />
-				<a href="/sales"> Venta</a>
+				<Link to="/sales" className="sideNavLink"> Venta</Link>
 			</div>
 			<div className="sideBarOption">
 				<UserCircleIcon className="navIcon" />
-				<a href="/">Usuario</a>
+				<Link to="/" className="sideNavLink">Usuario</Link>
 			</div>
 		</nav>
 	</div>

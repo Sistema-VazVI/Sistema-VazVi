@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 import "./client-card.css";
 import React from "react";
 import { UserIcon } from "@heroicons/react/24/outline";
@@ -6,6 +7,7 @@ import IClient from "../../models/client.model";
 import { hardDeleteClient, viewClient } from "../../controllers/client.controller";
 import { Dispatch, SetStateAction } from 'react';
 
+import { Link } from "react-router-dom";
 export interface ClientCardProps {
 	className?: string;
 	openModal?: Dispatch<SetStateAction<boolean>>;
@@ -25,9 +27,12 @@ export const ClientCard: React.FC<ClientCardProps> = ({ className = "", openModa
 			</span>
 		</div>
 		<div className="CardButtons">
-			<button className="cardBtn">
-				<EyeIcon />
-			</button>
+			<Link
+				to={"/clients/"+`${client?.id}`}
+				className="cardBtn"
+			>
+				<EyeIcon className="eyeIcon" />
+			</Link>
 			<button
 				className="cardBtn"
 				onClick={() => viewClient(client, setClient, openModal!)}

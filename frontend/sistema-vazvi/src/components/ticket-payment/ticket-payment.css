@@ -1,0 +1,43 @@
+.paymentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 50px 5px;
+    color: #6F5E76;
+    font-family: Verdana, sans-serif;
+    width: 250px;
+}
+
+.paymentForm {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    width: 100%;
+}
+
+.paymentInput {
+    padding-left: 10px;
+    border-radius: 15px;
+    border: 1px solid #6F5E76;
+    height: 30px;
+    width: 100%;
+}
+
+.paymentBtnContainer {
+    align-self: end;
+    display: flex;
+    flex-direction: row;
+    gap: 19px;
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

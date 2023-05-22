@@ -41,13 +41,13 @@ return(
 			</div>
 			<div className="formBtns">
 				<button
-					className="btnReset"
+					className="btn btnSecondary"
 					onClick={closeModal}
 				>
 					Cerrar
 				</button>
 				<button
-					className="btnSubmit"
+					className="btn btnPrimary"
 					onClick={handleSubmit(handleFormSubmit)}
 				>
 					{isEditing ? "Actualizar" : "Aceptar"} 

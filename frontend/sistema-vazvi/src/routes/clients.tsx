@@ -8,6 +8,7 @@ import { ClientSearch } from "../components/client-search/client-search";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import IClient from "../models/client.model";
 import { setAllClients } from "../controllers/client.controller";
+import { useNavigate } from 'react-router-dom';
 
 const customStyles = {
 	content: {
@@ -25,6 +26,7 @@ function Clients() {
 	const [clients, setClients] = useState<IClient[]>([] as IClient[]);
 	const [client, setClient] = useState<IClient | undefined>(undefined);
 	const [search, setSearch] = useState<string | undefined>(undefined);
+	const navigate = useNavigate();
 
 	function openModal() {
 		setIsOpen(true);

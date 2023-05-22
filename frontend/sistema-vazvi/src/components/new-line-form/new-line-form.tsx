@@ -42,13 +42,13 @@ export const NewLineForm: React.FC<NewLineFormProps> = ({ className = "", closeM
 				</div>
 				<div className="formBtns">
 					<button
-						className="btnReset"
+						className="btn btnSecondary"
 						onClick={closeModal}
 					>
 						Cerrar
 					</button>
 					<button
-						className="btnSubmit"
+						className="btn btnPrimary"
 						onClick={handleSubmit(handleFormSubmit)}
 					>
 						{isEditing ? "Actualizar" : "Aceptar"} 

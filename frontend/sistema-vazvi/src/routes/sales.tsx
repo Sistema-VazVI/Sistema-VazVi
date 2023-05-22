@@ -18,6 +18,7 @@ import { setAllClients } from "../controllers/client.controller";
 import IClient from "../models/client.model";
 import { addTicket } from "../controllers/ticket.controller";
 import { ITicketCreate } from '../models/ticket.model';
+import { Link } from "react-router-dom";
 
 const customStyles = {
 	content: {
@@ -105,13 +106,13 @@ function Sales() {
 
 						<div className="confirmationBtns">
 							<button
-								className="btnSecondary"
+								className="btn btnSecondary"
 								onClick={closeModal}
 							>
 								Volver
 							</button>
 							<button
-								className="btnPrimary"
+								className="btn btnPrimary"
 								onClick={() => {
 									closeModal();
 									handdleCreation();
@@ -136,24 +137,20 @@ function Sales() {
 						</h1>
 
 						<div className="confirmationBtns">
-							<button
-								className="btnSecondary"
-								onClick={() => {
-									closeConfirmation();
-									location.href = "/clients";
-								}}
+							<Link
+								to="/clients"
+								className="btn btnSecondary"
+								onClick={closeConfirmation}
 							>
 								Terminar
-							</button>
-							<button
-								className="btnPrimary"
-								onClick={() => {
-									closeConfirmation();
-									location.href = "/clients";
-								}}
+							</Link>
+							<Link
+								to="/clients"
+								className="btn btnPrimary"
+								onClick={closeConfirmation}
 							>
 								Abonar
-							</button>
+							</Link>
 						</div>
 					</div>
 				</Modal>

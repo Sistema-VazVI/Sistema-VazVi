@@ -128,12 +128,12 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 				</div>
 				<div className="btnFormContainer">
 					<button
-						className="btnCancel"
+						className="btn btnSecondary"
 						onClick={closeModal}
 					>
 						Cerrar
 					</button>
-					<button className="btnAccept" 
+					<button className="btn btnPrimary" 
 							onClick={handleSubmit(handleFormSubmit)}
 					> 
 						{isEditing ? "Actualizar" : "Aceptar"} 

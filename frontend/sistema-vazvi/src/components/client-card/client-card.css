@@ -86,6 +86,12 @@
     background-color: #EFD6D2;
     text-align: start;
     border: 1px solid #EFD6D2;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .cardBtn:hover {
@@ -108,4 +114,9 @@
     .CardClient {
         width: 265px;
     }
+}
+
+.eyeIcon {
+    width: 20px;
+    height: 20px;
 }

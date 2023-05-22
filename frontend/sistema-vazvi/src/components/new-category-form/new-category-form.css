@@ -65,35 +65,6 @@ input.border-error:focus {
     column-gap: 18px;
 }
 
-.btnReset {
-    border: 1px solid #6F5E76;
-    background-color: transparent;
-    width: 100px;
-    height: 38px;
-    border-radius: 15px;
-    cursor: pointer;
-    color: #6F5E76;
-}
-
-.btnReset:hover {
-    background-color: #6F5E76;
-    color: #EFD6D2;
-}
-
-.btnSubmit {
-    border: 1px solid #6F5E76;
-    background-color: #6F5E76;
-    color: #EFD6D2;
-    width: 100px;
-    height: 38px;
-    border-radius: 15px;
-    cursor: pointer;
-}
-
-.btnSubmit:hover {
-    color: #6F5E76;
-    background-color: #EFD6D2;
-}
 
 .error-message {
     color: #E84C3D;
