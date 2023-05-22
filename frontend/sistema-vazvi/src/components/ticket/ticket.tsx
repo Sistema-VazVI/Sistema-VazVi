@@ -4,7 +4,7 @@ import { EyeIcon } from "@heroicons/react/24/solid";
 import { Icon } from "@iconify/react";
 import ITicket from "../../models/ticket.model";
 import Modal from "react-modal";
-import { XCircleIcon } from "@heroicons/react/24/outline";
+import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { TicketPayment } from "../ticket-payment/ticket-payment";
 import { TicketDetail } from "../ticket-detail/ticket-detail";
 
@@ -20,11 +20,10 @@ const customStyles = {
 };
 export interface TicketProps {
 	className?: string;
-	ticket?: ITicket;
-	setTicket?: any;
+	ticket: ITicket;
 }
 
-const Ticket: React.FC<TicketProps> = ({ className = "", ticket, setTicket }) => {
+const Ticket: React.FC<TicketProps> = ({ className = "", ticket }) => {
 	const [modalDetail, setDetail] = useState(false);
 	const [modalPayment, setPayment] = useState(false);
 
@@ -52,7 +51,7 @@ const Ticket: React.FC<TicketProps> = ({ className = "", ticket, setTicket }) =>
 				style={customStyles}
 				contentLabel="Form Modal"
 			>
-				<XCircleIcon
+				<XMarkIcon
 					className="closeIcon"
 					onClick={closeDetail}
 				/>
@@ -65,7 +64,7 @@ const Ticket: React.FC<TicketProps> = ({ className = "", ticket, setTicket }) =>
 				style={customStyles}
 				contentLabel="Form Modal"
 			>
-				<XCircleIcon
+				<XMarkIcon
 					className="closeIcon"
 					onClick={closePayment}
 				/>
@@ -76,10 +75,10 @@ const Ticket: React.FC<TicketProps> = ({ className = "", ticket, setTicket }) =>
 				className="ticketI"
 			/>
 			<div className="DataTick">
-				<h6 className="TitleT">Ticket #{`${ticket?.id}`}</h6>
+				<h6 className="TitleT">Ticket #{`${ticket.id}`}</h6>
 				<span className="InfoTicket">
 					<p>Fecha: DD-MM-YYYY</p>
-					<p>Total: ${`${ticket?.total}`}</p>
+					<p>Total: ${`${ticket.total}`}</p>
 					<p>Abonado: $500.00</p>
 					<p>Restante: $1000.00</p>
 				</span>

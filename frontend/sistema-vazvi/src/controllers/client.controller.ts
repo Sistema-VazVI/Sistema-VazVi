@@ -1,9 +1,11 @@
 import { Dispatch, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/client.endpoint';
 import IClient, {IClientCreate, IClientUpdate} from '../models/client.model';
+import IClientDetail from '../models/client.model';
 
 type SetClientsType = Dispatch<SetStateAction<IClient[]>>;
 type SetClientType = Dispatch<SetStateAction<IClient | undefined>>;
+type SetClientDetailType = Dispatch<SetStateAction<IClientDetail>>;
 type setModalOpen = Dispatch<SetStateAction<boolean>>;
 
 export function setAllClients(setClients: SetClientsType, searchFilter: string | undefined) {
@@ -12,6 +14,14 @@ export function setAllClients(setClients: SetClientsType, searchFilter: string |
           setClients(data);
         }
       });
+}
+
+export function getSingleClient(id: number, setClient: SetClientDetailType) {
+  getSingle(id).then((data) => {
+    if (data as IClient) {
+      setClient(data);
+    }
+  });
 }
 
 export function viewClient(client: IClient, setClient: SetClientType, openModal:setModalOpen){
