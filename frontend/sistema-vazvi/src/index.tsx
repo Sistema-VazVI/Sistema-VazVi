@@ -47,7 +47,7 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 	},
 	{
-		path: "/clients/9",
+		path: "/clients/:id",
 		element: (
 			<div>
 				<SideBar /> <ClientTickets />

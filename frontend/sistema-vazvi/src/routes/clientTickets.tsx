@@ -2,12 +2,15 @@ import React from "react";
 import "./app.css";
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 import ITicket from "../models/ticket.model";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import IClient from "../models/client.model";
 import  Ticket  from "../components/ticket/ticket";
+import { getSingle } from "../endpoints/client.endpoint";
 
 function ClientTickets() {
 	const navigate = useNavigate();
+	const { id } = useParams();
+	const client:IClient = getSingle(Number(id))
 
 	// React.useEffect(() => {
 	// 	setAllTickets(setTickets);
@@ -21,7 +24,7 @@ function ClientTickets() {
 						onClick={() => navigate(-1)}
 						className="backBtn"
 					/>{" "}
-					Nombre del cliente
+					{`${client?.name}`}
 				</h1>
 				<div className="subtitleBox">
 					<h3>Saldo: $1230.00</h3>
