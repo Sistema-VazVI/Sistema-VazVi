@@ -10,7 +10,7 @@ export interface ShoppingCartProps {
 
 export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = "", openModal }) => (
 	<div className={`${className} cartContainer`}>
-		<h2>Carrito de Compra</h2>
+		<h1>Carrito de Compra</h1>
 		<hr />
 		<div className="cartScroll">
 			<div>
@@ -36,7 +36,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className = "", open
 			</p>
 			<hr />
 			<button
-				className="finishBtn"
+				className="btn btnPrimary"
 				onClick={openModal}
 			>
 				Terminar Venta

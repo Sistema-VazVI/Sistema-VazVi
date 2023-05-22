@@ -63,13 +63,13 @@ function Sales() {
 
 						<div className="confirmationBtns">
 							<button
-								className="btnSecondary"
+								className="btn btnSecondary"
 								onClick={closeModal}
 							>
 								Volver
 							</button>
 							<button
-								className="btnPrimary"
+								className="btn btnPrimary"
 								onClick={() => {
 									closeModal();
 									openConfirmation();
@@ -95,14 +95,14 @@ function Sales() {
 						<div className="confirmationBtns">
 							<Link
 								to="/clients"
-								className="btnSecondary"
+								className="btn btnSecondary"
 								onClick={closeConfirmation}
 							>
 								Terminar
 							</Link>
 							<Link
 								to="/clients"
-								className="btnPrimary"
+								className="btn btnPrimary"
 								onClick={closeConfirmation}
 							>
 								Abonar

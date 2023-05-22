@@ -17,11 +17,11 @@ export const Line: React.FC<LineProps> = ({ className = "", brand, setBrand }) =
             <ListBulletIcon />
         </div>
         <div className="Titulo">{`${brand?.name}`}</div>
-        <div className="btnContainer">
-            <button className="btn" onClick={() => viewBrand(brand!, setBrand)}>
+        <div className="btnContainerLineCat">
+            <button className="btnLineCat" onClick={() => viewBrand(brand!, setBrand)}>
                 <PencilSquareIcon />
             </button>
-            <button className="btn" onClick={() => hardDeleteBrand(brand!)}>
+            <button className="btnLineCat" onClick={() => hardDeleteBrand(brand!)}>
                 <TrashIcon />
             </button>
         </div>

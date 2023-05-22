@@ -16,11 +16,11 @@ export const Category: React.FC<CategoryProps> = ({ className = "", category, se
 			<BookmarkIcon />
 		</div>
 		<div className="Titulo">{`${category?.name}`}</div>
-		<div className="btnContainer">
-			<button className="btn" onClick={()=>viewCategory(category!, setCategory)}>
+		<div className="btnContainerLineCat">
+			<button className="btnLineCat" onClick={()=>viewCategory(category!, setCategory)}>
 				<PencilSquareIcon />
 			</button>
-			<button className="btn" onClick={() => hardDeleteCategory(category!)}>
+			<button className="btnLineCat" onClick={() => hardDeleteCategory(category!)}>
 				<TrashIcon />
 			</button>
 		</div>

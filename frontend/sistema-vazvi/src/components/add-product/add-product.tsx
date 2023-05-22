@@ -86,13 +86,13 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
             <div className="btnFormContainer">
                 <input
                     type="reset"
-                    className="btnCancel"
+                    className="btn btnSecondary"
                     value="Reiniciar"
                 />
                 <input
                     type="submit"
                     value="Aceptar"
-                    className="btnAccept"
+                    className="btn btnPrimary"
                 />
             </div>
         </form>

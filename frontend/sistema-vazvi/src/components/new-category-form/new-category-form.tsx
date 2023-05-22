@@ -21,12 +21,12 @@ export const NewCategoryForm: React.FC<NewCategoryFormProps> = ({ className = ""
 				<input
 					type="reset"
 					value="Reiniciar"
-					className="btnReset"
+					className="btn btnSecondary"
 				/>
 				<input
 					type="submit"
 					value="Submit"
-					className="btnSubmit"
+					className="btn btnPrimary"
 				/>
 			</div>
 		</form>

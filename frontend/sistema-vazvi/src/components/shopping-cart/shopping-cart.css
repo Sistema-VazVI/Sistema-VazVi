@@ -156,48 +156,6 @@
     scrollbar-color: #6f5e76;
 }
 
-.btnSecondary {
-    border: 1px solid #6F5E76;
-    background-color: transparent;
-    width: 100px;
-    height: 38px;
-    border-radius: 15px;
-    cursor: pointer;
-    color: #6F5E76;
-    text-decoration: none;
-    justify-items: center;
-    align-items: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.btnSecondary:hover {
-    background-color: #6F5E76;
-    color: #EFD6D2;
-}
-
-.btnPrimary {
-    border: 1px solid #6F5E76;
-    background-color: #6F5E76;
-    color: #EFD6D2;
-    width: 100px;
-    height: 38px;
-    border-radius: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    justify-items: center;
-    align-items: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.btnPrimary:hover {
-    color: #6F5E76;
-    background-color: #EFD6D2;
-}
-
 .confirmationModal {
     display: flex;
     flex-direction: column;

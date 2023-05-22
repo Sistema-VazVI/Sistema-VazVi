@@ -7,6 +7,7 @@ import ErrorPage from "./error-page";
 import Clients from "./routes/clients";
 import LinesCategories from "./routes/lines-categories";
 import Sales from "./routes/sales";
+import ClientTickets from "./routes/clientTickets";
 
 const router = createBrowserRouter([
 	{
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
 		path: "/clients/9",
 		element: (
 			<div>
-				<SideBar /> 
+				<SideBar /> <ClientTickets />
 			</div>
 		),
 		errorElement: <ErrorPage />,

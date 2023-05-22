@@ -42,7 +42,7 @@ function Clients() {
 	return (
 		<div>
 			<div className="container">
-				<h1>Clientes <button onClick={() => navigate(-1)}>go back</button></h1>
+				<h1>Clientes</h1>
 				<ClientSearch />
 				<div className="containerCards">
 					<div>
