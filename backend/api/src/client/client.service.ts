@@ -12,12 +12,14 @@ export class ClientService {
     private clientRepository: Repository<Client>,
   ) {}
 
-  findAll(): Promise<Client[]> {
-    return this.clientRepository.find({
-      order:{
-        name: 'ASC',
-      }
-    });
+  findAll(searchFilter:string): Promise<Client[]> {
+    const query = this.clientRepository.createQueryBuilder('product')
+                                       .orderBy('product.name', 'ASC');
+    if(searchFilter){
+      query.andWhere('(product.name LIKE :searchFilter)', { searchFilter: `%${searchFilter}%` });
+    }
+
+    return query.getMany();
   }
 
   findById(id: number): Promise<Client>{

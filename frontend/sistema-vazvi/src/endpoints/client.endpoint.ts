@@ -1,9 +1,13 @@
 import IClient, {IClientUpdate, IClientCreate} from "../models/client.model";
 import axios from "axios";
 
-export const getAll = async (): Promise<IClient[]> => {
+export const getAll = async (searchFilter: string | undefined): Promise<IClient[]> => {
+  let url: string = 'http://localhost:3001/client';
+  if (searchFilter !== undefined) {
+    url += `?searchFilter=${searchFilter}`;
+  }
   return await axios
-    .get<IClient[]>('http://localhost:3001/client')
+    .get<IClient[]>(url)
     .then((response) => {
       if (response.data) {
         return response.data;

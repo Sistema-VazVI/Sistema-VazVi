@@ -10,9 +10,9 @@ export default interface ITicket {
 }
 
 export interface ITicketCreate {
- 
+    
+    id?: number;
     total: number;
-    is_payed: boolean;
     client: number;
 
 }

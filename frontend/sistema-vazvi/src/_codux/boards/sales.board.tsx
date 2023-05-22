@@ -11,20 +11,20 @@ export default createBoard({
     Board: () => (
         <div className="grid">
             <div className="column">
-                <Cliente />
+                {/* <Cliente /> */}
                 <Plazos />
             </div>
             <div className="col2">
                 <div>
                     {/* <ProductSearchBar /> */}
                     <div className="containerCardsSales">
+                        {/* <SaleCard />
                         <SaleCard />
                         <SaleCard />
-                        <SaleCard />
-                        <SaleCard />
+                        <SaleCard /> */}
                     </div></div>
                 <div>
-                    <ShoppingCart />
+                    {/* <ShoppingCart /> */}
                 </div>
             </div></div>
     ),
