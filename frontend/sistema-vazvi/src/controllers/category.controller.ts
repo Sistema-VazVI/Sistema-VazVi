@@ -34,6 +34,24 @@ export function hardDeleteCategory(category: ICategory) {
   remove(category);
 } 
 
+export function softDeleteCategory(category: ICategory) {
+
+  const updatedCategory: ICategoryUpdate = {
+    id: category.id,
+    name: category.name,
+    is_active: false,
+  }
+
+  update(updatedCategory)
+  .then(() => {
+    toast.success('Categoría eliminada exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al eliminar la categoría', error);
+  });
+}
+
+
 export function updateCategory(id: number, category: ICategoryCreate) {
 
   const updatedCategory: ICategoryUpdate = {
