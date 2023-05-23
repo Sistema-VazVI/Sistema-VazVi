@@ -9,7 +9,7 @@ export default interface ICategory {
 export interface ICategoryCreate {
 
     name?: string;
-    is_active?: number;
+    is_active?: boolean;
 
 }
 
@@ -17,6 +17,6 @@ export interface ICategoryUpdate {
 
     id: number;
     name?: string;
-    is_active?: number;
+    is_active?: boolean;
 
 }
