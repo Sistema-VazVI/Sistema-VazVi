@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import Products from "./routes/products";
 import { SideBar } from "./components/side-bar/side-bar";
