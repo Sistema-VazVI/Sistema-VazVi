@@ -91,7 +91,9 @@ export const ProductSearchBar: React.FC<ProductSearchBarProps> = ({
         <option hidden value="">
           Categoría
         </option>
-        {categories.map((category: ICategory) => (
+        {categories
+        .filter((category) => category.is_active)
+        .map((category: ICategory) => (
           <option value={category.id}>{category.name}</option>
         ))}
       </select>

@@ -98,7 +98,9 @@ function LinesCategories() {
 							openModal={openModalCat}
 							title="Categoría"
 						/>
-						{categories.map((cat: ICategory) => (
+						{categories
+						.filter((category) => category.is_active)
+						.map((cat: ICategory) => (
 							<div key={cat.id}>
 								<Category
 									category={cat}
@@ -114,7 +116,9 @@ function LinesCategories() {
 							openModal={openModalLine}
 							title="Línea"
 						/>
-						{brands.map((line: IBrand) => (
+						{brands
+						.filter((brand) => brand.is_active)
+						.map((line: IBrand) => (
 							<div key={line.id}>
 								<Line
 									brand={line}

@@ -34,6 +34,23 @@ export function hardDeleteBrand(brand: IBrand) {
   remove(brand);
 } 
 
+export function softDeleteBrand(brand: IBrand) {
+
+  const updatedBrand: IBrandUpdate = {
+    id: brand.id,
+    name: brand.name,
+    is_active: false,
+  }
+
+  update(updatedBrand)
+  .then(() => {
+    toast.success('Linea eliminada exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al eliminar la linea', error);
+  });
+}
+
 export function updateBrand(id: number, brand: IBrandCreate) {
 
   const updatedBrand: IBrandUpdate = {

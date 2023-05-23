@@ -31,7 +31,8 @@ function ClientTickets() {
 						onClick={() => navigate(-1)}
 						className="backBtn"
 					/>{" "}
-					{`${client?.name}`}
+					{/* {`${client?.name}`} */}
+					holaaa
 				</h1>
 				<div className="subtitleBox">
 					<h3>Saldo:{`${client.debt?.toLocaleString("es-MX", { style: "currency", currency: "MXN" })}`}</h3>
