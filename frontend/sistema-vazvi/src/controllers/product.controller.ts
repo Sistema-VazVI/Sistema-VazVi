@@ -1,6 +1,7 @@
 import { Dispatch, MouseEventHandler, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/product.endopint';
 import IProduct, {IProductCreate, IProductUpdate} from '../models/product.model';
+import { toast } from 'react-toastify';
 
 type SetProductsType = Dispatch<SetStateAction<IProduct[]>>;
 type SetProductType = Dispatch<SetStateAction<IProduct | undefined>>;
@@ -20,11 +21,18 @@ export function viewProduct(product: IProduct, setProduct: SetProductType, setIs
 }
 
 export function addProduct(product: IProductCreate){
-    create(product);
+  create(product)
+  .then(() => {
+    toast.success('Producto añadido exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al agregar el producto', error);
+  });
+
 }
 
 export function hardDeleteProduct(product: IProduct) {
-  remove(product);
+  remove(product)
 } 
 
 export function updateProduct(id:number, product: IProductCreate) {
@@ -39,7 +47,13 @@ export function updateProduct(id:number, product: IProductCreate) {
     is_active: product.is_active,
   }
 
-  update(updatedProduct);
+  update(updatedProduct)
+  .then(() => {
+    toast.success('Producto actualizado exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al actualizar el producto', error);
+  });
 }
 
 

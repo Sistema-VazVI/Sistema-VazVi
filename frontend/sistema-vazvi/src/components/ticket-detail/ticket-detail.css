@@ -1,5 +1,5 @@
 .detail-container {
-    display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-items: center;
@@ -27,7 +27,7 @@
 
 .cartItemContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-items: center;
     align-content: center;
@@ -37,29 +37,37 @@
     width: 100%;
 }
 
+.itemTitleContainer{
+    display: flex;
+    width: 100%;
+}
+
+.itemDetailContainer{
+    display: flex;
+    width: 100%;
+}
+
 .itemTitle {
-    display: inline-block;
-    font-weight: 300;
+    display: flex;
+    font-weight: bold;
     font-size: 12px;
     color: #6F5E76;
-    width: 25%;
+    width: 100%;
     margin: 0px;
+    padding-left: 15px;
 }
 
 .itemText {
-    display: inline-block;
+    display: flex;
+    justify-content: right;
     width: 45%;
     font-size: 12px;
     font-weight: 100;
 }
 
 .cartScroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     max-height: 375px;
 }
 
@@ -83,3 +91,4 @@
     color: #6F5E76;
     font-size: 14px;
 }
+

@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/category.endpoint';
 import ICategory, {ICategoryCreate, ICategoryUpdate} from '../models/category.model';
+import { toast } from 'react-toastify';
 
 type SetCategorysType = Dispatch<SetStateAction<ICategory[]>>;
 type SetCategoryType = Dispatch<SetStateAction<ICategory | undefined>>;
@@ -20,7 +21,13 @@ export function viewCategory(category: ICategory, setCategory: SetCategoryType, 
 }
 
 export function addCategory(category: ICategoryCreate){
-    create(category);
+    create(category)
+    .then(() => {
+      toast.success('Categoría añadida exitosamente');
+    })
+    .catch(error => {
+      toast.error('Error al agregar la categoría', error);
+    });
 }
 
 export function hardDeleteCategory(category: ICategory) {
@@ -35,7 +42,13 @@ export function updateCategory(id: number, category: ICategoryCreate) {
     is_active: category.is_active,
   }
 
-  update(updatedCategory);
+  update(updatedCategory)
+  .then(() => {
+    toast.success('Categoría actualizada exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al actualizar la categoría', error);
+  });
 }
 
 

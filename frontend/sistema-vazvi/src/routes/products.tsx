@@ -12,6 +12,7 @@ import { AddProductForm,  } from "../components/add-product/add-product";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import { setAllCategories } from "../controllers/category.controller";
 import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -23,6 +24,9 @@ const customStyles = {
 		bottom: "auto",
 		transform: "translate(-50%, -50%)",
 		borderRadius: 30
+	},
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 	},
 };
 
@@ -104,7 +108,12 @@ function Products() {
 					))}
 				</div>
 			</div>
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
 		</div>
+		
 	);
 }
 

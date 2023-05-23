@@ -4,6 +4,8 @@ import { TagIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import IProduct from "../../models/product.model";
 import { hardDeleteProduct, viewProduct } from "../../controllers/product.controller";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export interface ProductCardProps {
 	className?: string;
@@ -40,8 +42,5 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className = "", produc
 				<TrashIcon />
 			</button>
 		</div>
-		{/* <button onClick={() => viewProduct(product, setProduct) }> view product </button>{" "}
-          <button onClick={() => updateProduct(product, true)}> soft delete </button>{" "}
-          <button onClick={() => hardDeleteProduct(product)}> delete </button>{" "} */}
 	</div>
 );

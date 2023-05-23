@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/brand.endpoint';
 import IBrand, {IBrandCreate, IBrandUpdate} from '../models/brand.model';
+import { toast } from 'react-toastify';
 
 type SetBrandsType = Dispatch<SetStateAction<IBrand[]>>;
 type SetBrandType = Dispatch<SetStateAction<IBrand | undefined>>;
@@ -20,7 +21,13 @@ export function viewBrand(brand: IBrand, setBrand: SetBrandType, setIsOpen: setM
 }
 
 export function addBrand(brand: IBrandCreate){
-    create(brand);
+    create(brand)
+    .then(() => {
+      toast.success('Linea añadida exitosamente');
+    })
+    .catch(error => {
+      toast.error('Error al agregar la linea', error);
+    });
 }
 
 export function hardDeleteBrand(brand: IBrand) {
@@ -34,7 +41,13 @@ export function updateBrand(id: number, brand: IBrandCreate) {
     name: brand.name,
   }
 
-  update(updatedBrand);
+  update(updatedBrand)
+  .then(() => {
+    toast.success('Linea actualizada exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al actualizar la linea', error);
+  });
 }
 
 

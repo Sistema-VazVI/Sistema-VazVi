@@ -8,10 +8,20 @@ import Clients from "./routes/clients";
 import LinesCategories from "./routes/lines-categories";
 import Sales from "./routes/sales";
 import ClientTickets from "./routes/clientTickets";
+import LogIn from "./routes/login";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
+		element: (
+			<div>
+				<LogIn />
+			</div>
+		),
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/products",
 		element: (
 			<div>
 				<SideBar /> <Products />
@@ -24,6 +34,15 @@ const router = createBrowserRouter([
 		element: (
 			<div>
 				<SideBar /> <Clients />
+			</div>
+		),
+		errorElement: <ErrorPage />,
+	},
+	{
+		path: "/clients/:id",
+		element: (
+			<div>
+				<SideBar /> <ClientTickets />
 			</div>
 		),
 		errorElement: <ErrorPage />,
@@ -46,15 +65,7 @@ const router = createBrowserRouter([
 		),
 		errorElement: <ErrorPage />,
 	},
-	{
-		path: "/clients/:id",
-		element: (
-			<div>
-				<SideBar /> <ClientTickets />
-			</div>
-		),
-		errorElement: <ErrorPage />,
-	},
+	
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);

@@ -39,12 +39,6 @@ export const ClientCard: React.FC<ClientCardProps> = ({ className = "", openModa
 			>
 				<PencilSquareIcon />
 			</button>
-			<button
-				className="cardBtn"
-				onClick={() => hardDeleteClient(client)}
-			>
-				<TrashIcon />
-			</button>
 		</div>
 	</div>
 );

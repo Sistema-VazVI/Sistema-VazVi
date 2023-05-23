@@ -2,7 +2,7 @@ import IProduct, {IProductUpdate, IProductCreate} from "../models/product.model"
 import axios from "axios";
 
 export const getAll = async (categoryId: number | undefined, brandId: number | undefined, searchFilter: string | undefined): Promise<IProduct[]> => {
-  let url: string = 'http://localhost:3001/product';
+  let url: string = process.env.REACT_APP_API_URL+'/product';
   if (categoryId !== undefined) {
     url += `?categoryId=${categoryId}`;
   }
@@ -26,7 +26,7 @@ export const getAll = async (categoryId: number | undefined, brandId: number | u
 
 export const getSingle = async (id:number): Promise<IProduct> => {
   return await axios
-    .get<IProduct>(`http://localhost:3001/product/${id}`)
+    .get<IProduct>(process.env.REACT_APP_API_URL+`/product/${id}`)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -39,7 +39,7 @@ export const getSingle = async (id:number): Promise<IProduct> => {
 
 export const create = async (product:IProductCreate): Promise<IProductCreate> => {
   return await axios
-    .post<IProductCreate>('http://localhost:3001/product', product)
+    .post<IProductCreate>(process.env.REACT_APP_API_URL+'/product', product)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -52,7 +52,7 @@ export const create = async (product:IProductCreate): Promise<IProductCreate> =>
 
 export const update = async (product:IProductUpdate): Promise<IProductUpdate> => {
   return await axios
-    .patch<IProductUpdate>('http://localhost:3001/product', product)
+    .patch<IProductUpdate>(process.env.REACT_APP_API_URL+'/product', product)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -65,7 +65,7 @@ export const update = async (product:IProductUpdate): Promise<IProductUpdate> =>
 
 export const remove = async (product: IProduct): Promise<IProduct> => {
   return await axios
-    .delete<IProduct>(`http://localhost:3001/product/${product.id}`)
+    .delete<IProduct>(process.env.REACT_APP_API_URL+`/product/${product.id}`)
     .then((response) => {
       if (response.data) {
         return response.data;

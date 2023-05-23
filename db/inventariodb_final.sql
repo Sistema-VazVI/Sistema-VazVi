@@ -27,12 +27,7 @@ CREATE TABLE IF NOT EXISTS `brand` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.brand: ~2 rows (aproximadamente)
-DELETE FROM `brand`;
-INSERT INTO `brand` (`id`, `name`, `is_active`) VALUES
-	(2, 'Prueba1', 1),
-	(3, 'Prueba2', 1),
-	(5, 'prueba toast2', 1);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.category
 CREATE TABLE IF NOT EXISTS `category` (
@@ -42,14 +37,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.category: ~4 rows (aproximadamente)
-DELETE FROM `category`;
-INSERT INTO `category` (`id`, `name`, `is_active`) VALUES
-	(4, 'prueba10', 1),
-	(5, 'Prueba3', 1),
-	(6, 'Prueba4', 1),
-	(7, 'prueba de categoria', 1),
-	(8, 'prueba toast', 1);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.client
 CREATE TABLE IF NOT EXISTS `client` (
@@ -60,11 +48,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.client: ~2 rows (aproximadamente)
-DELETE FROM `client`;
-INSERT INTO `client` (`id`, `name`, `phone`, `debt`) VALUES
-	(15, 'Oscar Flores', '444 135 9427', 364),
-	(16, 'Massiel Vega', '4441359426', 0);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.item_ticket
 CREATE TABLE IF NOT EXISTS `item_ticket` (
@@ -79,16 +63,7 @@ CREATE TABLE IF NOT EXISTS `item_ticket` (
   CONSTRAINT `ticketId2` FOREIGN KEY (`ticketId`) REFERENCES `ticket` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.item_ticket: ~4 rows (aproximadamente)
-DELETE FROM `item_ticket`;
-INSERT INTO `item_ticket` (`id`, `ticketId`, `productId`, `quantity`) VALUES
-	(1, 9, 80, 1),
-	(2, 9, 81, 2),
-	(3, 9, 78, 1),
-	(4, 10, 81, 1),
-	(5, 11, 81, 1),
-	(6, 12, 81, 1),
-	(7, 13, 81, 1);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.payment
 CREATE TABLE IF NOT EXISTS `payment` (
@@ -100,15 +75,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
   CONSTRAINT `ticketId` FOREIGN KEY (`ticketId`) REFERENCES `ticket` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.payment: ~7 rows (aproximadamente)
-DELETE FROM `payment`;
-INSERT INTO `payment` (`id`, `amount`, `ticketId`) VALUES
-	(5, 994, 9),
-	(6, 1, 9),
-	(7, 332, 11),
-	(8, 300, 10),
-	(9, 32, 10),
-	(10, 300, 13);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.product
 CREATE TABLE IF NOT EXISTS `product` (
@@ -126,18 +93,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `id_category` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.product: ~4 rows (aproximadamente)
-DELETE FROM `product`;
-INSERT INTO `product` (`id`, `name`, `price`, `stock`, `categoryId`, `brandId`, `is_active`) VALUES
-	(76, 'massielito', 100000, 2, 4, 3, 1),
-	(78, 'esta es una prueba', 100, 49, 4, 2, 1),
-	(79, 'Esta es una nueva prueba de edit', 1234, 2312, 6, 3, 1),
-	(80, 'Esta es otra prueba', 231, 1230, 5, 3, 1),
-	(81, 'asdfa', 332, 0, 7, 3, 1),
-	(82, 'prueba de toast', 1231, 2131, 7, 3, 1),
-	(83, 'asdfa3', 234, 3423, 5, 3, 1),
-	(84, 'Esta es otra pruebasd', 12312, 12312, 4, 2, 1),
-	(85, 'hola', 23, 23, 7, 3, 1);
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla inventariodb_test.ticket
 CREATE TABLE IF NOT EXISTS `ticket` (
@@ -153,14 +109,7 @@ CREATE TABLE IF NOT EXISTS `ticket` (
   CONSTRAINT `clientId` FOREIGN KEY (`clientId`) REFERENCES `client` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Volcando datos para la tabla inventariodb_test.ticket: ~8 rows (aproximadamente)
-DELETE FROM `ticket`;
-INSERT INTO `ticket` (`id`, `total`, `payed`, `is_payed`, `paymentId`, `clientId`, `createdOn`) VALUES
-	(9, 995, 995, 1, NULL, 15, '2023-05-23 01:10:23'),
-	(10, 332, 332, 1, NULL, 15, '2023-05-23 01:33:16'),
-	(11, 332, 332, 1, NULL, 15, '2023-05-23 01:35:28'),
-	(12, 332, 0, 0, NULL, 15, '2023-05-23 03:10:37'),
-	(13, 332, 300, 0, NULL, 15, '2023-05-23 03:17:24');
+-- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para disparador inventariodb_test.item_ticket_after_insert
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION';

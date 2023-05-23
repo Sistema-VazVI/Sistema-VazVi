@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getAll = async (): Promise<ITicket[]> => {
   return await axios
-    .get<ITicket[]>('http://localhost:3001/ticket')
+    .get<ITicket[]>(process.env.REACT_APP_API_URL+'/ticket')
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -16,7 +16,7 @@ export const getAll = async (): Promise<ITicket[]> => {
 
 export const getSingle = async (id:number): Promise<ITicket> => {
   return await axios
-    .get<ITicket>(`http://localhost:3001/ticket/${id}`)
+    .get<ITicket>(process.env.REACT_APP_API_URL+`/ticket/${id}`)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -29,7 +29,7 @@ export const getSingle = async (id:number): Promise<ITicket> => {
 
 export const create = async (ticket:ITicketCreate): Promise<ITicketCreate> => {
   return await axios
-    .post<ITicketCreate>('http://localhost:3001/ticket', ticket)
+    .post<ITicketCreate>(process.env.REACT_APP_API_URL+'/ticket', ticket)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -42,7 +42,7 @@ export const create = async (ticket:ITicketCreate): Promise<ITicketCreate> => {
 
 export const update = async (ticket:ITicketUpdate): Promise<ITicketUpdate> => {
   return await axios
-    .patch<ITicketUpdate>('http://localhost:3001/ticket', ticket)
+    .patch<ITicketUpdate>(process.env.REACT_APP_API_URL+'/ticket', ticket)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -55,7 +55,7 @@ export const update = async (ticket:ITicketUpdate): Promise<ITicketUpdate> => {
 
 export const remove = async (ticket: ITicket): Promise<ITicket> => {
   return await axios
-    .delete<ITicket>(`http://localhost:3001/ticket/${ticket.id}`)
+    .delete<ITicket>(process.env.REACT_APP_API_URL+`/ticket/${ticket.id}`)
     .then((response) => {
       if (response.data) {
         return response.data;

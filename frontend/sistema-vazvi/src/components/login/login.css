@@ -2,7 +2,8 @@
     max-width: 400px;
     font-family: Verdana, sans-serif;
     border-radius: 10px;
-    box-shadow: inset -2.93px 2.72px 6px 2px #6f5e76;
+    box-shadow: -0.28px 1.98px 10px black;
+    border: 1.5px solid rgba(111, 94, 118, 0.18);
     width: 98%;
     position: fixed;
     text-align: center;
@@ -53,7 +54,7 @@
     justify-items: center;
     margin: 5px 0px 0px;
     width: 80%;
-    border: 1px dashed #6F5E76;
+    border: 1px solid #6F5E76;
     border-radius: 15px;
 }
 

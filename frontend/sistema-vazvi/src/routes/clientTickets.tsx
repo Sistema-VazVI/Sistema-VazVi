@@ -7,6 +7,7 @@ import IClient from "../models/client.model";
 import  Ticket  from "../components/ticket/ticket";
 import { getSingleClient } from "../controllers/client.controller";
 import IClientDetail from '../models/client.model';
+import { ToastContainer } from "react-toastify";
 
 
 function ClientTickets() {
@@ -16,8 +17,11 @@ function ClientTickets() {
 
 	React.useEffect(() => {
 		getSingleClient(id ? parseInt(id, 10) : 0, setClient);
-		console.log(client);
 	}, []);
+
+	React.useEffect(() => {
+		getSingleClient(id ? parseInt(id, 10) : 0, setClient);
+	}, [client]);
 
 	return (
 		<div>
@@ -31,7 +35,7 @@ function ClientTickets() {
 				</h1>
 				<div className="subtitleBox">
 					<h3>Saldo:{`${client.debt?.toLocaleString("es-MX", { style: "currency", currency: "MXN" })}`}</h3>
-					<select
+					{/* <select
 						defaultValue=""
 						className="selectTicket"
 					>
@@ -43,18 +47,22 @@ function ClientTickets() {
 						</option>
 						<option>Pagado</option>
 						<option>Pendiente</option>
-					</select>
+					</select> */}
 				</div>
 				<div className="containerCards">
-					{/* {client.tickets.map((ticket: ITicket) => (
+					{client.tickets?.map((ticket: ITicket) => (
 						<div key={ticket.id}>
 							<Ticket 
 								ticket={ticket}
 							/>
 						</div>
-					))} */}
+					))}
 				</div>
 			</div>
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
 		</div>
 	);
 }

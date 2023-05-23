@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { getAll, getSingle, create, update, remove } from '../endpoints/client.endpoint';
 import IClient, {IClientCreate, IClientUpdate} from '../models/client.model';
 import IClientDetail from '../models/client.model';
+import { toast } from 'react-toastify';
 
 type SetClientsType = Dispatch<SetStateAction<IClient[]>>;
 type SetClientType = Dispatch<SetStateAction<IClient | undefined>>;
@@ -17,11 +18,13 @@ export function setAllClients(setClients: SetClientsType, searchFilter: string |
 }
 
 export function getSingleClient(id: number, setClient: SetClientDetailType) {
-  getSingle(id).then((data) => {
-    if (data as IClient) {
-      setClient(data);
-    }
-  });
+  getSingle(id)
+    .then((data) => {
+      setClient(data as IClientDetail);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 export function viewClient(client: IClient, setClient: SetClientType, openModal:setModalOpen){
@@ -30,7 +33,13 @@ export function viewClient(client: IClient, setClient: SetClientType, openModal:
 }
 
 export function addClient(client: IClientCreate){
-  create(client);
+  create(client)
+  .then(() => {
+    toast.success('Cliente añadido exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al agregar el cliente', error);
+  });
 }
 
 export function hardDeleteClient(client: IClient) {
@@ -45,7 +54,13 @@ export function updateClient(id: number, client: IClientCreate) {
     phone: client.phone,
   }
 
-  update(updatedClient);
+  update(updatedClient)
+  .then(() => {
+    toast.success('Cliente actualizado exitosamente');
+  })
+  .catch(error => {
+    toast.error('Error al actualizar el Cliente', error);
+  });
 }
 
 

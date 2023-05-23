@@ -11,6 +11,7 @@ import IBrand, { IBrandCreate, IBrandUpdate } from "../models/brand.model";
 import { setAllBrands, addBrand } from "../controllers/brand.controller";
 import ICategory, { ICategoryCreate, ICategoryUpdate } from "../models/category.model";
 import { setAllCategories, addCategory } from "../controllers/category.controller";
+import { ToastContainer } from "react-toastify";
 
 const customStyles = {
 	content: {
@@ -20,6 +21,9 @@ const customStyles = {
 		bottom: "auto",
 		transform: "translate(-50%, -50%)",
 		borderRadius: 30,
+	},
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 	},
 };
 
@@ -122,6 +126,12 @@ function LinesCategories() {
 					</div>
 				</div>
 			</div>
+
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
+			
 		</div>
 	);
 }

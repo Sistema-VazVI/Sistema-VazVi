@@ -18,6 +18,9 @@ export class Ticket{
     @Column()
     is_payed: boolean;
 
+    @Column()
+    createdOn: string;
+
     @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
     payments: Payment[];
 

@@ -9,6 +9,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import IClient from "../models/client.model";
 import { setAllClients } from "../controllers/client.controller";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer } from "react-toastify";
 
 const customStyles = {
 	content: {
@@ -18,6 +19,9 @@ const customStyles = {
 		bottom: "auto",
 		transform: "translate(-50%, -50%)",
 		borderRadius: 30,
+	},
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 	},
 };
 
@@ -82,6 +86,10 @@ function Clients() {
 					))}
 				</div>
 			</div>
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
 		</div>
 	);
 }

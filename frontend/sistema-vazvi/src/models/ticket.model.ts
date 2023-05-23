@@ -1,4 +1,6 @@
 import IClient from "./client.model";
+import IitemTicket from "./item-ticket.model";
+import IPayment from "./payment.model";
 
 export default interface ITicket {
  
@@ -7,6 +9,9 @@ export default interface ITicket {
     payed: number;
     is_payed: boolean;
     client: IClient;
+    items: IitemTicket[];
+    payments: IPayment[];
+    createdOn: string;
     
 }
 

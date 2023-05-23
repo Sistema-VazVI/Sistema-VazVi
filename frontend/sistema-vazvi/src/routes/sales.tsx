@@ -19,6 +19,7 @@ import IClient from "../models/client.model";
 import { addTicket } from "../controllers/ticket.controller";
 import { ITicketCreate } from '../models/ticket.model';
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const customStyles = {
 	content: {
@@ -28,6 +29,9 @@ const customStyles = {
 		bottom: "auto",
 		transform: "translate(-50%, -50%)",
 		borderRadius: 30,
+	},
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
 	},
 };
 
@@ -49,7 +53,19 @@ function Sales() {
 	const [client, setClient] = useState<number>(0);
 
 	function openModal() {
-		setIsOpen(true);
+		if(client != 0 && shoppingCart.length > 0){
+
+			setIsOpen(true);
+			
+		}else{
+			if (client === 0) {
+				toast.error('Debes seleccionar un cliente para continuar.');
+			}
+			if (shoppingCart.length === 0){
+				toast.error('El carrito de compras está vacío.');
+			}
+		}
+		
 	}
 
 	function closeModal() {
@@ -66,17 +82,12 @@ function Sales() {
 
 	function handdleCreation(){
 		if(client != 0 && shoppingCart.length > 0){
-
 			var newTicket: ITicketCreate = {
 				total: shoppingCart.reduce((total, item) => total + (item.product.price * item.quantity), 0),
 				client: client
 			};
 			openConfirmation();
-			addTicket(newTicket, shoppingCart);
-			
-		}else{
-
-			setIsOpen(false);
+			addTicket(newTicket, shoppingCart);	
 		}
 	}
 
@@ -145,7 +156,7 @@ function Sales() {
 								Terminar
 							</Link>
 							<Link
-								to="/clients"
+								to={`/clients/${client}`}
 								className="btn btnPrimary"
 								onClick={closeConfirmation}
 							>
@@ -189,6 +200,10 @@ function Sales() {
 					</div>
 				</div>
 			</div>
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
 		</div>
 	);
 }
