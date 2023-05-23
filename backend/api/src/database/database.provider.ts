@@ -9,6 +9,7 @@ import { ItemTicket } from "src/item-ticket/entity/item-ticket.entity";
 import { Payment } from "src/payment/entity/payment.entity";
 import { Product } from "src/product/entity/product.entity";
 import { Ticket } from "src/ticket/entity/ticket.entity";
+import { User } from "src/user/entity/user.entity";
 
 export const DatabaseProvider: DynamicModule = TypeOrmModule.forRootAsync({
     inject: [ConfigService],
@@ -22,7 +23,7 @@ export const DatabaseProvider: DynamicModule = TypeOrmModule.forRootAsync({
             username: config.get('DB_USER'),
             password: config.get('DB_PASSWORD'),
             database: config.get('DB_NAME'),
-            entities: [Category, Brand, Client, Product, Ticket, ItemTicket, Payment],
+            entities: [Category, Brand, Client, Product, Ticket, ItemTicket, Payment, User],
             synchronize: false,
         } as ConnectionOptions
 
