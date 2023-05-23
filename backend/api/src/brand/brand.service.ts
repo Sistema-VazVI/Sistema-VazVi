@@ -13,7 +13,11 @@ export class BrandService {
   ) {}
 
   findAll(): Promise<Brand[]> {
-    return this.brandRepository.find();
+    return this.brandRepository.find({
+      order:{
+        name: 'ASC',
+      }
+    });
   }
 
   findById(id: number): Promise<Brand>{

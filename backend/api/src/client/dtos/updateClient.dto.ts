@@ -9,9 +9,6 @@ export class UpdateClientDto{
     name: string;
 
     @IsString()
-    first_name: string;
-
-    @IsString()
     phone: string;
 
     @IsNumber()

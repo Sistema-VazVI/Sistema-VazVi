@@ -15,6 +15,7 @@ export class ItemTicketService {
   findAll(): Promise<ItemTicket[]> {
     return this.ItemTicketRepository.find({
       relations: {
+        ticket: true,
         product: true,
       },
     });

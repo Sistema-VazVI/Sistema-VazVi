@@ -1,12 +1,20 @@
+import Modal from "react-modal";
+import "./app.css";
 import React, { useState } from "react";
-import IProduct, { IProductCreate, IProductUpdate } from "../models/product.model";
-import { setAllProducts, addProduct } from "../controllers/product.controller";
+import IProduct from "../models/product.model";
+import ICategory from "../models/category.model";
+import IBrand from "../models/brand.model";
+import { setAllProducts } from "../controllers/product.controller";
+import { setAllBrands } from "../controllers/brand.controller";
 import { ProductCard } from "../components/product-card/product-card";
 import { NewItem } from "../components/new-item/new-item";
-import { AddProductForm } from "../components/add-product/add-product";
-import "./app.css";
+import { AddProductForm,  } from "../components/add-product/add-product";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
-import Modal from "react-modal";
+import { setAllCategories } from "../controllers/category.controller";
+import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ToastContainer } from "react-toastify";
+
+
 
 const customStyles = {
 	content: {
@@ -17,12 +25,21 @@ const customStyles = {
 		transform: "translate(-50%, -50%)",
 		borderRadius: 30
 	},
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.8)",
+	},
 };
 
 function Products() {
 	const [products, setProducts] = useState<IProduct[]>([]);
-	const [product, setProduct] = useState<IProduct>({} as IProduct);
-	const [modalIsOpen, setIsOpen] = React.useState(false);
+	const [categories, setCategories] = useState<ICategory[]>([]);
+	const [brands, setBrands] = useState<IBrand[]>([]);
+	const [product, setProduct] = useState<IProduct | undefined>(undefined);
+	const [brand, setBrand] = useState<number | undefined>(undefined);
+	const [category, setCategory] = useState<number | undefined>(undefined);
+	const [search, setSearch] = useState<string | undefined>(undefined);
+
+	const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
 	function openModal() {
 		setIsOpen(true);
@@ -30,30 +47,34 @@ function Products() {
 
 	function closeModal() {
 		setIsOpen(false);
+		setProduct(undefined);
 	}
 
-	const testCreate: IProductCreate = {
-		name: "testCreate 3",
-		price: 100,
-		stock: 1,
-		is_active: 1,
-		category: 4,
-		brand: 2,
-	};
-
 	React.useEffect(() => {
-		setAllProducts(setProducts);
-	}, [products]);
+		setAllProducts(setProducts, category, brand, search);
+		setAllCategories(setCategories);
+		setAllBrands(setBrands);
+	}, []);
+	
+	React.useEffect(() => {
+		setAllProducts(setProducts, category, brand, search);
+	}, [category, brand, search, products]);
 
+	
 	return (
 		<div>
 			<div className="container">
 				<h1>Inventario</h1>
-				<ProductSearchBar />
+				<ProductSearchBar 
+					categories={categories}
+					brands={brands}
+					searchFilter={setSearch}
+					categoryFilter={setCategory}
+					brandFilter={setBrand}
+				/>
 				<div className="containerCards">
 					<div>
 						<NewItem
-							testCreate={testCreate}
 							openModal={openModal}
 						/>
 					</div>
@@ -63,19 +84,36 @@ function Products() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
-						<AddProductForm/>
+						<XMarkIcon
+						className="closeIcon"
+						onClick={closeModal}
+						/>
+						<AddProductForm 
+							closeModal={closeModal}
+							product={product} 
+							brands={brands} 
+							categories={categories}
+						/>
 					</Modal>
-					{products.map((product: IProduct) => (
+					{products
+					.filter((product) => product.is_active)
+					.map((product: IProduct) => (
 						<div key={product.id}>
 							<ProductCard
 								product={product}
 								setProduct={setProduct}
+								setIsOpen={setIsOpen}
 							/>
 						</div>
 					))}
 				</div>
 			</div>
+			<ToastContainer 
+				position="top-center"
+				theme="colored"
+			/>
 		</div>
+		
 	);
 }
 

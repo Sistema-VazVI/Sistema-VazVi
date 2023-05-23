@@ -6,9 +6,6 @@ export class CreateClientDto{
     name: string;
 
     @IsString()
-    first_name: string;
-
-    @IsString()
     phone: string;
 
     @IsNumber()

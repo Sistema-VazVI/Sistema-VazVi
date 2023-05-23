@@ -11,9 +11,6 @@ export class Client{
     name: string;
 
     @Column()
-    first_name: string;
-
-    @Column()
     phone: string;
 
     @Column()

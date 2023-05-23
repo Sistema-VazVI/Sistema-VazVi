@@ -1,0 +1,174 @@
+.cardLineCat {
+	display: flex;
+	flex-direction: row;
+	height: 70px;
+	color: #6f5e76;
+	border: 1px solid #efd6d2;
+	border-radius: 20px;
+	align-items: center;
+	font-family: Verdana, sans-serif;
+	font-size: 16px;
+	list-style-type: none;
+	justify-items: center;
+	align-content: center;
+	font-weight: 700;
+	justify-content: center;
+	max-width: 310px;
+	width: 300px;
+	column-gap: 20px;
+	padding-left: 10px;
+	padding-top: 1px;
+	padding-right: 10px;
+}
+
+.cardLogo {
+	width: 24px;
+	height: 24px;
+	background-color: #6f5e76;
+	border-radius: 50%;
+	color: #ffdde2;
+	padding: 5px;
+	align-self: center;
+	margin: 0;
+}
+
+.btnContainerLineCat {
+	display: flex;
+	flex-direction: row;
+	gap: 0px 10px;
+	text-align: start;
+	align-items: center;
+	justify-items: center;
+	align-content: center;
+	justify-content: center;
+	align-self: center;
+	padding: 0px;
+	margin: 0px 0px 0px 18px;
+}
+
+.btnLineCat {
+	width: 30px;
+	height: 30px;
+	font-weight: 400;
+	border-radius: 50%;
+	background-color: #efd6d2;
+	border: 1px solid #efd6d2;
+	display: flex;
+	flex-direction: row;
+	margin: 1px;
+	align-items: center;
+	color: #6f5e76;
+	cursor: pointer;
+}
+
+.btnLineCat:hover {
+	color: #efd6d2;
+	background-color: #6f5e76;
+}
+
+.Titulo {
+	font-family: Verdana, sans-serif;
+	color: #6f5e76;
+	display: inline-block;
+	margin: 0px;
+	text-align: start;
+	width: 30%;
+    margin-right: 15px;
+}
+
+.lineCatContainer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.lineCatCardsContainer {
+	display: grid;
+	grid-template-rows: auto;
+	grid-auto-flow: row;
+	gap: 5px;
+	width: 25%;
+	height: 20%;
+	box-shadow: -0.28px 1.98px 8px black;
+	border-radius: 28px;
+	padding-bottom: 25px;
+	padding-top: 25px;
+	justify-items: center;
+	align-items: center;
+	scrollbar-width: thin;
+	scrollbar-color: #6f5e76;
+	overflow: scroll;
+}
+
+@media (max-height: 1200px) {
+	.lineCatCardsContainer {
+		height: 650px;
+	}
+}
+
+@media (max-height: 854px) {
+    .lineCatCardsContainer {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .lineCatCardsContainer {
+		width: 35%;
+	}
+}
+
+@media (max-width: 1024px) {
+    .lineCatCardsContainer {
+		width: 45%;
+	}
+}
+
+@media (max-width: 820px) {
+	.lineCatCardsContainer {
+		width: 40%;
+	}
+
+	.cardLineCat {
+		width: 200px;
+		font-size: 9px;
+	}
+
+	.cardLogo {
+		width: 18px;
+		height: 18px;
+	}
+
+    .btnContainer{
+        gap: 5px;
+        margin: 0px;
+    }
+
+    .btnLineCat{
+        width: 28px;
+		height: 28px;
+    }
+}
+
+@media (max-width:425px){
+    .cardLineCat {
+		width: 90px;
+		font-size: 8px;
+	}
+
+	.cardLogo {
+		display: none;
+	}
+
+    .btnContainer{
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 10px;
+    }
+
+    .btnLineCat{
+        width: 28px;
+		height: 28px;
+    }
+}

@@ -1,3 +1,4 @@
+DELIMITER //
 CREATE TRIGGER `payment_before_insert` BEFORE INSERT ON `payment` FOR EACH ROW BEGIN
 	 DECLARE ticketTotal FLOAT;
     DECLARE amountPayed FLOAT;
@@ -16,4 +17,6 @@ CREATE TRIGGER `payment_before_insert` BEFORE INSERT ON `payment` FOR EACH ROW B
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La Cantidad A Ingresar Sobrepasa El Total Del Ticket';
    END IF;
     
-END
+END//
+
+DELIMITER ;

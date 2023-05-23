@@ -1,0 +1,86 @@
+.containerModal {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    align-content: start;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: Verdana, sans-serif;
+    color: #6F5E76;
+    row-gap: 20px;
+    align-self: center;
+    width: 500px;
+}
+
+.lineForm {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: start;
+    justify-content: space-evenly;
+    row-gap: 30px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.formName {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-items: start;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+    width: 100%;
+}
+
+.formName input {
+    width: 95%;
+    border: 1px solid rgb(111, 94, 118);
+    border-radius: 15px;
+    height: 30px;
+    padding-left: 8px;
+    font-size: 16px;
+}
+
+input:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+input.border-error {
+    border-color: #E84C3D;
+  }
+  
+input.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
+.formBtns {
+    align-self: end;
+    display: flex;
+    flex-direction: row;
+    column-gap: 18px;
+}
+
+
+
+.error-message {
+    color: #E84C3D;
+    animation-name: errorAnimation;
+    animation-duration: 0.5s;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    animation-timing-function: ease-in-out;
+  }
+  
+
+@media (max-width: 425px) {
+    .containerModal{
+        width: auto !important;
+    }
+}

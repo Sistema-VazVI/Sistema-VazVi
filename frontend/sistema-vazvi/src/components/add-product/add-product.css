@@ -38,6 +38,32 @@
     width: 100%;
 }
 
+input:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+input.border-error {
+    border-color: #E84C3D;
+  }
+  
+input.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
+select:focus{
+    outline: 1px solid #735380;
+    margin-right:10px;
+}
+
+select.border-error{
+    border-color: 1px solid #E84C3D !important;
+}
+
+select.border-error:focus {
+    outline: 1px solid #E84C3D;
+}
+
 .nameForm {
     margin-top: 0px;
     border: 1px solid #ffffff;
@@ -85,7 +111,7 @@
     border-radius: 10px;
     padding-left: 10px;
     grid-template-columns: auto;
-    margin: 20px 0px 0px;
+    margin: 5px 0px 0px;
     width: 99%;
     overflow: visible;
 }
@@ -137,68 +163,43 @@
     align-self: end;
 }
 
-.btnCancel {
-    padding: 10px 0px;
-    width: 90px;
-    border: 1.5px solid #6f5e76;
-    background-color: #ffffff;
-    border-radius: 13px;
-    color: #6f5e76;
-    height: 40px;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btnCancel:hover {
-    background-color: #6f5e76;
-    color: #EFD6D2;
-}
-
-.btnAccept {
-    padding: 10px 0px;
-    width: 90px;
-    border: 1.5px solid #6f5e76;
-    background-color: #6f5e76;
-    border-radius: 13px;
-    color: #EFD6D2;
-    height: 40px;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btnAccept:hover {
-    color: #6f5e76;
-    background-color: #ffdde2;
+.titleModalProduct {
+    display: block;
+    padding-left: 30px;
 }
 
 .closeIcon {
     color: #6F5E76;
-    height: 48px;
-    width: 48px;
+    height: 28px;
+    width: 28px;
     cursor: pointer;
     transition: 0.4s;
-}
-
-.closeIcon:hover {
-    color: #ffdde2;
+    position: relative;
+    left: 90%;
 }
 
 .title {
     display: block;
 }
+
+.error-message {
+    color: #E84C3D;
+    animation-name: errorAnimation;
+    animation-duration: 0.5s;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes errorAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { Delete, Patch, Post, Put } from '@nestjs/common/decorators/http/request-mapping.decorator';
-import { Body, Param } from '@nestjs/common/decorators/http/route-params.decorator';
+import { Body, Param, Query } from '@nestjs/common/decorators/http/route-params.decorator';
 import { UpdateResult } from 'typeorm';
 import { ClientService } from './client.service';
 import { CreateClientDto } from './dtos/createClient.dto';
@@ -13,8 +13,10 @@ export class ClientController {
     constructor(private readonly clientService: ClientService){}
 
     @Get()
-    getAll(): Promise<Client[]>{
-        return this.clientService.findAll();
+    getAll(
+        @Query('searchFilter') searchFilter?: string
+        ): Promise<Client[]>{
+            return this.clientService.findAll(searchFilter);
     }
 
     @Get(':id')

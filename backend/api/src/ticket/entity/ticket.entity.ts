@@ -13,7 +13,13 @@ export class Ticket{
     total: number;
 
     @Column()
+    payed: number;
+
+    @Column()
     is_payed: boolean;
+
+    @Column()
+    createdOn: string;
 
     @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
     payments: Payment[];

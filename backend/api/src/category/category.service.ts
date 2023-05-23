@@ -13,7 +13,11 @@ export class CategoryService {
   ) {}
 
   findAll(): Promise<Category[]> {
-    return this.categoryRepository.find();
+    return this.categoryRepository.find({
+      order:{
+        name: 'ASC',
+      }
+    });
   }
 
   findById(id: number): Promise<Category>{

@@ -12,8 +12,8 @@ export default interface IitemTicket {
 }
 
 export interface IitemTicketCreate {
- 
-    ticket: number;
+    
+    ticket: number | undefined;
     product: number;
     quantity: number;
 

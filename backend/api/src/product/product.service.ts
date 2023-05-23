@@ -12,13 +12,22 @@ export class ProductService {
     private productRepository: Repository<Product>,
   ) {}
 
-  findAll(): Promise<Product[]> {
-    return this.productRepository.find({
-      relations: {
-        category: true,
-        brand: true,
-      },
-    });
+  findAll(categoryId: number, brandId:number, searchFilter:string): Promise<Product[]> {
+    const query = this.productRepository.createQueryBuilder('product')
+                                        .leftJoinAndSelect('product.category', 'category')
+                                        .leftJoinAndSelect('product.brand', 'brand')
+                                        .orderBy('product.name', 'ASC');
+    if(categoryId){
+      query.andWhere('product.categoryId = :categoryId',{categoryId});
+    }
+    if(brandId){
+      query.andWhere('product.brandId = :brandId',{brandId});
+    }
+    if(searchFilter){
+      query.andWhere('(product.name LIKE :searchFilter)', { searchFilter: `%${searchFilter}%` });
+    }
+
+    return query.getMany();
   }
 
   findById(id: number): Promise<Product> {

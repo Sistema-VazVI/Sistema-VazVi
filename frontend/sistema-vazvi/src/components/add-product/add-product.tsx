@@ -1,108 +1,145 @@
 import "./add-product.css";
 import React from "react";
-import { XCircleIcon } from "@heroicons/react/24/outline";
-import { addProduct } from "../../controllers/product.controller";
-import { IProductCreate } from "../../models/product.model";
-import { Form } from "react-router-dom";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { addProduct, updateProduct } from "../../controllers/product.controller";
+import IProduct, { IProductCreate } from "../../models/product.model";
+import ICategory from "../../models/category.model";
+import IBrand from "../../models/brand.model";
+import { useForm } from "react-hook-form";
 
 export interface AddProductProps {
 	className?: string;
 	closeModal?: () => void;
-    product?: IProductCreate;
+    product: IProduct | undefined;
+	categories: ICategory[];
+	brands: IBrand[];
 }
 
-export async function newProduct(product: IProductCreate){
+export const AddProductForm: React.FC<AddProductProps> = ({ className = "", closeModal, product, categories, brands}) => {
+	
+	const { register, handleSubmit, formState: {errors} } = useForm<IProductCreate>();
+	const isEditing = product !== undefined;
 
-}
+	const handleFormSubmit = (data: IProductCreate) => {
+		if (isEditing) {
+		  updateProduct(product.id, data)
+		} else {
+		  addProduct(data); 
+		}
+		closeModal?.();
+	  };
 
-export const AddProductForm: React.FC<AddProductProps> = ({ className = "", closeModal, product }) => (
-	<div className={`${className} Container`}>
-		<div className="divTit">
-			<div
-				className="closeIcon"
-				onClick={closeModal}
-			>
-				<XCircleIcon onClick={closeModal}/>
+	return(
+		<div className={`${className} Container`}>
+			<div className="divTit">
+				<div
+					className="closeIcon"
+					onClick={closeModal}
+				>
+				</div>
+				<h1 className="title">Añadir Producto </h1>
 			</div>
-			<h1 className="title">Añadir Producto</h1>
+			<form >
+				<div className="nameForm">
+					<label className="etiquetas" >Nombre Del Producto </label>
+					{errors.name && <p className="error-message">{errors.name.message}</p>}
+					<input
+						type="text"
+						className={`inputLG ${errors.name ? "border-error" : ""}`}
+						defaultValue={isEditing ? product.name : ""}
+						placeholder="Introduzca el nombre del producto"
+						{...register("name", {required: "¡Este campo es requerido!"})}
+					/>
+				</div>
+				<div className="twoClmnForm">
+					<div className="divCol">
+						<label className="etiquetas">Categoría</label>
+						{errors.name && <p className="error-message">{errors.name.message}</p>}
+						<select
+							defaultValue={isEditing ? product.category?.id : ""}
+							className={`mdForm ${errors.name ? "border-error" : ""}`}
+							{...register("category", {required: "¡Este campo es requerido!"})}
+						>
+							<option
+								hidden
+								value=""
+							>
+								Categoria
+							</option>
+							{categories.map((category: ICategory) => (
+								<option 
+									value={category.id}
+									selected={isEditing && product.category?.id === category.id}
+								>
+									{category.name}
+								</option>
+							))}
+						</select>
+					</div>
+					<div className="divCol">
+						<label className="etiquetas">Línea</label>
+						{errors.name && <p className="error-message">{errors.name.message}</p>}
+						<select
+							defaultValue={isEditing ? product.brand?.id : ""}
+							className={`mdForm ${errors.name ? "border-error" : ""}`}
+							{...register("brand", {required: "¡Este campo es requerido!"})}
+						>
+							<option
+								hidden
+								value=""
+							>
+								Linea
+							</option>
+							{brands.map((brand: IBrand) => (
+								<option 
+									value={brand.id}
+									selected={isEditing && product.brand?.id === brand.id}
+								>
+									{brand.name}
+								</option>
+							))}
+						</select>
+					</div>
+				</div>
+				<input type="hidden" value="1"/>
+				<div className="twoClmnForm">
+					<div className="divCol">
+						<label className="etiquetas">Precio</label>
+						{errors.name && <p className="error-message">{errors.name.message}</p>}
+						<input
+							type="number"
+							className={`mdForm ${errors.name ? "border-error" : ""}`}
+							defaultValue={isEditing ? product.price : ""}
+							placeholder="$ MXN"
+							{...register("price", {required: "¡Este campo es requerido!"})}
+						/>
+					</div>
+					<div className="divCol">
+						<label className="etiquetas">Stock</label>
+						{errors.name && <p className="error-message">{errors.name.message}</p>}
+						<input
+							type="number"
+							className={`mdForm ${errors.name ? "border-error" : ""}`}
+							defaultValue={isEditing ? product.stock : ""}
+							placeholder="No. productos en stock"
+							{...register("stock", {required: "¡Este campo es requerido!"})}
+						/>
+					</div>
+				</div>
+				<div className="btnFormContainer">
+					<button
+						className="btn btnSecondary"
+						onClick={closeModal}
+					>
+						Cerrar
+					</button>
+					<button className="btn btnPrimary" 
+							onClick={handleSubmit(handleFormSubmit)}
+					> 
+						{isEditing ? "Actualizar" : "Aceptar"} 
+					</button>
+				</div>
+			</form>
 		</div>
-		<form method="post" action="/">
-			<div className="nameForm">
-				<label className="etiquetas" >Nombre Del Producto</label>
-				<input
-					type="text"
-                    name="productName"
-					className="inputLG"
-					placeholder="Introduzca el nombre del producto"
-				/>
-			</div>
-			<div className="twoClmnForm">
-				<div className="divCol">
-					<label className="etiquetas">Categoría</label>
-					<select
-						defaultValue=""
-						className="mdForm"
-                        name="category"
-					>
-						<option
-							hidden
-							value=""
-						>
-							Categoria
-						</option>
-						<option value={4}>Opcion 1</option>
-					</select>
-				</div>
-				<div className="divCol">
-					<label className="etiquetas">Línea</label>
-					<select
-						defaultValue=""
-						className="mdForm"
-                        name="line"
-					>
-						<option
-							hidden
-							value=""
-						>
-							Linea
-						</option>
-						<option value={2}>Opcion 1</option>
-					</select>
-				</div>
-			</div>
-            <input type="hidden" value="1"/>
-			<div className="twoClmnForm">
-				<div className="divCol">
-					<label className="etiquetas">Precio</label>
-					<input
-						type="number"
-                        name="price"
-						className="mdForm"
-						placeholder="$ MXN"
-					/>
-				</div>
-				<div className="divCol">
-					<label className="etiquetas">Stock</label>
-					<input
-						type="number"
-                        name="stock"
-						className="mdForm"
-						placeholder="No. productos en stock"
-					/>
-				</div>
-			</div>
-			<div className="btnFormContainer">
-				<input
-					type="reset"
-					className="btnCancel"
-					value="Reiniciar"
-				/>
-				<input
-					type="submit"
-					value="Aceptar"
-					className="btnAccept"
-				/>
-			</div>
-		</form>
-	</div>
-);
+	);
+};

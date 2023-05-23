@@ -16,19 +16,14 @@ import { Ticket } from './ticket/entity/ticket.entity';
 import { TicketModule } from './ticket/ticket.module';
 import { Payment } from './payment/entity/payment.entity';
 import { PaymentModule } from './payment/payment.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { DatabaseModule } from './database/database.module';
+
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root',
-      database: 'inventariodb_test',
-      entities: [Category, Brand, Client, Product, Ticket, ItemTicket, Payment],
-      synchronize: false,
-    }),
+    ConfigModule.forRoot({isGlobal: true}),
+    DatabaseModule,
     CategoryModule,
     BrandModule,
     ClientModule,
@@ -36,8 +31,14 @@ import { PaymentModule } from './payment/payment.module';
     TicketModule,
     ItemTicketModule,
     PaymentModule,
+    DatabaseModule
   ],
   controllers: [AppController],
   providers: [AppService ],
 })
-export class AppModule {}
+export class AppModule {
+  static port: number;
+  constructor(private readonly configService: ConfigService){
+    AppModule.port = +this.configService.get('PORT');
+  }
+}
