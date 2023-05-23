@@ -10,7 +10,7 @@ import { getSingle } from "../endpoints/client.endpoint";
 function ClientTickets() {
 	const navigate = useNavigate();
 	const { id } = useParams();
-	const client:IClient = getSingle(Number(id))
+	// const client:IClient = getSingle(Number(id))
 
 	// React.useEffect(() => {
 	// 	setAllTickets(setTickets);
@@ -24,7 +24,8 @@ function ClientTickets() {
 						onClick={() => navigate(-1)}
 						className="backBtn"
 					/>{" "}
-					{`${client?.name}`}
+					{/* {`${client?.name}`} */}
+					holaaa
 				</h1>
 				<div className="subtitleBox">
 					<h3>Saldo: $1230.00</h3>
