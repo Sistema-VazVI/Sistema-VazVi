@@ -17,7 +17,7 @@ export const SideBar: React.FC<SideBarProps> = ({ className = "" }) => (
 		<nav className="sideNav">
 			<div className="sideBarOption">
 				<ClipboardIcon className="navIcon" />
-				<Link to="/" className="sideNavLink"> Inventario</Link>
+				<Link to="/products" className="sideNavLink"> Inventario</Link>
 			</div>
 			<div className="sideBarOption">
 				<Bars3CenterLeftIcon className="navIcon" />

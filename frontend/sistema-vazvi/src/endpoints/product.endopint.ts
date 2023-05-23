@@ -38,29 +38,33 @@ export const getSingle = async (id:number): Promise<IProduct> => {
 };
 
 export const create = async (product:IProductCreate): Promise<IProductCreate> => {
-  return await axios
-    .post<IProductCreate>(process.env.REACT_APP_API_URL+'/product', product)
-    .then((response) => {
-      if (response.data) {
-        return response.data;
-      }
-    })
-    .catch((error) => {
-      return error;
-    });
-};
+  return new Promise<IProductCreate>((resolve, reject) => {
+    axios
+      .post<IProductCreate>(process.env.REACT_APP_API_URL + '/product', product)
+      .then((response) => {
+        if (response.data) {
+          resolve(response.data);
+        }
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+ };
 
 export const update = async (product:IProductUpdate): Promise<IProductUpdate> => {
-  return await axios
-    .patch<IProductUpdate>(process.env.REACT_APP_API_URL+'/product', product)
-    .then((response) => {
-      if (response.data) {
-        return response.data;
-      }
-    })
-    .catch((error) => {
-      return error;
-    });
+  return new Promise<IProductUpdate>((resolve, reject) => {
+    axios
+      .post<IProductUpdate>(process.env.REACT_APP_API_URL + '/product', product)
+      .then((response) => {
+        if (response.data) {
+          resolve(response.data);
+        }
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
 };
 
 export const remove = async (product: IProduct): Promise<IProduct> => {

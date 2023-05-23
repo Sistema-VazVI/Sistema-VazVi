@@ -8,7 +8,7 @@ export function addPayment(payment: IPaymentCreate){
       toast.success('Abono registrado exitosamente en el ticket #' + payment.ticket);
     })
     .catch(error => {
-      toast.error('Error al registrar el abono en en el ticket #' + payment.ticket, error);
+      toast.error('Error al registrar el abono en en el ticket #' + payment.ticket + ' error: ' + error.message);
     });
   
   }
