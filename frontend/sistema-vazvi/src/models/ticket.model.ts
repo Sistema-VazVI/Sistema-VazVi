@@ -4,6 +4,7 @@ export default interface ITicket {
  
     id: number;
     total: number;
+    payed: number;
     is_payed: boolean;
     client: IClient;
     

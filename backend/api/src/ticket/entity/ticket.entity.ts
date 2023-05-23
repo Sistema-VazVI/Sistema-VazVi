@@ -13,6 +13,9 @@ export class Ticket{
     total: number;
 
     @Column()
+    payed: number;
+
+    @Column()
     is_payed: boolean;
 
     @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
