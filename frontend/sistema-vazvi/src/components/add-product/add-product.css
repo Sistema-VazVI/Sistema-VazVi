@@ -137,54 +137,9 @@
     align-self: end;
 }
 
-.btnCancel {
-    padding: 10px 0px;
-    width: 90px;
-    border: 1.5px solid #6f5e76;
-    background-color: #ffffff;
-    border-radius: 13px;
-    color: #6f5e76;
-    height: 40px;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btnCancel:hover {
-    background-color: #6f5e76;
-    color: #EFD6D2;
-}
-
-.btnAccept {
-    padding: 10px 0px;
-    width: 90px;
-    border: 1.5px solid #6f5e76;
-    background-color: #6f5e76;
-    border-radius: 13px;
-    color: #EFD6D2;
-    height: 40px;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.btnAccept:hover {
-    color: #6f5e76;
-    background-color: #ffdde2;
+.titleModalProduct {
+    display: block;
+    padding-left: 30px;
 }
 
 .closeIcon {
@@ -193,12 +148,10 @@
     width: 48px;
     cursor: pointer;
     transition: 0.4s;
+    position: relative;
+    left: 90%;
 }
 
 .closeIcon:hover {
     color: #ffdde2;
-}
-
-.title {
-    display: block;
 }

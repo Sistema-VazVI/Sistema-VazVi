@@ -1,0 +1,43 @@
+.newLineCategory {
+    border-radius: 28px;
+    font-family: Verdana, sans-serif;
+    border: 2px dashed #6F5E76;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: #6F5E76;
+    column-gap: 18px;
+    height: 110px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.newIconLine {
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 820px){
+    .newLineCategory{
+        width: 200px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:425px){
+    .newLineCategory{
+        height: 50px;
+        width: 80px;
+        font-size: 7px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .newIconLine {
+        width: 20px;
+        height: 20px;
+    }
+}

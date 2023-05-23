@@ -7,6 +7,7 @@ import { AddProductForm } from "../components/add-product/add-product";
 import "./app.css";
 import { ProductSearchBar } from "../components/product-search-bar/product-search-bar";
 import Modal from "react-modal";
+import { XCircleIcon } from "@heroicons/react/24/outline";
 
 const customStyles = {
 	content: {
@@ -32,15 +33,6 @@ function Products() {
 		setIsOpen(false);
 	}
 
-	const testCreate: IProductCreate = {
-		name: "testCreate 3",
-		price: 100,
-		stock: 1,
-		is_active: 1,
-		category: 4,
-		brand: 2,
-	};
-
 	React.useEffect(() => {
 		setAllProducts(setProducts);
 	}, [products]);
@@ -53,7 +45,6 @@ function Products() {
 				<div className="containerCards">
 					<div>
 						<NewItem
-							testCreate={testCreate}
 							openModal={openModal}
 						/>
 					</div>
@@ -63,6 +54,7 @@ function Products() {
 						style={customStyles}
 						contentLabel="Form Modal"
 					>
+						<XCircleIcon className="closeIcon" onClick={closeModal}/>
 						<AddProductForm/>
 					</Modal>
 					{products.map((product: IProduct) => (

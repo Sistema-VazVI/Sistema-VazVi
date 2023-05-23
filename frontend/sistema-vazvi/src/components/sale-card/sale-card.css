@@ -1,0 +1,121 @@
+.saleCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    max-width: 250px;
+    column-gap: 20px;
+    padding: 15px 10px 10px 15px;
+    border: 1px solid #6F5E76;
+    border-radius: 18px;
+    margin: 15px;
+}
+
+.saleLogo {
+    background-color: #6F5E76;
+    border-radius: 50%;
+    color: #EFD6D2;
+    font-size: 20px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-items: start;
+    justify-content: start;
+    align-content: start;
+    height: 100%;
+    width: 60%;
+    font-family: Verdana, sans-serif;
+}
+
+.title {
+    display: inline-block;
+    font-size: 14px;
+    color: #6F5E76;
+    margin: 0px;
+}
+
+.text {
+    display: inline-block;
+    align-self: start;
+    font-size: 10px;
+}
+
+.btnContainerSales {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+.btnSale {
+    width: 16px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: #EFD6D2;
+    color: #6F5E76;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.btnSale:hover {
+    color: #EFD6D2;
+    background-color: #6F5E76;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    color: #6F5E76;
+    font-size: 12px;
+    font-family: Verdana, sans-serif;
+}
+
+.cartIcon {
+    width: 16px;
+    cursor: pointer;
+}
+
+.numberQt {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    border: 1px solid #6F5E76;
+    border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+    .saleCard{
+        width: 150px;
+    }
+    
+    .saleLogo {
+        display: none;
+    }
+}
