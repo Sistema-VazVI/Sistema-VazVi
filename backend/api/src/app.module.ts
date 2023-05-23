@@ -18,7 +18,6 @@ import { Payment } from './payment/entity/payment.entity';
 import { PaymentModule } from './payment/payment.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
-import { UserModule } from './user/user.module';
 
 
 @Module({
@@ -32,8 +31,7 @@ import { UserModule } from './user/user.module';
     TicketModule,
     ItemTicketModule,
     PaymentModule,
-    DatabaseModule,
-    UserModule
+    DatabaseModule
   ],
   controllers: [AppController],
   providers: [AppService ],

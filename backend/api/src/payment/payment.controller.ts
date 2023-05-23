@@ -4,8 +4,8 @@ import { Body, Param } from '@nestjs/common/decorators/http/route-params.decorat
 import { UpdateResult } from 'typeorm';
 import { PaymentService } from './payment.service';
 import { CreatePaymentDto } from './dtos/createPayment.dto';
-import { Payment } from './entity/payment.entity';
 import { UpdatePaymentDto } from './dtos/updatePayment.dto';
+import { Payment } from './entity/payment.entity';
 
 @Controller('payment')
 export class PaymentController {
