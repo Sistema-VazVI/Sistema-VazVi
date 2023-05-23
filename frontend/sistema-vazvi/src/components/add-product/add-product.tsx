@@ -66,9 +66,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 							>
 								Categoria
 							</option>
-							{categories
-							.filter((category) => category.is_active)
-							.map((category: ICategory) => (
+							{categories.map((category: ICategory) => (
 								<option 
 									value={category.id}
 									selected={isEditing && product.category?.id === category.id}
@@ -92,9 +90,7 @@ export const AddProductForm: React.FC<AddProductProps> = ({ className = "", clos
 							>
 								Linea
 							</option>
-							{brands
-							.filter((brand) => brand.is_active)
-							.map((brand: IBrand) => (
+							{brands.map((brand: IBrand) => (
 								<option 
 									value={brand.id}
 									selected={isEditing && product.brand?.id === brand.id}

@@ -8,7 +8,6 @@ import { XCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { TicketPayment } from "../ticket-payment/ticket-payment";
 import { TicketDetail } from "../ticket-detail/ticket-detail";
 import moment from "moment";
-import { toast } from "react-toastify";
 
 const customStyles = {
 	content: {
@@ -43,8 +42,6 @@ const Ticket: React.FC<TicketProps> = ({ className = "", ticket }) => {
 	function openPayment() {
 		if(!ticket.is_payed) {
 			setPayment(true);
-		}else{
-			toast.warning('El ticket # '+ ticket.id + ' ya ha sido pagado.');
 		}
 	}
 

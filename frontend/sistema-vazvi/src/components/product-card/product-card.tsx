@@ -3,7 +3,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import { TagIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import IProduct from "../../models/product.model";
-import { hardDeleteProduct, softDeleteProduct, viewProduct } from "../../controllers/product.controller";
+import { hardDeleteProduct, viewProduct } from "../../controllers/product.controller";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,7 +37,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className = "", produc
 			</button>
 			<button
 				className="cardBtn"
-				onClick={() => softDeleteProduct(product)}
+				onClick={() => hardDeleteProduct(product)}
 			>
 				<TrashIcon />
 			</button>

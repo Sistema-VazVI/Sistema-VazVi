@@ -35,27 +35,6 @@ export function hardDeleteProduct(product: IProduct) {
   remove(product)
 } 
 
-export function softDeleteProduct(product: IProduct) {
-
-  const updatedProduct: IProductUpdate = {
-    id: product.id,
-    name: product.name,
-    price: product.price,
-    stock: product.stock,
-    category: product.category.id,
-    brand: product.brand.id,
-    is_active: false,
-  }
-
-  update(updatedProduct)
-  .then(() => {
-    toast.success('Producto fue eliminado exitosamente');
-  })
-  .catch(error => {
-    toast.error('Error al eliminar el producto', error.message);
-  });
-}
-
 export function updateProduct(id:number, product: IProductCreate) {
 
   const updatedProduct: IProductUpdate = {

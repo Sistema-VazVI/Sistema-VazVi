@@ -179,9 +179,7 @@ function Sales() {
 								brandFilter={setBrand}
 							/>
 							<div className="containerCardsSales">
-								{products
-								.filter((product) => product.stock > 0 && product.is_active)
-								.map((product: IProduct) => (
+								{products.map((product: IProduct) => (
 									<div key={product.id}>
 										<SaleCard 
 											product={product}
