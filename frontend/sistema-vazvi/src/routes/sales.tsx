@@ -53,7 +53,7 @@ function Sales() {
 	const [client, setClient] = useState<number>(0);
 
 	function openModal() {
-		if(client != 0 && shoppingCart.length > 0){
+		if(client !== 0 && shoppingCart.length > 0){
 
 			setIsOpen(true);
 			
@@ -81,7 +81,7 @@ function Sales() {
 	}
 
 	function handdleCreation(){
-		if(client != 0 && shoppingCart.length > 0){
+		if(client !== 0 && shoppingCart.length > 0){
 			var newTicket: ITicketCreate = {
 				total: shoppingCart.reduce((total, item) => total + (item.product.price * item.quantity), 0),
 				client: client
