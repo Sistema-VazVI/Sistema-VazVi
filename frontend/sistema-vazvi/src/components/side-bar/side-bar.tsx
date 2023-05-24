@@ -17,7 +17,7 @@ export const SideBar: React.FC<SideBarProps> = ({ className = "" }) => (
 		<nav className="sideNav">
 			<div className="sideBarOption">
 				<ClipboardIcon className="navIcon" />
-				<Link to="/products" className="sideNavLink"> Inventario</Link>
+				<Link to="/" className="sideNavLink"> Inventario</Link>
 			</div>
 			<div className="sideBarOption">
 				<Bars3CenterLeftIcon className="navIcon" />
@@ -31,10 +31,10 @@ export const SideBar: React.FC<SideBarProps> = ({ className = "" }) => (
 				<ShoppingBagIcon className="navIcon" />
 				<Link to="/sales" className="sideNavLink"> Venta</Link>
 			</div>
-			<div className="sideBarOption">
+			{/* <div className="sideBarOption">
 				<UserCircleIcon className="navIcon" />
 				<Link to="/" className="sideNavLink">Usuario</Link>
-			</div>
+			</div> */}
 		</nav>
 	</div>
 );

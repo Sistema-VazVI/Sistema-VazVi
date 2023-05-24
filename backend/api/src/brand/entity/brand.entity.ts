@@ -1,13 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Brand{
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
+export class Brand {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    is_active: boolean;
+  @Column()
+  name: string;
+
+  @Column()
+  is_active: boolean;
 }

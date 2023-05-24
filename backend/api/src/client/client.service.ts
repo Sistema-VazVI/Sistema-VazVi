@@ -28,10 +28,8 @@ export class ClientService {
   findById(id: number): Promise<Client> {
     return this.clientRepository.findOne({
       where: { id: id },
-      relations: { 
-        tickets: {payments: true,
-                  items: {product: true}
-                } 
+      relations: {
+        tickets: { payments: true, items: { product: true } },
       },
     });
   }
