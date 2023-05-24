@@ -1,31 +1,35 @@
-import { Brand } from "../../brand/entity/brand.entity";
-import { Category } from "../../category/entity/category.entity";
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Brand } from '../../brand/entity/brand.entity';
+import { Category } from '../../category/entity/category.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
-export class Product{
-    
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
+export class Product {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    price: number;
+  @Column()
+  name: string;
 
-    @Column()
-    stock: number;
+  @Column()
+  price: number;
 
-    @OneToOne(() => Category, (category: Category) => category.id)
-    @JoinColumn()
-    category: Category;
+  @Column()
+  stock: number;
 
-    @OneToOne(() => Brand, (brand: Brand) => brand.id)
-    @JoinColumn()
-    brand: Brand;
+  @OneToOne(() => Category, (category: Category) => category.id)
+  @JoinColumn()
+  category: Category;
 
-    @Column()
-    is_active: boolean;
+  @OneToOne(() => Brand, (brand: Brand) => brand.id)
+  @JoinColumn()
+  brand: Brand;
 
+  @Column()
+  is_active: boolean;
 }

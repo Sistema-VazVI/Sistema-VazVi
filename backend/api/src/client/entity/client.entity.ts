@@ -1,22 +1,20 @@
-import { Ticket } from "../../ticket/entity/ticket.entity";
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Ticket } from '../../ticket/entity/ticket.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Client{
-    
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    name: string;
+export class Client {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    phone: string;
+  @Column()
+  name: string;
 
-    @Column()
-    debt: number;
+  @Column()
+  phone: string;
 
-    @OneToMany(() => Ticket, (ticket: Ticket) => ticket.client)
-    tickets: Ticket[];
+  @Column()
+  debt: number;
 
+  @OneToMany(() => Ticket, (ticket: Ticket) => ticket.client)
+  tickets: Ticket[];
 }

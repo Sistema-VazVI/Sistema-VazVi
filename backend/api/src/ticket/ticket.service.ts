@@ -7,35 +7,35 @@ import { UpdateTicketDto } from './dtos/updateTicket.dto';
 
 @Injectable()
 export class TicketService {
-    constructor(
-        @InjectRepository(Ticket)
-        private ticketRepository: Repository<Ticket>,
-    ) {}
-    
-    findAll(): Promise<Ticket[]> {
-        return this.ticketRepository.find();
-    }
+  constructor(
+    @InjectRepository(Ticket)
+    private ticketRepository: Repository<Ticket>,
+  ) {}
 
-    findById(id: number): Promise<Ticket> {
-        return this.ticketRepository.findOne({ 
-            where: { id: id },
-            relations:{
-                items: {product: true},
-                payments: true,
-                client: true,
-            }
-        });
-    }
+  findAll(): Promise<Ticket[]> {
+    return this.ticketRepository.find();
+  }
 
-    create(ticket: CreateTicketDto): Promise<CreateTicketDto> {
-        return this.ticketRepository.save(ticket);
-    }
+  findById(id: number): Promise<Ticket> {
+    return this.ticketRepository.findOne({
+      where: { id: id },
+      relations: {
+        items: { product: true },
+        payments: true,
+        client: true,
+      },
+    });
+  }
 
-    update(ticket: UpdateTicketDto): Promise<UpdateResult> {
-        return this.ticketRepository.update({ id: ticket.id }, ticket);
-    }
+  create(ticket: CreateTicketDto): Promise<CreateTicketDto> {
+    return this.ticketRepository.save(ticket);
+  }
 
-    delete(id: number) {
-        return this.ticketRepository.delete({ id: id });
-    }
+  update(ticket: UpdateTicketDto): Promise<UpdateResult> {
+    return this.ticketRepository.update({ id: ticket.id }, ticket);
+  }
+
+  delete(id: number) {
+    return this.ticketRepository.delete({ id: id });
+  }
 }

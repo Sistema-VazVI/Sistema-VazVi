@@ -1,33 +1,40 @@
-import { Client } from "../../client/entity/client.entity";
-import { Payment } from "../../payment/entity/payment.entity";
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Client } from '../../client/entity/client.entity';
+import { Payment } from '../../payment/entity/payment.entity';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { ItemTicket } from '../../item-ticket/entity/item-ticket.entity';
 
 @Entity()
-export class Ticket{
-    
-    @PrimaryGeneratedColumn()
-    id: number;
-    
-    @Column()
-    total: number;
+export class Ticket {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    payed: number;
+  @Column()
+  total: number;
 
-    @Column()
-    is_payed: boolean;
+  @Column()
+  payed: number;
 
-    @Column()
-    createdOn: string;
+  @Column()
+  is_payed: boolean;
 
-    @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
-    payments: Payment[];
+  @Column()
+  createdOn: string;
 
-    @OneToMany(() => ItemTicket, (item: ItemTicket) => item.ticket)
-    items: ItemTicket[];
+  @OneToMany(() => Payment, (payment: Payment) => payment.ticket)
+  payments: Payment[];
 
-    @OneToOne(() => Client, (client: Client) => client.id)
-    @JoinColumn()
-    client: Client;
+  @OneToMany(() => ItemTicket, (item: ItemTicket) => item.ticket)
+  items: ItemTicket[];
+
+  @OneToOne(() => Client, (client: Client) => client.id)
+  @JoinColumn()
+  client: Client;
 }

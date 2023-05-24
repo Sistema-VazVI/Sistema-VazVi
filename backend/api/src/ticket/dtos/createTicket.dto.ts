@@ -1,13 +1,12 @@
-import {IsNumber} from 'class-validator';
+import { IsNumber } from 'class-validator';
 
-export class CreateTicketDto{
+export class CreateTicketDto {
+  @IsNumber()
+  total: number;
 
-    @IsNumber()
-    total: number;
+  @IsNumber()
+  is_payed: boolean;
 
-    @IsNumber()
-    is_payed: boolean;
-
-    @IsNumber()
-    clientId: number;
+  @IsNumber()
+  clientId: number;
 }

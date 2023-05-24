@@ -19,10 +19,9 @@ import { PaymentModule } from './payment/payment.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 
-
 @Module({
   imports: [
-    ConfigModule.forRoot({isGlobal: true}),
+    ConfigModule.forRoot({ isGlobal: true }),
     DatabaseModule,
     CategoryModule,
     BrandModule,
@@ -31,14 +30,14 @@ import { DatabaseModule } from './database/database.module';
     TicketModule,
     ItemTicketModule,
     PaymentModule,
-    DatabaseModule
+    DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [AppService ],
+  providers: [AppService],
 })
 export class AppModule {
   static port: number;
-  constructor(private readonly configService: ConfigService){
+  constructor(private readonly configService: ConfigService) {
     AppModule.port = +this.configService.get('PORT');
   }
 }

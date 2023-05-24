@@ -1,17 +1,15 @@
-import { IsNumber, IsString } from "class-validator";
+import { IsNumber, IsString } from 'class-validator';
 
-export class UpdateClientDto{
+export class UpdateClientDto {
+  @IsNumber()
+  id: number;
 
-    @IsNumber()
-    id: number;
+  @IsString()
+  name: string;
 
-    @IsString()
-    name: string;
+  @IsString()
+  phone: string;
 
-    @IsString()
-    phone: string;
-
-    @IsNumber()
-    debt: number;
-    
+  @IsNumber()
+  debt: number;
 }

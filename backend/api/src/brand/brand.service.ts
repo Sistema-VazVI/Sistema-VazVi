@@ -14,27 +14,25 @@ export class BrandService {
 
   findAll(): Promise<Brand[]> {
     return this.brandRepository.find({
-      order:{
+      order: {
         name: 'ASC',
-      }
+      },
     });
   }
 
-  findById(id: number): Promise<Brand>{
-    return this.brandRepository.findOneBy({id:id});
+  findById(id: number): Promise<Brand> {
+    return this.brandRepository.findOneBy({ id: id });
   }
 
-  create(brand: CreateBrandDto): Promise<CreateBrandDto>{
+  create(brand: CreateBrandDto): Promise<CreateBrandDto> {
     return this.brandRepository.save(brand);
   }
 
-  update(brand:UpdateBrandDto): Promise<UpdateResult>{
-    return this.brandRepository.update({id:brand.id}, brand)
+  update(brand: UpdateBrandDto): Promise<UpdateResult> {
+    return this.brandRepository.update({ id: brand.id }, brand);
   }
 
-  delete(id:number){
-    return this.brandRepository.delete({id:id});
+  delete(id: number) {
+    return this.brandRepository.delete({ id: id });
   }
-  
-
 }
