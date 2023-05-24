@@ -61,3 +61,4 @@ backend/api/*.sublime-workspace
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.vercel
