@@ -55,6 +55,8 @@ backend/api/*.launch
 backend/api/.settings/
 backend/api/*.sublime-workspace
 
+backend/api/vercel.json
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
