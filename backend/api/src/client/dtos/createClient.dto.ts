@@ -1,12 +1,14 @@
 import { IsString, IsNumber } from 'class-validator';
 
-export class CreateClientDto {
-  @IsString()
-  name: string;
+export class CreateClientDto{
 
-  @IsString()
-  phone: string;
+    @IsString()
+    name: string;
 
-  @IsNumber()
-  debt: number;
+    @IsString()
+    phone: string;
+
+    @IsNumber()
+    debt: number;
+
 }

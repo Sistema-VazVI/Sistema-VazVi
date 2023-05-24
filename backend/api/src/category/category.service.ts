@@ -14,25 +14,27 @@ export class CategoryService {
 
   findAll(): Promise<Category[]> {
     return this.categoryRepository.find({
-      order: {
+      order:{
         name: 'ASC',
-      },
+      }
     });
   }
 
-  findById(id: number): Promise<Category> {
-    return this.categoryRepository.findOneBy({ id: id });
+  findById(id: number): Promise<Category>{
+    return this.categoryRepository.findOneBy({id:id});
   }
 
-  create(category: CreateCategoryDto): Promise<CreateCategoryDto> {
+  create(category: CreateCategoryDto): Promise<CreateCategoryDto>{
     return this.categoryRepository.save(category);
   }
 
-  update(category: UpdateCategoryDto): Promise<UpdateResult> {
-    return this.categoryRepository.update({ id: category.id }, category);
+  update(category:UpdateCategoryDto): Promise<UpdateResult>{
+    return this.categoryRepository.update({id:category.id}, category)
   }
 
-  delete(id: number) {
-    return this.categoryRepository.delete({ id: id });
+  delete(id:number){
+    return this.categoryRepository.delete({id:id});
   }
+  
+
 }

@@ -1,25 +1,27 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from "class-validator";
 
-export class UpdateProductDto {
-  @IsNumber()
-  id: number;
+export class UpdateProductDto{
 
-  @IsString()
-  name: string;
+    @IsNumber() 
+    id: number;
 
-  @IsNumber()
-  price: number;
+    @IsString()
+    name: string;
 
-  @IsNumber()
-  stock: number;
+    @IsNumber()
+    price: number;
 
-  @IsNumber()
-  categoryId: number;
+    @IsNumber()
+    stock: number;
 
-  @IsNumber()
-  brandId: number;
+    @IsNumber()
+    categoryId: number;
 
-  @IsNumber()
-  @IsOptional()
-  is_active: boolean;
+    @IsNumber()
+    brandId: number;
+
+    @IsNumber()
+    @IsOptional()
+    is_active: boolean;
+    
 }

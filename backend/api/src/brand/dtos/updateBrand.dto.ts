@@ -1,13 +1,15 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from "class-validator";
 
-export class UpdateBrandDto {
-  @IsNumber()
-  id: number;
+export class UpdateBrandDto{
 
-  @IsString()
-  name: string;
+    @IsNumber()
+    id: number;
 
-  @IsNumber()
-  @IsOptional()
-  is_active: boolean;
+    @IsString()
+    name: string;
+
+    @IsNumber()
+    @IsOptional()
+    is_active: boolean;
+    
 }

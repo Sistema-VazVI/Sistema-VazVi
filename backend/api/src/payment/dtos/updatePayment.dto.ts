@@ -1,12 +1,13 @@
-import { IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from "class-validator";
 
-export class UpdatePaymentDto {
-  @IsNumber()
-  id: number;
+export class UpdatePaymentDto{
 
-  @IsNumber()
-  amount: number;
+    @IsNumber() 
+    id: number;
 
-  @IsNumber()
-  ticketId: number;
+    @IsNumber()
+    amount: number;
+
+    @IsNumber()
+    ticketId: number;    
 }

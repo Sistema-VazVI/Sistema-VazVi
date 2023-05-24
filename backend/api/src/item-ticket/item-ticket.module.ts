@@ -7,6 +7,6 @@ import { ItemTicketService } from './item-ticket.service';
 @Module({
   imports: [TypeOrmModule.forFeature([ItemTicket])],
   providers: [ItemTicketService],
-  controllers: [ItemTicketController],
+  controllers: [ItemTicketController]
 })
 export class ItemTicketModule {}
