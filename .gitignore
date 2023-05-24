@@ -63,4 +63,3 @@ backend/api/vercel.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.vercel
