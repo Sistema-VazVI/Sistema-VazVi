@@ -15,30 +15,40 @@ export interface ClientCardProps {
 	setClient: Dispatch<SetStateAction<IClient | undefined>>;
 }
 
-export const ClientCard: React.FC<ClientCardProps> = ({ className = "", openModal, client, setClient }) => (
-	<div className={`${className} CardClient`}>
-		<UserIcon className="ClientLogo" />
-		<div className="Data">
-			<h5 className="Title">{`${client.name}`}</h5>
-			<span className="InfoClient">
-				<p>Telefono:</p>
-				<p>{`${client?.phone}`}</p>
-				<p>Saldo: {`${client.debt?.toLocaleString("es-MX", { style: "currency", currency: "MXN" })}`}</p>
-			</span>
+export const ClientCard: React.FC<ClientCardProps> = ({ className = "", openModal, client, setClient }) => {
+	function formatPhoneNumber(phoneNumber: string): string {
+		const countryCode = phoneNumber.substring(0, 3);
+		const areaCode = phoneNumber.substring(3, 6);
+		const firstPart = phoneNumber.substring(6, 9);
+		const secondPart = phoneNumber.substring(9);
+	  
+		return `${countryCode} ${areaCode} ${firstPart} ${secondPart}`;
+	}
+
+	return(
+		<div className={`${className} CardClient`}>
+			<UserIcon className="ClientLogo" />
+			<div className="Data">
+				<h5 className="Title">{`${client.name}`}</h5>
+				<span className="InfoClient">
+					<p>Telefono:</p>
+					<p>{formatPhoneNumber(`${client.phone}`)}</p>
+					<p>Saldo: {`${client.debt?.toLocaleString("es-MX", { style: "currency", currency: "MXN" })}`}</p>
+				</span>
+			</div>
+			<div className="CardButtons">
+				<Link
+					to={"/clients/"+`${client?.id}`}
+					className="cardBtn"
+				>
+					<EyeIcon className="eyeIcon" />
+				</Link>
+				<button
+					className="cardBtn"
+					onClick={() => viewClient(client, setClient, openModal!)}
+				>
+					<PencilSquareIcon />
+				</button>
+			</div>
 		</div>
-		<div className="CardButtons">
-			<Link
-				to={"/clients/"+`${client?.id}`}
-				className="cardBtn"
-			>
-				<EyeIcon className="eyeIcon" />
-			</Link>
-			<button
-				className="cardBtn"
-				onClick={() => viewClient(client, setClient, openModal!)}
-			>
-				<PencilSquareIcon />
-			</button>
-		</div>
-	</div>
-);
+	)};
