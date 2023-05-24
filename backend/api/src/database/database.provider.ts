@@ -2,13 +2,13 @@ import { DynamicModule } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ConfigService } from '@nestjs/config';
 import { ConnectionOptions, ConnectionOptionsReader } from "typeorm";
-import { Brand } from "../brand/entity/brand.entity";
-import { Category } from "../category/entity/category.entity";
-import { Client } from "../client/entity/client.entity";
-import { ItemTicket } from "../item-ticket/entity/item-ticket.entity";
-import { Payment } from "../payment/entity/payment.entity";
-import { Product } from "../product/entity/product.entity";
-import { Ticket } from "../ticket/entity/ticket.entity";
+import { Brand } from "src/brand/entity/brand.entity";
+import { Category } from "src/category/entity/category.entity";
+import { Client } from "src/client/entity/client.entity";
+import { ItemTicket } from "src/item-ticket/entity/item-ticket.entity";
+import { Payment } from "src/payment/entity/payment.entity";
+import { Product } from "src/product/entity/product.entity";
+import { Ticket } from "src/ticket/entity/ticket.entity";
 
 export const DatabaseProvider: DynamicModule = TypeOrmModule.forRootAsync({
     inject: [ConfigService],

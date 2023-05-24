@@ -1,5 +1,5 @@
-import { Brand } from "../../brand/entity/brand.entity";
-import { Category } from "../../category/entity/category.entity";
+import { Brand } from "src/brand/entity/brand.entity";
+import { Category } from "src/category/entity/category.entity";
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

@@ -1,5 +1,5 @@
-import { Product } from "../../product/entity/product.entity";
-import { Ticket } from "../../ticket/entity/ticket.entity";
+import { Product } from "src/product/entity/product.entity";
+import { Ticket } from "src/ticket/entity/ticket.entity";
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
