@@ -31,32 +31,40 @@
     margin-top: 10px;
 }
 
-.cartItemContainer {
+.shoppingCartItemContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-items: center;
     align-content: center;
     justify-content: center;
-    column-gap: 20px;
+    justify-items: center;
     margin-top: 0px;
     width: 100%;
 }
 
-.itemTitle {
-    display: inline-block;
-    font-weight: 300;
-    font-size: 12px;
-    color: #6F5E76;
-    width: 25%;
-    margin: 0px;
+.cartItemTextContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 10px;
 }
 
-.itemText {
+.cartItemTitle {
     display: inline-block;
-    width: 45%;
+    font-weight: 500;
+    font-size: 16px;
+    color: #6F5E76;
+    margin: 0px;
+    text-align: left;
+}
+
+.cartItemText {
+    display: block;
     font-size: 12px;
     font-weight: 100;
+    margin: 0px;
+    text-align: left;
+    padding-left: 5%;
 }
 
 .trashBtn {
@@ -73,6 +81,7 @@
     justify-content: center;
     overflow: scroll;
     max-height: 375px;
+    width: 90%;
 }
 
 .cartFooter {
