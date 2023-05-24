@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getAll = async (): Promise<IitemTicket[]> => {
   return await axios
-    .get<IitemTicket[]>(process.env.REACT_APP_API_URL+'/item-ticket')
+    .get<IitemTicket[]>(process.env.REACT_APP_API_URL+'item-ticket')
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -16,7 +16,7 @@ export const getAll = async (): Promise<IitemTicket[]> => {
 
 export const getSingle = async (id:number): Promise<IitemTicket> => {
   return await axios
-    .get<IitemTicket>(process.env.REACT_APP_API_URL+`/item-ticket/${id}`)
+    .get<IitemTicket>(process.env.REACT_APP_API_URL+`item-ticket/${id}`)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -29,7 +29,7 @@ export const getSingle = async (id:number): Promise<IitemTicket> => {
 
 export const create = async (itemTicket:IitemTicketCreate): Promise<IitemTicketCreate> => {
   return await axios
-    .post<IitemTicketCreate>(process.env.REACT_APP_API_URL+'/item-ticket', itemTicket)
+    .post<IitemTicketCreate>(process.env.REACT_APP_API_URL+'item-ticket', itemTicket)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -42,7 +42,7 @@ export const create = async (itemTicket:IitemTicketCreate): Promise<IitemTicketC
 
 export const update = async (itemTicket:IitemTicketUpdate): Promise<IitemTicketUpdate> => {
   return await axios
-    .patch<IitemTicketUpdate>(process.env.REACT_APP_API_URL+'/item-ticket', itemTicket)
+    .patch<IitemTicketUpdate>(process.env.REACT_APP_API_URL+'item-ticket', itemTicket)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -55,7 +55,7 @@ export const update = async (itemTicket:IitemTicketUpdate): Promise<IitemTicketU
 
 export const remove = async (itemTicket: IitemTicket): Promise<IitemTicket> => {
   return await axios
-    .delete<IitemTicket>(process.env.REACT_APP_API_URL+`/item-ticket/${itemTicket.id}`)
+    .delete<IitemTicket>(process.env.REACT_APP_API_URL+`item-ticket/${itemTicket.id}`)
     .then((response) => {
       if (response.data) {
         return response.data;

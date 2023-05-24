@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getAll = async (): Promise<IBrand[]> => {
   return await axios
-    .get<IBrand[]>(process.env.REACT_APP_API_URL+'/brand')
+    .get<IBrand[]>(process.env.REACT_APP_API_URL+'brand')
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -16,7 +16,7 @@ export const getAll = async (): Promise<IBrand[]> => {
 
 export const getSingle = async (id:number): Promise<IBrand> => {
   return await axios
-    .get<IBrand>(process.env.REACT_APP_API_URL+`/brand/${id}`)
+    .get<IBrand>(process.env.REACT_APP_API_URL+`brand/${id}`)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -29,7 +29,7 @@ export const getSingle = async (id:number): Promise<IBrand> => {
 
 export const create = async (brand:IBrandCreate): Promise<IBrandCreate> => {
   return await axios
-    .post<IBrandCreate>(process.env.REACT_APP_API_URL+'/brand', brand)
+    .post<IBrandCreate>(process.env.REACT_APP_API_URL+'brand', brand)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -42,7 +42,7 @@ export const create = async (brand:IBrandCreate): Promise<IBrandCreate> => {
 
 export const update = async (brand:IBrandUpdate): Promise<IBrandUpdate> => {
   return await axios
-    .patch<IBrandUpdate>(process.env.REACT_APP_API_URL+'/brand', brand)
+    .patch<IBrandUpdate>(process.env.REACT_APP_API_URL+'brand', brand)
     .then((response) => {
       if (response.data) {
         return response.data;
@@ -55,7 +55,7 @@ export const update = async (brand:IBrandUpdate): Promise<IBrandUpdate> => {
 
 export const remove = async (brand: IBrand): Promise<IBrand> => {
   return await axios
-    .delete<IBrand>(process.env.REACT_APP_API_URL+`/brand/${brand.id}`)
+    .delete<IBrand>(process.env.REACT_APP_API_URL+`brand/${brand.id}`)
     .then((response) => {
       if (response.data) {
         return response.data;
